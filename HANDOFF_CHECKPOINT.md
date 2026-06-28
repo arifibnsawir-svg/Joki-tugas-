@@ -34,7 +34,7 @@ Yang SAMA antar buku hanya judul bab. Selebihnya WAJIB beda: kalimat, contoh, su
 | 1 | Nurul Syifa | Naratif-reflektif | Tengah bawah | Prosa + refleksi | Dot leader rata (bab) | APA | SELESAI |
 | 2 | Naila Diyana Nabilah | Akademik-terstruktur | Pojok kanan bawah | Tabel berwarna (header biru lembut) | Bertingkat (bab+subbab) | IEEE [n] | SELESAI |
 | 3 | Balqis Sandra Lejla | Kontekstual-aplikatif | Pojok luar (kiri-kanan ganti) | Poin-poin/bullet + kotak studi kasus | Leader titik format beda | Harvard | SELESAI |
-| 4 | Lidya Ellen Febriasalsa | Dialogis/tanya-jawab | Tengah atas (header) | Kotak tanya-jawab + tabel ringkas | Tanpa leader, indentasi | MLA | BELUM |
+| 4 | Lidya Ellen Febriasalsa | Dialogis/tanya-jawab | Tengah atas (header) | Kotak tanya-jawab + tabel ringkas | Tanpa leader, indentasi | MLA | SELESAI |
 | 5 | Nurjali Sangadji | KHUSUS: file asli 100% GAMBAR (62 gambar, 0 teks). Perlu dibangun ulang jadi teks. | ditentukan | ditentukan | ditentukan | ditentukan | BELUM |
 
 Catatan: tabel/warna dibuat lembut & profesional. Tiap buku tetap WAJIB lolos QA penuh.
@@ -81,7 +81,8 @@ GOTCHA penting:
 - Buku 1 (Nurul Syifa): SELESAI, QA 13/13 PASS. FINAL/Buku 1 - Nurul Syifa - PKN - FINISH.pdf & .docx. 64 hal isi. DNA naratif-reflektif, APA.
 - Buku 2 (Naila): SELESAI, QA 16/16 PASS. 62 hal isi. DNA akademik + 10 tabel berwarna + no.halaman kanan + daftar isi bertingkat + IEEE. Bab 5 sudah sesuai silabus (HAM jadi sub-bab).
 - Buku 3 (Balqis Sandra Lejla): SELESAI, QA 20/20 PASS. 64 hal isi (66 dgn cover). DNA kontekstual-aplikatif + 16 kotak studi kasus + poin-poin/bullet + no.halaman pojok luar berganti + daftar isi nomor bab 01-08 + Harvard. Overlap antar-buku rendah (vs Buku1 1.7 persen, vs Buku2 7.1 persen; sisa hanya nama UU & URL sumber). Pipeline di `_generator/buku3/`. GOTCHA tambahan: di TOC HTML JANGAN pakai class `bab` pada `<li>` karena bentrok dgn `.bab{break-before:page}` (tiap entri jadi pindah halaman); pakai class lain mis. `tbab`. PDF & DOCX line-height 1.9 (nomor TOC DOCX dari scan PDF).
-- Buku 4, 5: BELUM. Kerjakan di sesi baru mengikuti DNA & pipeline di atas.
+- Buku 4 (Lidya Ellen Febriasalsa): SELESAI, QA 18/18 PASS. 62 hal isi (64 dgn cover). DNA dialogis/tanya-jawab + 16 kotak tanya-jawab + tabel ringkas hijau-abu + no.halaman TENGAH ATAS (header) + daftar isi TANPA leader (flex rata kanan, indentasi) + MLA. Pipeline di `_generator/buku4/`. QC anti-plagiat WAJIB vs Buku 1, 2, DAN 3 (sekelas): overlap 8-kata vs B1 0.53 / B2 0.60 / B3 0.85 persen, 0 blok prosa panjang identik (sisa cuma nama UU & URL). CATATAN: saat dedup, hati-hati jangan men-reword kalimat jadi mirip versi buku lain yang sudah di-dedup (sempat kejadian di kalimat geostrategi vs Buku3). DOCX nomor halaman di HEADER (evenAndOdd tidak dipakai; cukup header center).
+- Buku 5: BELUM. Kerjakan di sesi baru mengikuti DNA & pipeline di atas.
 
 ## 8. Cara melanjutkan di sesi baru
 1. Clone repo arifibnsawir-svg/Joki-tugas-.
