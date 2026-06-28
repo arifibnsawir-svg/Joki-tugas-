@@ -12,19 +12,19 @@ from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 from konten import KATA_PENGANTAR, BAB, DAFTAR_PUSTAKA
 
-SRC = "drive_buku/Joki buku pkn/MINI_BOOK_PKN_NAILA_FINAL_V10_COVER_INTEGRATED finish.docx"
+SRC = "Joki-tugas-/SUMBER_ASLI (jangan dikumpulkan)/MINI_BOOK_PKN_NAILA_FINAL_V10_COVER_INTEGRATED finish.docx"
 OUT = "Joki-tugas-/FINAL/Buku 2 - Naila - PKN - FINISH.docx"
-PR = json.load(open("build_naila/page_real.json"))
+PR = json.load(open("Joki-tugas-/_generator/buku2/build_naila/page_real.json"))
 FONT = "Times New Roman"
 TEXT_W_CM = 14.5
 
 def covers_extract():
-    os.makedirs("build_naila/img", exist_ok=True)
+    os.makedirs("Joki-tugas-/_generator/buku2/build_naila/img", exist_ok=True)
     z = zipfile.ZipFile(SRC)
     media = sorted([n for n in z.namelist() if n.startswith("word/media/image")])
     paths = []
     for i, m in enumerate(media, 1):
-        p = "build_naila/img/cv%d%s" % (i, os.path.splitext(m)[1]); open(p,"wb").write(z.read(m)); paths.append(p)
+        p = "Joki-tugas-/_generator/buku2/build_naila/img/cv%d%s" % (i, os.path.splitext(m)[1]); open(p,"wb").write(z.read(m)); paths.append(p)
     return paths
 
 def set_font(run, size=12, bold=False, italic=False, color=None):

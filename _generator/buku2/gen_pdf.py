@@ -7,10 +7,10 @@ import os, zipfile, html as _html, base64, json
 from io import BytesIO
 from konten import KATA_PENGANTAR, BAB, DAFTAR_PUSTAKA
 
-SRC = "drive_buku/Joki buku pkn/MINI_BOOK_PKN_NAILA_FINAL_V10_COVER_INTEGRATED finish.docx"
+SRC = "Joki-tugas-/SUMBER_ASLI (jangan dikumpulkan)/MINI_BOOK_PKN_NAILA_FINAL_V10_COVER_INTEGRATED finish.docx"
 OUTDIR = "Joki-tugas-/FINAL"
 OUTPDF = os.path.join(OUTDIR, "Buku 2 - Naila - PKN - FINISH.pdf")
-PAGEMAP = "build_naila/page_real.json"
+PAGEMAP = "Joki-tugas-/_generator/buku2/build_naila/page_real.json"
 
 def covers():
     z = zipfile.ZipFile(SRC)

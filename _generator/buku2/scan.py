@@ -2,7 +2,7 @@
 import re, json
 from pypdf import PdfReader
 import sys
-sys.path.insert(0, "build_naila")
+sys.path.insert(0, "Joki-tugas-/_generator/buku2")
 import konten
 
 PDF = "Joki-tugas-/FINAL/Buku 2 - Naila - PKN - FINISH.pdf"
@@ -59,7 +59,7 @@ blank = [i+1 for i in range(1, n-1) if len(pages[i].strip()) < 5]
 print("halaman kosong di isi:", blank if blank else "tidak ada")
 print("heading tak ketemu:", miss if miss else "semua ketemu")
 print("contoh: bab1=%s bab8=%s dp=%s" % (page_real.get('bab1'), page_real.get('bab8'), page_real.get('dp')))
-json.dump(page_real, open("build_naila/page_real.json","w"), indent=2, ensure_ascii=False)
+json.dump(page_real, open("Joki-tugas-/_generator/buku2/build_naila/page_real.json","w"), indent=2, ensure_ascii=False)
 
 # tampilkan daftar isi tercetak (halaman2 TOC)
 print("--- DAFTAR ISI tercetak (cuplikan) ---")
