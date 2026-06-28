@@ -18,7 +18,7 @@ Repo kerja untuk project mini book Pendidikan Kewarganegaraan (PKN) di Perguruan
 | Buku | Penulis | Status |
 |------|---------|--------|
 | 1 | Nurul Syifa | SELESAI (FINISH) - PDF + DOCX |
-| 2 | Naila Diyana Nabilah | belum |
+| 2 | Naila Diyana Nabilah | SELESAI (FINISH) - PDF + DOCX |
 | 3 | Balqis Sandra Lejla | belum |
 | 4 | Lidya Ellen Febriasalsa | belum |
 | 5 | Nurjali Sangadji | belum (file asli 100% gambar - perlu pendekatan khusus) |
