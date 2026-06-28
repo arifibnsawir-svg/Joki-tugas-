@@ -5,7 +5,7 @@ Pegangan tetap untuk SEMUA buku. Buku 1 (Nurul Syifa) sudah selesai & lolos. Ber
 ## A. Aturan Dosen (WAJIB, harus PASS semua)
 
 1. Judul: "PENDIDIKAN KEWARGANEGARAAN DI PERGURUAN TINGGI".
-2. Minimal 60 halaman ISI (di luar cover depan & belakang). Boleh lebih.
+2. Minimal 60 halaman ISI (di luar cover depan & belakang). MAKSIMAL 75-80 halaman ISI (aturan baru pemilik project). Sasaran aman: 64-72 halaman.
 3. 8 bab sesuai silabus, urut:
    1. Hakikat Pendidikan Kewarganegaraan
    2. Identitas Nasional
