@@ -1,26 +1,37 @@
-# Joki Tugas — Project Buku PKN
+# Joki Tugas - Project Buku PKN
 
-Repo kerja untuk project joki buku PKN. Berisi file sumber buku (.docx) dan skill pendukung untuk pengerjaan.
+Repo kerja untuk project mini book Pendidikan Kewarganegaraan (PKN) di Perguruan Tinggi.
 
-## Struktur
+## Struktur folder
 
 ```
 .
-├── buku/                      # File sumber buku (.docx)
-├── .kiro/skills/humanizer/    # Skill: hapus pola tulisan ala-AI
-└── README.md
+├── FINAL/                              <- HASIL JADI (yang dikumpulkan)
+├── SUMBER_ASLI (jangan dikumpulkan)/   <- file asli dari Drive, BELUM sesuai silabus
+└── .kiro/skills/humanizer/             <- skill anti tulisan ala-AI
 ```
 
-## Isi folder `buku/`
+> Aturan gampang: **ambil file dari folder `FINAL/`**. File di folder `SUMBER_ASLI` adalah bahan mentah, jangan dipakai untuk dikumpulkan.
 
-| File | Keterangan |
-|------|------------|
-| `5_6183913965983112173.docx` | Mini book |
-| `Mini Book Finish Balqis Lejla.docx` | Mini book — Balqis Lejla |
-| `Mini Book Teman Balqis.docx` | Mini book — Teman Balqis |
-| `MINI_BOOK_PKN_NAILA_FINAL_V10_COVER_INTEGRATED finish.docx` | Mini book PKN — Naila (final v10) |
-| `NURJALI_SANGADJI_FINAL_Mini Book V4.docx` | Mini book — Nurjali Sangadji (final v4) |
+## Status pengerjaan
 
-## Skill: humanizer
+| Buku | Penulis | Status |
+|------|---------|--------|
+| 1 | Nurul Syifa | SELESAI (FINISH) - PDF + DOCX |
+| 2 | Naila Diyana Nabilah | belum |
+| 3 | Balqis Sandra Lejla | belum |
+| 4 | Lidya Ellen Febriasalsa | belum |
+| 5 | Nurjali Sangadji | belum (file asli 100% gambar - perlu pendekatan khusus) |
 
-Skill di `.kiro/skills/humanizer/SKILL.md` dipakai untuk merapikan tulisan agar terbaca natural (menghapus ciri khas tulisan AI). Berbasis panduan Wikipedia "Signs of AI writing". Sumber: [blader/humanizer](https://github.com/blader/humanizer) (MIT).
+## Tiap buku FINAL memuat
+
+- 8 bab sesuai silabus: Hakikat PKN, Identitas Nasional, Integrasi Nasional, Negara & Konstitusi, Hak & Kewajiban Warga Negara, Penegakan Hukum yang Berkeadilan, Geopolitik & Geostrategi, Anti Korupsi
+- Minimal 60 halaman isi (di luar cover depan & belakang)
+- Sistematika: Cover, Kata Pengantar, Daftar Isi, Bab 1-8, Daftar Pustaka, Biografi penulis (sampul belakang)
+- Dua format: **PDF** (untuk dibuka & dikumpulkan, tampilan sama di semua perangkat) dan **DOCX** (file editan)
+- Daftar pustaka dengan tautan sumber yang dapat diperiksa
+
+## Catatan format
+
+- **PDF** = versi tampilan final. Nomor halaman & daftar isi sudah tercetak permanen, identik di HP maupun PC.
+- **DOCX** = versi yang bisa diedit. Nomor halaman footer otomatis benar saat dibuka di Microsoft Word.
