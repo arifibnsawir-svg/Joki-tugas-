@@ -102,7 +102,7 @@ BAB.append({
      ("p", "Skema pada Gambar 1.1 menggambarkan bagaimana informasi dari lingkungan diterima oleh indra, lalu diproses sesuai gaya belajar individu, dan akhirnya tersimpan dalam memori jangka panjang sebagai pengetahuan."),
   ]}),
   ("fig", {"no": "1.1", "judul": "Skema Proses Belajar Berdasarkan Gaya Belajar", "file": "fig_1_1.png",
-     "sumber": "Diolah penulis berdasarkan konsep pemrosesan informasi (Schunk, 2020)."}),
+     "sumber": "Diolah penulis dari konsep pemrosesan informasi (Schunk, 2020); ilustrasi dibuat dengan bantuan AI (ChatGPT)."}),
   ("box", {"kind": "aktivitas", "judul": "Aktivitas 1.1: Jurnal Belajar Singkat", "body": [
      ("p", "Sebelum melanjutkan ke Bab II, kerjakan aktivitas berikut untuk menggali pemahaman awal Anda tentang gaya belajar. Ingat kembali pengalaman belajar Anda selama satu bulan terakhir, lalu jawab pertanyaan berikut secara jujur pada buku catatan atau file pribadi Anda:"),
      ("nlist", [
@@ -118,7 +118,7 @@ BAB.append({
   ("p", "Faktor pertama adalah faktor biologis dan genetik. Struktur otak dan sistem saraf setiap individu memiliki keunikan yang memengaruhi cara memproses informasi. Faktor kedua adalah faktor lingkungan, mencakup keluarga, sekolah, dan masyarakat. Lingkungan yang kaya stimulus visual, auditorial, atau kinestetik akan mendorong berkembangnya gaya belajar yang sesuai. Faktor ketiga adalah pengalaman belajar masa lalu yang membentuk kebiasaan dan preferensi. Faktor keempat adalah sosial-budaya tempat seseorang tumbuh, dan faktor kelima adalah motivasi serta kepribadian, yang membuat individu dengan motivasi tinggi cenderung lebih aktif mengembangkan strategi belajar bervariasi."),
   ("p", "Kelima faktor tersebut diringkas pada Gambar 1.2 berikut agar lebih mudah diingat."),
   ("fig", {"no": "1.2", "judul": "Faktor yang Memengaruhi Gaya Belajar", "file": "fig_1_2.png",
-     "sumber": "Diolah penulis dari Schunk (2020) dan Pritchard (2017)."}),
+     "sumber": "Diolah penulis dari Schunk (2020) dan Pritchard (2017); ilustrasi dibuat dengan bantuan AI (ChatGPT)."}),
   ("h2", "1.7 Mitos dan Fakta tentang Gaya Belajar"),
   ("p", "Seiring populernya konsep gaya belajar, muncul sejumlah mitos yang perlu diluruskan. Mitos pertama menyebut gaya belajar bersifat tetap dan tidak bisa berubah; faktanya, gaya belajar dapat berkembang seiring pengalaman dan latihan. Mitos kedua menyatakan gaya belajar tertentu lebih unggul; faktanya, setiap gaya memiliki kelebihan masing-masing dan tidak ada yang superior secara mutlak."),
   ("p", "Mitos ketiga menganggap pengajaran harus selalu disesuaikan secara ketat dengan gaya belajar siswa; faktanya, pendekatan multimodal yang melibatkan banyak indra justru lebih efektif bagi semua pembelajar. Mitos keempat menyatakan tes gaya belajar selalu akurat; faktanya, hasil tes hanya memberikan gambaran preferensi dan dapat berubah seiring waktu. Karena itu, tes gaya belajar sebaiknya dijadikan panduan, bukan label permanen."),
@@ -152,7 +152,7 @@ BAB.append({
   ("p", "Model VAK (Visual, Auditorial, Kinestetik) dikembangkan oleh Neil Fleming pada tahun 1987. Model ini mengelompokkan gaya belajar berdasarkan modalitas indra yang paling dominan digunakan seseorang dalam memproses informasi. Fleming kemudian mengembangkan model VARK dengan menambahkan satu modalitas, yaitu Read/Write atau membaca dan menulis. Namun dalam praktik pembelajaran sehari-hari, ketiga modalitas pertama merupakan yang paling sering digunakan (Fleming, 1987)."),
   ("p", "Perlu dipahami bahwa seseorang tidak selalu memiliki hanya satu gaya belajar. Banyak individu memiliki gaya belajar kombinasi atau multimodal, misalnya visual-kinestetik atau auditorial-visual. Karena itu, pemahaman tentang ketiga tipe ini membantu pembaca mengenali pola dominan dalam dirinya sekaligus mengembangkan gaya belajar lain sebagai pelengkap. Gambar 2.1 menyajikan ilustrasi ketiga tipe tersebut."),
   ("fig", {"no": "2.1", "judul": "Ilustrasi Tiga Tipe Gaya Belajar (VAK)", "file": "fig_2_1.png",
-     "sumber": "Diolah penulis berdasarkan model VAK (Fleming, 1987)."}),
+     "sumber": "Diolah penulis dari model VAK (Fleming, 1987); ilustrasi dibuat dengan bantuan AI (ChatGPT)."}),
   ("h2", "2.2 Gaya Belajar Visual"),
   ("p", "Gaya belajar visual adalah gaya belajar ketika seseorang lebih mudah menerima, memahami, dan mengingat informasi yang disajikan dalam bentuk gambar, diagram, warna, simbol, atau visualisasi lain. Pembelajar visual cenderung berpikir dalam gambar dan lebih responsif terhadap stimulus visual. Mereka lebih cepat memahami peta, grafik, bagan, dan ilustrasi dibandingkan penjelasan verbal yang panjang."),
   ("p", "Karakteristik pembelajar visual antara lain lebih mudah mengingat wajah dibandingkan nama, menyukai presentasi yang dilengkapi gambar atau slide berwarna, sering mencoret-coret saat berpikir, peka terhadap tata letak dan warna, serta lebih mudah mengingat informasi yang telah dituliskan. Kelebihannya adalah kemampuan mengorganisasi informasi secara spasial dan memahami hubungan antarkonsep. Tantangannya, pembelajar visual dapat kesulitan mengikuti penjelasan lisan yang panjang tanpa bantuan visualisasi."),
@@ -204,7 +204,7 @@ BAB.append({
   ("p", "Selain tiga tipe VAK, Fleming menambahkan satu tipe dalam model VARK, yaitu Read/Write atau membaca dan menulis. Pembelajar tipe ini belajar optimal melalui teks tertulis, baik membaca buku dan artikel maupun menulis catatan dan esai. Mereka menyukai informasi yang disajikan dalam bentuk kata dan kalimat, serta gemar menggunakan kamus, ensiklopedia, dan dokumentasi tertulis sebagai sumber utama."),
   ("p", "Karakteristik pembelajar Read/Write antara lain menyukai membaca buku teks dan artikel, mengandalkan catatan tertulis yang rapi, senang menyusun ringkasan dan esai, serta lebih mudah memahami informasi yang tersaji dalam bentuk daftar dan poin. Walaupun model VAK lebih populer, pemahaman tentang tipe Read/Write melengkapi gambaran tentang keragaman gaya belajar. Gambar 2.2 dan Tabel 2.3 berikut merangkum keempat modalitas VARK."),
   ("fig", {"no": "2.2", "judul": "Empat Modalitas Gaya Belajar VARK", "file": "fig_2_2.png",
-     "sumber": "Diolah penulis dari model VARK (Fleming, 1987)."}),
+     "sumber": "Diolah penulis dari model VARK (Fleming, 1987); ilustrasi dibuat dengan bantuan AI (ChatGPT)."}),
   ("table", {"no": "2.3", "judul": "Perbandingan Empat Tipe Gaya Belajar VARK",
      "head": ["Tipe", "Cara Belajar Utama", "Media Favorit", "Contoh Aktivitas"],
      "rows": [
@@ -289,7 +289,7 @@ BAB.append({
      ("p", "Misalkan Anda mahasiswa dengan gaya belajar visual yang harus menyiapkan presentasi tentang teori belajar. Alih-alih hanya membaca teks, Anda dapat membuat peta pikiran yang menghubungkan tokoh teori dengan konsepnya, mendesain slide dengan ikon dan warna konsisten, menambahkan video pendek ilustratif, lalu menyusun ringkasan akhir dalam bentuk infografis. Dengan strategi ini, Anda tidak hanya memahami materi, tetapi juga mampu menyajikannya secara menarik. Gambar 3.1 membantu Anda memilih strategi sesuai gaya dominan."),
   ]}),
   ("fig", {"no": "3.1", "judul": "Diagram Pemilihan Strategi Belajar", "file": "fig_3_1.png",
-     "sumber": "Diolah penulis berdasarkan strategi belajar VAK (Schunk, 2020)."}),
+     "sumber": "Diolah penulis dari strategi belajar VAK (Schunk, 2020); ilustrasi dibuat dengan bantuan AI (ChatGPT)."}),
   ("box", {"kind": "aktivitas", "judul": "Aktivitas 3.1: Rencana Belajar Pribadi", "body": [
      ("p", "Berdasarkan hasil tes gaya belajar Anda pada Bab II, susunlah rencana belajar pribadi untuk satu minggu ke depan dengan format berikut:"),
      ("nlist", [
@@ -323,7 +323,7 @@ BAB.append({
   ("p", "Beberapa kiat membangun kebiasaan belajar berkelanjutan adalah memulai dari target kecil yang realistis, mengaitkan belajar dengan aktivitas rutin yang sudah ada, memberi penghargaan sederhana setelah mencapai target, mencatat kemajuan dalam jurnal belajar, serta tidak terlalu keras pada diri sendiri saat gagal dan segera memulai lagi. Konsistensi lebih penting daripada kesempurnaan dalam membangun kebiasaan."),
   ("p", "Langkah membangun kebiasaan belajar tersebut dapat digambarkan sebagai satu rangkaian yang berkesinambungan, seperti tampak pada Gambar 3.2."),
   ("fig", {"no": "3.2", "judul": "Siklus Membangun Kebiasaan Belajar", "file": "fig_3_2.png",
-     "sumber": "Diolah penulis dari prinsip pembentukan kebiasaan (Schunk, 2020)."}),
+     "sumber": "Diolah penulis dari prinsip pembentukan kebiasaan (Schunk, 2020); ilustrasi dibuat dengan bantuan AI (ChatGPT)."}),
   ("box", {"kind": "tips", "judul": "Tahukah Anda?", "body": [
      ("p", "Pembelajaran yang melibatkan lebih dari satu indra sekaligus, misalnya melihat diagram sambil menjelaskannya dengan suara, cenderung menghasilkan ingatan yang lebih kuat. Inilah sebabnya pendekatan multimodal sering dianjurkan, bahkan bagi orang yang sudah mengetahui gaya belajar dominannya."),
   ]}),
