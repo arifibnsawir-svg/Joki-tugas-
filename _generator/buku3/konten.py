@@ -50,7 +50,7 @@ BAB.append({
   ("p", "Dengan kata lain, kewarganegaraan bukan sekadar status pada kartu tanda penduduk. Ia adalah peran yang dijalankan, yaitu kesediaan untuk peduli pada lingkungan sekitar, mematuhi aturan yang disepakati, dan ikut menjaga kepentingan bersama. Dari sinilah mata kuliah ini memperoleh maknanya yang sesungguhnya."),
 
   ("h2", "Landasan Hukum Mata Kuliah"),
-  ("p", "Kehadiran Pendidikan Kewarganegaraan di perguruan tinggi bukan kebijakan kampus semata, melainkan amanat peraturan. Undang-Undang Nomor 20 Tahun 2003 tentang Sistem Pendidikan Nasional menempatkan pendidikan kewarganegaraan sebagai bagian wajib dari kurikulum. Penegasan yang lebih khusus untuk jenjang perguruan tinggi terdapat dalam Undang-Undang Nomor 12 Tahun 2012 tentang Pendidikan Tinggi."),
+  ("p", "Kehadiran Pendidikan Kewarganegaraan di perguruan tinggi bukan kebijakan kampus semata, melainkan amanat peraturan. Melalui Undang-Undang Nomor 20 Tahun 2003, pendidikan kewarganegaraan dijadikan muatan wajib dalam kurikulum. Penegasan yang lebih khusus untuk jenjang perguruan tinggi terdapat dalam Undang-Undang Nomor 12 Tahun 2012 tentang Pendidikan Tinggi."),
   ("p", "Landasan ini penting agar mahasiswa memahami bahwa mata kuliah tersebut memiliki kedudukan resmi. Beberapa rujukan utama yang menjadi pijakannya dapat diringkas sebagai berikut."),
   ("ul", [
     "Pancasila sebagai sumber nilai dan dasar moral kehidupan berbangsa.",
@@ -58,7 +58,7 @@ BAB.append({
     "Undang-Undang Nomor 20 Tahun 2003 yang mewajibkan muatan pendidikan kewarganegaraan dalam kurikulum.",
     "Undang-Undang Nomor 12 Tahun 2012 yang menegaskan mata kuliah ini sebagai mata kuliah wajib di perguruan tinggi.",
   ]),
-  ("p", "Dengan dasar hukum yang jelas, Pendidikan Kewarganegaraan tidak dapat dianggap sebagai pelengkap. Ia adalah bagian utuh dari pembentukan lulusan yang cakap secara keilmuan sekaligus matang sebagai warga negara."),
+  ("p", "Dengan dasar hukum yang jelas, Pendidikan Kewarganegaraan tidak dapat dianggap sebagai pelengkap. Mata kuliah ini menjadi bagian tak terpisahkan dari upaya mencetak lulusan yang mumpuni keilmuannya sekaligus dewasa sebagai warga negara."),
 
   ("h2", "Tujuan dan Fungsi bagi Mahasiswa"),
   ("p", "Tujuan utama mata kuliah ini adalah membentuk mahasiswa yang cerdas, berkarakter, dan mau terlibat dalam kehidupan bersama. Cerdas berarti mampu menimbang persoalan secara jernih, berkarakter berarti memegang nilai meski tidak diawasi, dan terlibat berarti bersedia mengambil peran, bukan sekadar menonton dari kejauhan."),
@@ -87,7 +87,7 @@ BAB.append({
   ("p", "Bagi mahasiswa yang menekuni bidang yang berhubungan dengan pendampingan manusia, kebiasaan ini menjadi modal penting. Kemampuan mendengarkan tanpa menghakimi dan bersikap adil terhadap orang dari latar berbeda akan sangat berguna ketika kelak berhadapan dengan banyak orang. Di sinilah Pendidikan Kewarganegaraan bertemu dengan pembentukan pribadi yang peduli."),
 
   ("h2", "Ringkasan"),
-  ("p", "Pendidikan Kewarganegaraan adalah mata kuliah wajib yang membentuk mahasiswa menjadi warga negara yang cerdas, berkarakter, dan mau terlibat. Landasannya jelas, yaitu Pancasila, Undang-Undang Dasar Tahun 1945, Undang-Undang Nomor 20 Tahun 2003, dan Undang-Undang Nomor 12 Tahun 2012."),
+  ("p", "Pendidikan Kewarganegaraan adalah mata kuliah wajib yang membentuk mahasiswa menjadi warga negara yang cerdas, berkarakter, dan mau terlibat. Dasar hukumnya gamblang, mulai dari Pancasila, Undang-Undang Dasar Tahun 1945, lalu Undang-Undang Nomor 20 Tahun 2003, hingga Undang-Undang Nomor 12 Tahun 2012."),
   ("p", "Berbeda dari jenjang sekolah, pendekatannya di perguruan tinggi menekankan analisis dan penerapan. Inti dari seluruh pembahasan adalah kesadaran bahwa kewarganegaraan merupakan peran yang dijalankan, bukan sekadar status yang dimiliki."),
  ]
 })
@@ -114,10 +114,10 @@ BAB.append({
     "Kebudayaan yang beragam, dari kesenian sampai kebiasaan sosial seperti gotong royong.",
     "Simbol negara, yaitu bendera, lambang, dan lagu kebangsaan, sebagaimana diatur dalam Undang-Undang Nomor 24 Tahun 2009.",
   ]),
-  ("p", "Di lingkungan kampus, unsur-unsur ini hadir secara nyata. Bahasa Indonesia menjadi bahasa kuliah yang mempertemukan mahasiswa berbagai daerah, sementara pertukaran budaya antarteman memperkaya pemahaman tentang siapa kita sebagai bangsa."),
+  ("p", "Di tengah kehidupan kampus, unsur-unsur tersebut benar-benar terasa. Di ruang kuliah, bahasa Indonesia menyatukan mahasiswa dari banyak daerah, sedangkan saling berbagi budaya antarteman menambah pemahaman tentang jati diri kita sebagai bangsa."),
 
   ("h2", "Pancasila sebagai Pengikat"),
-  ("p", "Pancasila menempati kedudukan istimewa dalam identitas nasional. Ia bukan hanya dasar negara, tetapi juga titik temu nilai-nilai yang dianut sebagian besar rakyat Indonesia. Ketuhanan mengakui keberagaman kepercayaan, kemanusiaan menjunjung martabat, persatuan menolak perpecahan, kerakyatan menempatkan rakyat sebagai pemegang kedaulatan, dan keadilan sosial berpihak pada kesejahteraan bersama."),
+  ("p", "Pancasila menempati kedudukan istimewa dalam identitas nasional. Pancasila bukan semata dasar negara, melainkan juga simpul tempat bertemunya nilai-nilai yang dipegang mayoritas rakyat Indonesia. Ketuhanan mengakui keberagaman kepercayaan, kemanusiaan menjunjung martabat, persatuan menolak perpecahan, kerakyatan menempatkan rakyat sebagai pemegang kedaulatan, dan keadilan sosial berpihak pada kesejahteraan bersama."),
   ("p", "Pilihan terhadap Pancasila menunjukkan karakter khas Indonesia. Berbeda dari negara yang berdiri di atas satu agama atau satu ideologi tunggal, Indonesia memilih nilai yang dapat merangkul keberagamannya. Pilihan ini lahir dari pencarian panjang para pendiri bangsa, bukan sebuah kebetulan."),
 
   ("kasus", {
@@ -130,7 +130,7 @@ BAB.append({
   }),
 
   ("h2", "Tantangan di Era Globalisasi"),
-  ("p", "Identitas nasional tidak selalu kuat dengan sendirinya. Globalisasi membawa arus informasi dan gaya hidup yang masuk dengan cepat melalui layar gawai. Pengaruh ini tidak selalu buruk, tetapi menjadi masalah ketika seseorang lebih menghargai budaya luar daripada budayanya sendiri."),
+  ("p", "Identitas nasional tidak selalu kuat dengan sendirinya. Globalisasi membawa arus informasi dan gaya hidup yang masuk dengan cepat melalui layar gawai. Dampaknya tidak selalu negatif, namun menjadi persoalan begitu seseorang lebih mengagungkan budaya asing ketimbang budaya sendiri."),
   ("p", "Tantangan lain adalah melemahnya minat pada sejarah bangsa. Sebagian mahasiswa lebih hafal tokoh hiburan luar negeri daripada pahlawan nasional, atau menganggap materi kebangsaan sekadar hafalan. Padahal tanpa memahami sejarah, alasan untuk menjaga persatuan menjadi sulit dimengerti."),
 
   ("h2", "Merawat Identitas dari Lingkungan Terdekat"),
@@ -144,7 +144,7 @@ BAB.append({
   ("p", "Bagi calon pendamping atau konselor, kepekaan terhadap keberagaman ini menjadi bekal berharga. Memahami bahwa setiap orang membawa latar budaya yang memengaruhi cara berpikirnya akan membantu seseorang bersikap lebih terbuka dan tidak mudah berprasangka."),
 
   ("h2", "Ringkasan"),
-  ("p", "Identitas nasional adalah jati diri bangsa yang terbentuk dari sejarah, bahasa, budaya, dan simbol negara, serta diikat oleh nilai-nilai Pancasila. Jati diri seperti ini tidak terbentuk sekejap, sehingga perlu dijaga dengan kesadaran dari waktu ke waktu."),
+  ("p", "Pada dasarnya, jati diri bangsa tumbuh dari perjalanan sejarah, bahasa, kebudayaan, serta lambang negara, lalu disatukan oleh nilai Pancasila. Jati diri seperti ini tidak terbentuk sekejap, sehingga perlu dijaga dengan kesadaran dari waktu ke waktu."),
   ("p", "Tantangan terbesar di era globalisasi adalah lunturnya kebanggaan terhadap budaya sendiri. Mahasiswa dapat merawat identitas nasional melalui sikap sehari-hari yang sederhana namun konsisten di lingkungan terdekatnya."),
  ]
 })
@@ -157,12 +157,12 @@ BAB.append({
  "isi": [
   ("p", "Dalam satu kelompok tugas, biasanya berkumpul mahasiswa dengan suku, agama, dan kebiasaan yang berbeda. Mereka tetap harus menyelesaikan satu laporan bersama, tepat waktu, dengan hasil yang baik. Pengalaman sederhana ini adalah miniatur dari integrasi nasional, yaitu kemampuan menyatukan perbedaan agar tetap bisa bekerja sama. Bab ini membahas bagaimana persatuan dibangun dan dijaga."),
 
-  ("h2", "Pengertian Integrasi Nasional"),
+  ("h2", "Memahami Integrasi Nasional"),
   ("p", "Integrasi nasional dapat dipahami sebagai upaya merajut beragam kelompok masyarakat menjadi satu bangsa yang padu. Di Indonesia, proses ini penting karena masyarakatnya sangat beragam, mulai dari suku, agama, bahasa, sampai kondisi ekonomi dan pandangan politik."),
-  ("p", "Menyatukan bukan berarti menyeragamkan. Integrasi justru menjaga agar perbedaan tidak berubah menjadi konflik. Semboyan Bhinneka Tunggal Ika menegaskan bahwa bangsa ini dibangun di atas kesediaan untuk hidup bersama dalam perbedaan, bukan di atas keseragaman."),
-  ("p", "Kampus menjadi tempat latihan yang baik untuk integrasi. Di sana mahasiswa bertemu banyak orang yang berbeda dari dirinya, lalu belajar bekerja sama, berdiskusi, dan menyelesaikan perselisihan tanpa harus saling menjatuhkan."),
+  ("p", "Menyatukan bukan berarti menyeragamkan. Integrasi justru menjaga agar perbedaan tidak berubah menjadi konflik. Lewat semboyan Bhinneka Tunggal Ika, ditegaskan bahwa bangsa ini berdiri di atas kerelaan untuk hidup berdampingan dalam perbedaan, bukan di atas keseragaman."),
+  ("p", "Kampus menjadi tempat latihan yang baik untuk integrasi. Di lingkungan itu mahasiswa berjumpa dengan banyak orang yang tak serupa dengannya, lalu berlatih bekerja sama, bertukar pikiran, dan meredakan perselisihan tanpa saling menjatuhkan."),
 
-  ("h2", "Faktor Pendorong dan Penghambat"),
+  ("h2", "Pendorong dan Penghambat Persatuan"),
   ("p", "Integrasi nasional dipengaruhi oleh hal-hal yang memperkuatnya sekaligus hal-hal yang melemahkannya. Mengenali keduanya membantu mahasiswa bersikap lebih sadar."),
   ("ul", [
     "Pendorong: rasa senasib sebagai bangsa yang pernah dijajah dan ingin maju bersama.",
@@ -170,11 +170,11 @@ BAB.append({
     "Penghambat: ketimpangan ekonomi antardaerah yang menimbulkan kecemburuan.",
     "Penghambat: sentimen suku dan agama yang sengaja dipertajam, termasuk melalui kabar bohong di media sosial.",
   ]),
-  ("p", "Faktor pendorong perlu terus dirawat, sedangkan faktor penghambat perlu diwaspadai. Kabar bohong yang memanfaatkan isu suku, agama, ras, dan antargolongan sangat berbahaya karena dapat memantik konflik dalam waktu singkat."),
+  ("p", "Faktor pendorong perlu terus dirawat, sedangkan faktor penghambat perlu diwaspadai. Berita palsu yang menunggangi isu suku, agama, ras, dan antargolongan amat berbahaya sebab bisa menyulut keributan hanya dalam sekejap."),
 
   ("h2", "Toleransi sebagai Perekat"),
-  ("p", "Integrasi membutuhkan toleransi sebagai perekat. Toleransi berarti bersedia hidup berdampingan dengan mereka yang berbeda sekaligus menghormati hak setiap orang untuk menjadi dirinya sendiri. Tanpa toleransi, keberagaman mudah berubah menjadi sumber gesekan."),
-  ("p", "Meski demikian, toleransi tetap punya batas. Menghargai perbedaan tidak berarti membiarkan segala hal terjadi, termasuk yang melanggar hukum atau merugikan orang lain. Toleransi yang sehat selalu disertai prinsip, sehingga kerukunan yang terbangun bukan kerukunan semu."),
+  ("p", "Integrasi membutuhkan toleransi sebagai perekat. Bersikap toleran berarti mau berbagi ruang hidup dengan orang yang tidak sama, sembari menghargai kebebasan tiap pribadi untuk tetap menjadi dirinya. Tanpa toleransi, keberagaman gampang berbalik menjadi pemicu gesekan."),
+  ("p", "Walau begitu, toleransi pun tetap ada batasnya. Menghormati perbedaan bukan berarti membiarkan apa saja berlangsung, apalagi hal yang menabrak hukum atau menyakiti orang lain. Toleransi yang benar tetap berpegang pada prinsip, agar kerukunan yang lahir bukan sekadar pura-pura."),
 
   ("kasus", {
     "judul": "Studi Kasus 3.1 Kabar Bohong di Grup Angkatan",
@@ -186,7 +186,7 @@ BAB.append({
   }),
 
   ("h2", "Peran Mahasiswa Menjaga Persatuan"),
-  ("p", "Mahasiswa memiliki posisi strategis dalam menjaga integrasi bangsa. Perannya dapat dimulai dari hal yang dekat dan terjangkau."),
+  ("p", "Mahasiswa berada pada posisi yang menentukan untuk merawat integrasi bangsa. Perannya dapat dimulai dari hal yang dekat dan terjangkau."),
   ("ul", [
     "Membangun pertemanan lintas daerah dan menolak sikap eksklusif berdasarkan suku.",
     "Aktif dalam organisasi yang terbuka serta terbiasa bermusyawarah dalam keberagaman.",
@@ -196,7 +196,7 @@ BAB.append({
   ("p", "Kemampuan menjembatani perbedaan ini sangat berguna bagi mahasiswa yang kelak bekerja mendampingi orang lain. Banyak konflik bermula dari komunikasi yang buruk, sehingga keterampilan mencairkan ketegangan dan membangun dialog menjadi bekal yang berharga."),
 
   ("h2", "Ringkasan"),
-  ("p", "Integrasi nasional adalah proses menyatukan keberagaman menjadi satu kesatuan bangsa tanpa menghapus perbedaan. Prosesnya didorong oleh rasa senasib, bahasa pemersatu, dan nilai Pancasila, tetapi dihambat oleh ketimpangan, sentimen sempit, dan kabar bohong."),
+  ("p", "Pada intinya, integrasi nasional merajut aneka perbedaan menjadi satu bangsa yang padu tanpa harus melenyapkan keragamannya. Pendorongnya berupa rasa seperjuangan, bahasa yang menyatukan, dan nilai Pancasila, sedangkan penghalangnya datang dari kesenjangan, sikap sempit, serta berita palsu."),
   ("p", "Toleransi yang berprinsip menjadi perekat utama. Mahasiswa berperan menjaga persatuan melalui sikap inklusif dan kebiasaan menyaring informasi, yang sekaligus melatih keterampilan menjembatani perbedaan."),
  ]
 })
@@ -208,12 +208,12 @@ BAB.append({
  "no": "4",
  "judul": "NEGARA DAN KONSTITUSI",
  "isi": [
-  ("p", "Setiap organisasi mahasiswa biasanya memiliki anggaran dasar yang mengatur cara kerja, batas wewenang pengurus, dan hak anggota. Tanpa aturan dasar itu, organisasi mudah kacau karena tidak ada acuan bersama. Negara bekerja dengan logika yang mirip, dan aturan dasarnya disebut konstitusi. Bab ini membahas negara dan konstitusi sebagai kerangka kehidupan bernegara."),
+  ("p", "Setiap organisasi mahasiswa biasanya memiliki anggaran dasar yang mengatur cara kerja, batas wewenang pengurus, dan hak anggota. Tanpa aturan dasar itu, organisasi mudah kacau karena tidak ada acuan bersama. Negara bekerja dengan logika yang mirip, dan aturan dasarnya disebut konstitusi. Pada bab ini, negara dan konstitusi dibahas sebagai rangka yang menopang kehidupan bernegara."),
 
-  ("h2", "Pengertian Konstitusi"),
-  ("p", "Konstitusi adalah hukum dasar yang menjadi pijakan penyelenggaraan negara. Ia mengatur hubungan antara penguasa dan rakyat, hubungan antarlembaga negara, serta hak dan kewajiban setiap pihak. Karena kedudukannya yang paling tinggi, konstitusi sering disebut sebagai hukum tertinggi dalam suatu negara."),
-  ("p", "Indonesia menganut konstitusi tertulis berupa Undang-Undang Dasar Negara Republik Indonesia Tahun 1945. Selain naskah tertulis, dikenal pula konvensi ketatanegaraan, yaitu kebiasaan yang dijalankan secara konsisten dalam praktik kenegaraan meski tidak tertulis."),
-  ("p", "Memahami konstitusi membantu mahasiswa melihat bahwa seluruh kehidupan bernegara berpijak pada aturan dasar. Kebijakan pemerintah, undang-undang, sampai peraturan daerah semuanya harus dapat ditelusuri kembali ke konstitusi sebagai sumber acuan."),
+  ("h2", "Memahami Makna Konstitusi"),
+  ("p", "Konstitusi adalah hukum dasar yang menjadi pijakan penyelenggaraan negara. Ia mengatur hubungan antara penguasa dan rakyat, hubungan antarlembaga negara, serta hak dan kewajiban setiap pihak. Lantaran posisinya berada di puncak, konstitusi kerap dijuluki hukum paling tinggi di sebuah negara."),
+  ("p", "Indonesia menganut konstitusi tertulis berupa Undang-Undang Dasar Negara Republik Indonesia Tahun 1945. Di luar naskah yang tertulis, ada pula konvensi ketatanegaraan, yakni kebiasaan kenegaraan yang ditaati secara ajeg walau tidak dibukukan."),
+  ("p", "Dengan memahami konstitusi, mahasiswa lebih mudah melihat bahwa segenap kehidupan bernegara bersandar pada aturan dasar. Kebijakan pemerintah, undang-undang, sampai peraturan daerah semuanya harus dapat ditelusuri kembali ke konstitusi sebagai sumber acuan."),
 
   ("h2", "Fungsi Konstitusi"),
   ("p", "Konstitusi menjalankan beberapa fungsi yang membuat negara berjalan teratur dan adil. Fungsi-fungsi itu dapat diringkas agar lebih mudah diingat."),
@@ -223,14 +223,14 @@ BAB.append({
     "Melindungi hak warga negara dari tindakan sewenang-wenang.",
     "Menjadi acuan tertinggi yang menyatukan seluruh aturan di bawahnya.",
   ]),
-  ("p", "Pembagian kekuasaan menjadi cabang eksekutif, legislatif, dan yudikatif merupakan wujud dari fungsi pembatasan tersebut. Pemerintah memang diberi kewenangan, namun kewenangan itu selalu dibingkai oleh batas yang digariskan konstitusi."),
+  ("p", "Terbaginya kekuasaan ke dalam cabang eksekutif, legislatif, dan yudikatif adalah perwujudan dari fungsi pembatasan itu. Pemerintah memang diberi kewenangan, namun kewenangan itu selalu dibingkai oleh batas yang digariskan konstitusi."),
 
   ("h2", "Sejarah Singkat UUD 1945"),
-  ("p", "Undang-Undang Dasar Tahun 1945 disahkan pada 18 Agustus 1945, sehari setelah proklamasi kemerdekaan. Kecepatan pengesahan ini menunjukkan kesadaran para pendiri bangsa akan pentingnya aturan dasar sejak awal berdirinya negara."),
+  ("p", "Undang-Undang Dasar Tahun 1945 disahkan pada 18 Agustus 1945, sehari setelah proklamasi kemerdekaan. Cepatnya naskah itu disahkan memperlihatkan betapa para pendiri sadar bahwa negara membutuhkan aturan pokok sejak hari pertamanya."),
   ("p", "Dalam perjalanannya, Indonesia sempat menggunakan Konstitusi Republik Indonesia Serikat tahun 1949 dan Undang-Undang Dasar Sementara tahun 1950, sebelum kembali ke Undang-Undang Dasar Tahun 1945. Pada masa reformasi, naskah ini mengalami empat kali perubahan antara tahun 1999 hingga 2002, yang antara lain menegaskan hak asasi manusia, membatasi masa jabatan presiden, dan menata lembaga negara."),
 
   ("h2", "Lembaga Negara"),
-  ("p", "Undang-Undang Dasar Tahun 1945 mengatur lembaga-lembaga yang menjalankan pemerintahan dengan pembagian tugas yang jelas. Pembagian ini bertujuan agar tidak ada kekuasaan yang terlalu besar pada satu pihak."),
+  ("p", "Undang-Undang Dasar Tahun 1945 mengatur lembaga-lembaga yang menjalankan pemerintahan dengan pembagian tugas yang jelas. Pemisahan semacam itu dimaksudkan supaya tidak ada satu pihak yang menggenggam kekuasaan terlampau besar."),
   ("ul", [
     "Cabang legislatif, yaitu Majelis Permusyawaratan Rakyat, Dewan Perwakilan Rakyat, dan Dewan Perwakilan Daerah, yang membentuk undang-undang dan mewakili rakyat serta daerah.",
     "Cabang eksekutif, yaitu Presiden dan Wakil Presiden, yang menjalankan pemerintahan dan melaksanakan undang-undang.",
@@ -248,12 +248,12 @@ BAB.append({
   }),
 
   ("h2", "Supremasi Konstitusi dan Peran Mahasiswa"),
-  ("p", "Supremasi konstitusi berarti tidak ada pejabat, lembaga, atau kelompok yang boleh bertindak di luar koridor konstitusi. Prinsip ini menjadi fondasi negara hukum, karena tanpa supremasi konstitusi hak warga mudah dilanggar dan kekuasaan rentan disalahgunakan."),
+  ("p", "Menjunjung konstitusi sebagai yang tertinggi berarti tak ada satu pun pejabat, lembaga, atau golongan yang boleh melangkah keluar dari batasnya. Asas semacam ini menjadi tiang negara hukum, sebab bila konstitusi tidak ditempatkan paling atas, hak warga gampang diinjak dan kekuasaan mudah dibelokkan."),
   ("p", "Mahasiswa dapat ikut menjaga supremasi konstitusi melalui sikap yang terukur, misalnya membaca aturan secara langsung sebelum berkomentar, menilai kebijakan publik dengan kepala dingin, dan menjadi pelopor ketaatan terhadap aturan kecil seperti menolak plagiarisme. Sikap taat pada aturan kecil melatih kesadaran untuk taat pada aturan yang lebih besar."),
 
   ("h2", "Ringkasan"),
-  ("p", "Konstitusi adalah aturan dasar tertinggi yang membatasi kekuasaan, mengatur hubungan antarlembaga, dan melindungi hak warga negara. Undang-Undang Dasar Tahun 1945 telah melewati sejarah panjang dan empat kali perubahan untuk menyempurnakan sistem ketatanegaraan."),
-  ("p", "Lembaga negara dibagi ke dalam cabang legislatif, eksekutif, dan yudikatif yang saling mengawasi. Supremasi konstitusi menjamin seluruh aturan berpijak pada Undang-Undang Dasar, dan mahasiswa dapat ikut menjaganya melalui ketaatan dalam hal-hal kecil."),
+  ("p", "Sebagai aturan pokok paling tinggi, konstitusi berfungsi mengekang kekuasaan, menata hubungan antarlembaga, dan menjaga hak warga. Sepanjang sejarahnya yang panjang, Undang-Undang Dasar Tahun 1945 sempat empat kali diubah demi membenahi sistem ketatanegaraan."),
+  ("p", "Lembaga negara terbagi atas cabang legislatif, eksekutif, dan yudikatif yang saling mengontrol. Supremasi konstitusi menjamin seluruh aturan berpijak pada Undang-Undang Dasar, dan mahasiswa dapat ikut menjaganya melalui ketaatan dalam hal-hal kecil."),
  ]
 })
 
@@ -263,14 +263,14 @@ BAB.append({
  "no": "5",
  "judul": "HAK DAN KEWAJIBAN WARGA NEGARA",
  "isi": [
-  ("p", "Seorang mahasiswa berhak menyampaikan pendapat di forum kampus. Pada saat yang sama, ia berkewajiban tidak menyerang pribadi orang lain dan tetap menjaga ketertiban. Contoh kecil ini memperlihatkan bahwa hak dan kewajiban selalu berjalan bersama. Bab ini membahas hak dan kewajiban warga negara, termasuk hak asasi manusia sebagai bagian penting di dalamnya."),
+  ("p", "Seorang mahasiswa berhak menyampaikan pendapat di forum kampus. Pada saat yang sama, ia berkewajiban tidak menyerang pribadi orang lain dan tetap menjaga ketertiban. Contoh kecil ini memperlihatkan bahwa hak dan kewajiban selalu berjalan bersama. Bab ini menelaah hak dan kewajiban warga negara, dengan hak asasi manusia sebagai salah satu bagian pentingnya."),
 
-  ("h2", "Pengertian Hak dan Kewajiban"),
-  ("p", "Hak warga negara adalah kewenangan yang melekat pada setiap warga sebagai bagian dari keanggotaannya dalam suatu negara. Hak ini dijamin oleh konstitusi dan peraturan, sehingga negara berkewajiban melindunginya. Tanpa perlindungan hukum, hak warga mudah dilanggar oleh pihak yang lebih berkuasa."),
-  ("p", "Kewajiban warga negara adalah hal-hal yang harus dilakukan sebagai konsekuensi dari keanggotaan tersebut, seperti menaati hukum, menghormati hak orang lain, dan ikut menjaga keamanan bersama. Hak dan kewajiban tidak dapat dipisahkan, karena warga negara tidak bisa hanya menuntut tanpa menjalankan tanggung jawabnya."),
+  ("h2", "Memahami Hak dan Kewajiban"),
+  ("p", "Yang disebut hak warga negara ialah kewenangan yang dimiliki seseorang karena ia tercatat sebagai anggota sebuah negara. Hak tersebut memperoleh jaminan dari konstitusi dan peraturan perundang-undangan, sehingga negara wajib melindunginya. Bila hukum tidak melindungi, hak warga gampang diterabas oleh pihak yang lebih kuat."),
+  ("p", "Adapun kewajiban warga negara mencakup hal yang mesti dijalankan sebagai imbas dari keanggotaan itu, misalnya patuh pada hukum, menghormati hak sesama, serta turut menjaga keamanan. Hak dan kewajiban tidak dapat dipisahkan, karena warga negara tidak bisa hanya menuntut tanpa menjalankan tanggung jawabnya."),
 
   ("h2", "Hak Warga Negara dalam Berbagai Bidang"),
-  ("p", "Hak warga negara menyentuh hampir seluruh aspek kehidupan. Pembagiannya membantu mahasiswa mengenali hak yang dimilikinya sekaligus menghormati hak orang lain."),
+  ("p", "Hampir seluruh sisi kehidupan tersentuh oleh hak warga negara. Pengelompokan itu memudahkan mahasiswa mengenali hak miliknya sambil tetap menghargai hak orang lain."),
   ("ul", [
     "Bidang politik, misalnya hak memilih dan dipilih.",
     "Bidang ekonomi, misalnya hak berusaha dan memiliki harta.",
@@ -280,9 +280,9 @@ BAB.append({
   ("p", "Karena hak-hak ini saling berkaitan, terabaikannya satu bidang sering berdampak pada bidang lain. Hak atas pendidikan yang terhambat, misalnya, dapat memengaruhi peluang seseorang dalam bidang ekonomi di kemudian hari."),
 
   ("h2", "Hak Asasi Manusia dan Martabat Setiap Orang"),
-  ("p", "Cakupan hak asasi manusia jauh lebih luas dibandingkan hak yang melekat pada warga negara. Hak asasi melekat pada setiap manusia semata karena ia manusia, tanpa memandang suku, agama, jenis kelamin, atau kewarganegaraan. Maka, siapa pun yang berada di tanah Indonesia, termasuk warga negara asing, tetap memiliki hak asasi yang wajib dihargai."),
-  ("p", "Indonesia mengakui dan melindungi hak asasi melalui Undang-Undang Dasar Tahun 1945 dan Undang-Undang Nomor 39 Tahun 1999 tentang Hak Asasi Manusia, serta membentuk Komisi Nasional Hak Asasi Manusia sebagai lembaga pengawas. Pada tingkat dunia, prinsip hak asasi dirumuskan dalam Deklarasi Universal Hak Asasi Manusia yang disahkan Perserikatan Bangsa-Bangsa pada tahun 1948."),
-  ("p", "Perbedaan utamanya cukup jelas. Hak warga negara diperoleh karena status kewarganegaraan dan diatur hukum nasional, sedangkan hak asasi bersifat universal dan tidak dapat dicabut oleh negara mana pun."),
+  ("p", "Cakupan hak asasi manusia jauh lebih luas dibandingkan hak yang melekat pada warga negara. Setiap orang membawa hak asasi sejak ia lahir sebagai manusia, lepas dari suku, agama, gender, maupun status kewarganegaraannya. Maka, siapa pun yang berada di tanah Indonesia, termasuk warga negara asing, tetap memiliki hak asasi yang wajib dihargai."),
+  ("p", "Pengakuan dan perlindungan hak asasi di Indonesia bersandar pada Undang-Undang Dasar Tahun 1945 bersama Undang-Undang Nomor 39 Tahun 1999, dan untuk mengawasinya dibentuklah Komisi Nasional Hak Asasi Manusia. Di panggung internasional, asas hak asasi tertuang dalam Deklarasi Universal Hak Asasi Manusia yang ditetapkan Perserikatan Bangsa-Bangsa pada 1948."),
+  ("p", "Perbedaan utamanya cukup jelas. Hak warga negara muncul dari status kewarganegaraan dan tunduk pada hukum dalam negeri, sementara hak asasi berlaku universal dan tak bisa dirampas oleh negara mana pun."),
 
   ("kasus", {
     "judul": "Studi Kasus 5.1 Komentar yang Melukai",
@@ -294,7 +294,7 @@ BAB.append({
   }),
 
   ("h2", "Etika Hak Asasi di Media Sosial"),
-  ("p", "Salah satu tantangan nyata terkait hak asasi bagi generasi sekarang adalah penggunaan media sosial. Ruang digital memberi kebebasan berekspresi yang begitu lebar, meskipun tetap ada rambu yang membatasinya. Menyebarkan ujaran kebencian, mempermalukan orang lain, atau menyebar informasi palsu yang merugikan seseorang adalah bentuk pelanggaran hak asasi, meski terjadi di ruang maya."),
+  ("p", "Bagi generasi masa kini, ujian hak asasi yang paling terasa justru lahir dari cara memakai media sosial. Ruang digital memberi kebebasan berekspresi yang begitu lebar, meskipun tetap ada rambu yang membatasinya. Melempar ujaran kebencian, mempermalukan orang, atau menyebar kabar palsu yang merugikan seseorang tetap tergolong pelanggaran hak asasi, sekalipun dilakukan di dunia maya."),
   ("p", "Etika bermedia sosial yang baik mencakup beberapa sikap yang dapat dilatih setiap hari."),
   ("ul", [
     "Memeriksa kebenaran informasi sebelum membagikannya.",
@@ -304,11 +304,11 @@ BAB.append({
   ]),
 
   ("h2", "Menyeimbangkan Hak dan Kewajiban"),
-  ("p", "Hak dan kewajiban sebaiknya dilihat dalam kerangka tanggung jawab yang lebih luas. Tanggung jawab muncul dari kesadaran diri untuk melakukan hal yang semestinya, bukan karena terpaksa oleh aturan. Kepatuhan tanpa rasa tanggung jawab hanya bersifat permukaan dan mudah hilang ketika tidak ada yang mengawasi."),
+  ("p", "Akan lebih tepat bila hak dan kewajiban ditinjau dalam bingkai tanggung jawab yang lebih besar. Tanggung jawab muncul dari kesadaran diri untuk melakukan hal yang semestinya, bukan karena terpaksa oleh aturan. Patuh tanpa disertai rasa tanggung jawab hanya bertahan di permukaan dan cepat luntur begitu pengawasan menghilang."),
   ("p", "Bagi mahasiswa yang menekuni bidang pendampingan, kesadaran ini menjadi inti sikap profesional. Menghormati martabat setiap orang, menjaga kerahasiaan, dan bersikap adil terhadap siapa pun sejalan dengan nilai hak asasi manusia. Kebiasaan ini akan terbawa ketika kelak berhadapan dengan banyak orang yang membutuhkan bantuan."),
 
   ("h2", "Ringkasan"),
-  ("p", "Hak dan kewajiban warga negara berjalan seiring dalam kerangka tanggung jawab. Hak asasi manusia memiliki cakupan universal yang melekat pada setiap manusia, dijamin oleh Undang-Undang Dasar Tahun 1945 dan Undang-Undang Nomor 39 Tahun 1999."),
+  ("p", "Hak serta kewajiban warga negara melangkah beriringan dalam bingkai tanggung jawab. Sifat hak asasi manusia berlaku menyeluruh bagi siapa saja, dan jaminannya tertuang dalam Undang-Undang Dasar Tahun 1945 serta Undang-Undang Nomor 39 Tahun 1999."),
   ("p", "Etika di media sosial menjadi wujud nyata tanggung jawab kewarganegaraan modern. Keseimbangan antara hak dan kewajiban tumbuh dari kesadaran, bukan sekadar dari aturan yang memaksa."),
  ]
 })
@@ -322,30 +322,30 @@ BAB.append({
  "isi": [
   ("p", "Ketika sebuah kampus menegakkan aturan akademik secara konsisten, mahasiswa cenderung merasa aman dan dihargai. Sebaliknya, bila aturan hanya tegas pada sebagian orang, kepercayaan cepat runtuh. Logika yang sama berlaku dalam kehidupan bernegara. Bab ini membahas penegakan hukum yang berkeadilan, mulai dari konsep negara hukum hingga peran mahasiswa."),
 
-  ("h2", "Pengertian Negara Hukum"),
-  ("p", "Negara hukum adalah negara yang penyelenggaraannya didasarkan pada hukum, bukan pada kehendak pribadi penguasa. Dalam negara hukum, setiap tindakan pemerintah harus memiliki dasar hukum, dan tidak ada pihak yang boleh bertindak sewenang-wenang."),
-  ("p", "Indonesia menegaskan dirinya sebagai negara hukum dalam Pasal 1 ayat (3) Undang-Undang Dasar Tahun 1945. Lewat penegasan tersebut, Indonesia memilih jalan yang berbeda dari negara yang dikendalikan sekadar oleh selera penguasanya. Hukum berlaku bagi rakyat sekaligus bagi pemerintah, sehingga rakyat berhak memperjuangkan keadilan melalui jalur yang sah."),
+  ("h2", "Memahami Negara Hukum"),
+  ("p", "Negara hukum adalah negara yang penyelenggaraannya didasarkan pada hukum, bukan pada kehendak pribadi penguasa. Di negara yang berdasar hukum, langkah apa pun yang diambil pemerintah wajib berpijak pada aturan, sehingga tidak seorang pun bisa berbuat seenaknya."),
+  ("p", "Lewat Pasal 1 ayat (3) Undang-Undang Dasar Tahun 1945, Indonesia menyatakan dirinya sebagai negara hukum. Lewat penegasan tersebut, Indonesia memilih jalan yang berbeda dari negara yang dikendalikan sekadar oleh selera penguasanya. Hukum berlaku bagi rakyat sekaligus bagi pemerintah, sehingga rakyat berhak memperjuangkan keadilan melalui jalur yang sah."),
 
-  ("h2", "Prinsip-Prinsip Negara Hukum"),
+  ("h2", "Pilar Utama Negara Hukum"),
   ("p", "Ada beberapa prinsip yang menjadi tumpuan negara hukum agar hukum sungguh menjadi penjaga keadilan. Prinsip-prinsip ini saling melengkapi."),
   ("ul", [
-    "Persamaan di hadapan hukum, yaitu semua orang memiliki kedudukan yang sama tanpa memandang status.",
+    "Kesetaraan di mata hukum, yakni setiap orang berkedudukan sama tanpa melihat status.",
     "Perlindungan hak, yaitu negara wajib menjamin hak dasar setiap warga.",
     "Pembatasan kekuasaan, yaitu kekuasaan dicegah agar tidak terpusat melalui mekanisme saling mengawasi.",
     "Peradilan yang merdeka, yaitu hakim memutus berdasarkan hukum, bukan tekanan pihak tertentu.",
   ]),
   ("p", "Mengabaikan salah satu prinsip akan membuat keadilan pincang. Kesetaraan di mata hukum menjadi hampa bila hak warga tidak benar-benar dilindungi, sementara perlindungan hak sulit berdiri bila kekuasaan dibiarkan tanpa batas."),
 
-  ("h2", "Sistem Peradilan di Indonesia"),
+  ("h2", "Lembaga Peradilan di Indonesia"),
   ("p", "Untuk menengahi sengketa, memeriksa pelanggaran, dan menghadirkan keadilan, negara menyiapkan sistem peradilan. Dasar kewenangan kekuasaan kehakiman tertuang dalam Undang-Undang Nomor 48 Tahun 2009, sementara peran kepolisian dalam menegakkan hukum diatur melalui Undang-Undang Nomor 2 Tahun 2002."),
   ("ul", [
     "Peradilan umum yang menangani perkara pidana dan perdata.",
-    "Peradilan agama yang menangani perkara perkawinan, waris, dan keluarga bagi umat Islam.",
+    "Peradilan agama, yang mengurus perkara nikah, warisan, dan kekeluargaan bagi umat Islam.",
     "Peradilan militer yang menangani pelanggaran oleh prajurit.",
     "Peradilan tata usaha negara yang menangani sengketa warga dengan pejabat pemerintah.",
     "Mahkamah Konstitusi yang menguji undang-undang terhadap Undang-Undang Dasar Tahun 1945.",
   ]),
-  ("p", "Prinsip utama dalam sistem peradilan adalah proses yang adil, terbuka, dan tidak memihak. Setiap pihak berhak didengar dan menyampaikan bukti, sedangkan keterbukaan memberi ruang bagi masyarakat untuk mengawasi jalannya perkara."),
+  ("p", "Prinsip utama dalam sistem peradilan adalah proses yang adil, terbuka, dan tidak memihak. Tiap pihak berhak bersuara dan mengajukan bukti, dan keterbukaan persidangan membuka kesempatan bagi publik untuk turut mengawasinya."),
 
   ("kasus", {
     "judul": "Studi Kasus 6.1 Sanksi yang Pilih Kasih",
@@ -361,7 +361,7 @@ BAB.append({
   ("p", "Tantangan lain adalah penyalahgunaan kekuasaan dan lemahnya integritas sebagian aparat. Ketika hukum terasa tajam ke bawah tetapi tumpul ke atas, kepercayaan publik akan terkikis. Karena itu, penegakan hukum membutuhkan aparat yang jujur sekaligus masyarakat yang ikut mengawasi."),
 
   ("h2", "Membangun Budaya Hukum dan Peran Mahasiswa"),
-  ("p", "Budaya hukum adalah kebiasaan masyarakat dalam memahami, menaati, dan menghargai hukum. Hukum tidak akan berjalan baik bila hanya tertulis tanpa menjadi kebiasaan. Mahasiswa dapat ikut membangun budaya hukum dari lingkungan kampus."),
+  ("p", "Yang dimaksud budaya hukum ialah cara masyarakat terbiasa memahami, mematuhi, dan menghormati hukum. Sebuah hukum tak akan bekerja baik kalau berhenti di atas kertas dan tidak menjelma menjadi kebiasaan. Mahasiswa dapat ikut membangun budaya hukum dari lingkungan kampus."),
   ("ul", [
     "Menaati aturan akademik dan menolak plagiarisme sebagai bentuk keteladanan.",
     "Meningkatkan pemahaman tentang aturan dasar yang relevan dengan kehidupan.",
@@ -370,7 +370,7 @@ BAB.append({
   ("p", "Bagi mahasiswa yang kelak mendampingi orang lain, kepekaan terhadap hukum membantu mengenali persoalan yang menyangkut hak dan perlindungan, seperti kekerasan atau diskriminasi. Sikap berhati-hati dan tidak menyalahkan korban menjadi bagian penting dari pendampingan yang adil."),
 
   ("h2", "Ringkasan"),
-  ("p", "Negara hukum menempatkan hukum sebagai dasar utama yang membatasi kekuasaan dan melindungi hak warga, sebagaimana ditegaskan dalam Pasal 1 ayat (3) Undang-Undang Dasar Tahun 1945. Prinsip persamaan, perlindungan hak, pembatasan kekuasaan, dan peradilan yang merdeka menjadi pijakannya."),
+  ("p", "Dalam konsep negara hukum, hukumlah yang menjadi pijakan untuk mengekang kekuasaan sekaligus menjaga warga, dan hal itu dikukuhkan pada Pasal 1 ayat (3) Undang-Undang Dasar Tahun 1945. Prinsip persamaan, perlindungan hak, pembatasan kekuasaan, dan peradilan yang merdeka menjadi pijakannya."),
   ("p", "Sistem peradilan membuka jalan menuju keadilan, meski pelaksanaannya masih tersandung oleh akses yang timpang dan integritas yang rapuh. Budaya hukum dan peran aktif mahasiswa menjadi penopang agar hukum benar-benar berkeadilan."),
  ]
 })
@@ -384,21 +384,21 @@ BAB.append({
   ("p", "Ketika mahasiswa dari pulau yang berbeda berkumpul di satu kampus dan tetap merasa sebagai satu bangsa, di situ wawasan nusantara sedang bekerja. Cara pandang yang menyatukan wilayah yang terpisah lautan inilah inti dari geopolitik Indonesia. Bab ini membahas wawasan nusantara dan ketahanan nasional sebagai strategi menjaga persatuan dan kedaulatan."),
 
   ("h2", "Wawasan Nusantara sebagai Cara Pandang"),
-  ("p", "Wawasan nusantara adalah cara pandang bangsa Indonesia terhadap diri dan lingkungannya berdasarkan Pancasila dan Undang-Undang Dasar Tahun 1945, dengan mengutamakan persatuan wilayah. Sebagai negara kepulauan terbesar di dunia, Indonesia memiliki ribuan pulau yang menjadi kekayaan sekaligus tantangan tersendiri."),
-  ("p", "Dalam cara pandang ini, seluruh wilayah dari Sabang sampai Merauke dilihat sebagai satu kesatuan yang tidak terpisahkan. Laut yang memisahkan pulau tidak dianggap penghalang, melainkan penghubung. Konsep inilah yang menjadi landasan negara dalam memandang wilayah dan menjaga kepentingan nasional."),
+  ("p", "Wawasan nusantara merupakan sudut pandang bangsa Indonesia atas dirinya dan sekitarnya, berpijak pada Pancasila serta Undang-Undang Dasar Tahun 1945, dengan menomorsatukan keutuhan wilayah. Berstatus negara kepulauan terbesar sedunia, Indonesia menyimpan ribuan pulau yang menjadi kekayaan sekaligus tantangan tersendiri."),
+  ("p", "Lewat sudut pandang ini, seluruh wilayah dari Sabang sampai Merauke dipandang sebagai satu tubuh yang tidak boleh tercerai. Lautan di antara pulau bukan dilihat sebagai pemisah, justru perekat antarwilayah. Gagasan inilah yang dipakai negara sebagai pijakan untuk memandang wilayahnya dan merawat kepentingan nasional."),
   ("p", "Pada keseharian, wawasan nusantara mengajak setiap orang menimbang persoalan dengan kacamata kebangsaan, melampaui sekat kepentingan daerah maupun golongan. Ketika seseorang hanya mementingkan kelompoknya, integrasi bangsa dapat terganggu."),
 
-  ("h2", "Kedudukan dan Unsur Wawasan Nusantara"),
+  ("h2", "Kedudukan serta Unsur Pembentuknya"),
   ("p", "Dalam urusan pertahanan, pembangunan, maupun kehidupan sosial budaya, wawasan nusantara menempati posisi yang penting. Unsur-unsur pembentuknya dapat dikenali sebagai berikut."),
   ("ul", [
-    "Wilayah, yang mencakup darat, laut, dan udara dalam batas kedaulatan Indonesia.",
-    "Bangsa, yang terdiri atas ratusan suku yang dipersatukan oleh sejarah dan cita-cita bersama.",
+    "Wilayah, meliputi daratan, lautan, dan ruang udara di dalam batas kedaulatan Indonesia.",
+    "Bangsa, yakni himpunan ratusan suku yang direkatkan oleh perjalanan sejarah serta harapan yang sama.",
     "Budaya, yang merupakan kekayaan daerah yang hidup berdampingan sebagai bagian identitas nasional.",
   ]),
-  ("p", "Dalam pembangunan, wawasan nusantara mendorong pemerataan agar kemajuan tidak terpusat di kota besar. Daerah perbatasan dan pulau kecil perlu mendapat perhatian agar seluruh warga merasakan manfaat pembangunan, sehingga rasa memiliki terhadap bangsa tumbuh lebih kuat."),
+  ("p", "Dalam pembangunan, wawasan nusantara mendorong pemerataan agar kemajuan tidak terpusat di kota besar. Wilayah perbatasan dan pulau-pulau kecil patut diperhatikan supaya semua warga ikut menikmati hasil pembangunan, sehingga ikatan terhadap bangsa pun makin erat."),
 
   ("h2", "Ketahanan Nasional"),
-  ("p", "Geostrategi adalah strategi nasional yang disusun berdasarkan kondisi geografis dan berbagai aspek kehidupan bangsa untuk mencapai tujuan nasional. Salah satu wujudnya adalah ketahanan nasional, yaitu kemampuan bangsa menjaga kelangsungan hidup, persatuan, dan stabilitas dalam menghadapi tantangan. Landasan pertahanannya antara lain diatur dalam Undang-Undang Nomor 3 Tahun 2002 tentang Pertahanan Negara."),
+  ("p", "Geostrategi pada dasarnya merupakan siasat bangsa yang dirancang dengan menimbang letak geografis serta beragam sisi kehidupan, demi menggapai cita-cita nasional. Salah satu bentuknya berupa ketahanan nasional, yakni daya bangsa untuk mempertahankan keberlangsungan hidup, persatuan, dan kestabilan saat diterpa tantangan. Salah satu dasar hukum pertahanannya tertuang dalam Undang-Undang Nomor 3 Tahun 2002."),
   ("p", "Kekuatan militer bukan satu-satunya tumpuan ketahanan nasional, sebab ada banyak sisi lain yang juga harus ditata secara seimbang."),
   ("ul", [
     "Dimensi ideologi, yaitu menjaga Pancasila sebagai pegangan hidup bersama.",
@@ -418,11 +418,11 @@ BAB.append({
   }),
 
   ("h2", "Ancaman dan Peran Mahasiswa"),
-  ("p", "Ketahanan nasional menghadapi ancaman yang tidak selalu berbentuk fisik. Perpecahan bisa lahir dari gesekan antardaerah dan jurang ekonomi yang dibiarkan menganga. Di era digital, kabar bohong dan disinformasi menjadi ancaman serius karena dapat memecah belah masyarakat dengan cepat."),
-  ("p", "Mahasiswa dapat menjaga wawasan nusantara dan ketahanan nasional melalui sikap sederhana yang konsisten, seperti menjaga persatuan dalam keberagaman, menyaring informasi sebelum membagikan, menghargai budaya daerah, dan terlibat dalam kegiatan positif. Pada tingkat individu, ketahanan juga berkaitan dengan ketahanan psikologis, dan di sinilah kemampuan membantu orang lain menghadapi tekanan turut menyumbang pada kekuatan bangsa."),
+  ("p", "Ancaman terhadap ketahanan nasional tidak melulu berwujud fisik. Perpecahan bisa lahir dari gesekan antardaerah dan jurang ekonomi yang dibiarkan menganga. Pada masa digital, berita palsu dan informasi sesat berubah menjadi ancaman besar karena sanggup mengoyak masyarakat dalam waktu singkat."),
+  ("p", "Wawasan nusantara dan ketahanan nasional bisa dijaga mahasiswa lewat langkah sederhana yang ajeg, misalnya merawat persatuan di tengah keragaman, menyaring kabar sebelum menyebarkan, menghormati budaya daerah, serta ikut kegiatan yang bermanfaat. Pada lingkup pribadi, ketahanan juga menyangkut sisi psikologis, dan di titik itu kesanggupan menolong orang lain bertahan dari tekanan ikut memperkuat bangsa."),
 
   ("h2", "Ringkasan"),
-  ("p", "Wawasan nusantara adalah cara pandang yang menempatkan seluruh wilayah Indonesia sebagai satu kesatuan, sekaligus menjadi geopolitik Indonesia. Geostrategi mengambil bentuk nyata dalam ketahanan nasional yang merangkum sisi ideologi, politik, ekonomi, sosial budaya, sampai pertahanan dan keamanan."),
+  ("p", "Sebagai geopolitik bangsa, wawasan nusantara mengajak kita memandang segenap wilayah Indonesia sebagai satu tubuh yang utuh. Geostrategi mengambil bentuk nyata dalam ketahanan nasional yang merangkum sisi ideologi, politik, ekonomi, sosial budaya, sampai pertahanan dan keamanan."),
   ("p", "Belakangan, ancaman bagi ketahanan nasional kerap hadir dalam wujud disinformasi di ruang digital. Mahasiswa berperan menjaga persatuan dan menyaring informasi, sekaligus peduli terhadap ketahanan psikologis individu di sekitarnya."),
  ]
 })
@@ -434,25 +434,25 @@ BAB.append({
  "no": "8",
  "judul": "ANTI KORUPSI",
  "isi": [
-  ("p", "Korupsi sering dibayangkan sebagai kejahatan pejabat besar dengan angka yang fantastis. Padahal benihnya kerap muncul dari hal kecil yang dianggap biasa, seperti menitipkan tanda tangan kehadiran atau memanipulasi laporan kegiatan. Bab penutup ini membahas anti korupsi sebagai persoalan integritas yang dekat dengan kehidupan mahasiswa."),
+  ("p", "Korupsi sering dibayangkan sebagai kejahatan pejabat besar dengan angka yang fantastis. Padahal bibitnya sering tumbuh dari perkara kecil yang dianggap lumrah, seperti menitip absen atau mengakali laporan kegiatan. Bab penutup ini membahas anti korupsi sebagai persoalan integritas yang dekat dengan kehidupan mahasiswa."),
 
-  ("h2", "Pengertian Korupsi"),
+  ("h2", "Memahami Apa Itu Korupsi"),
   ("p", "Korupsi adalah perbuatan menyalahgunakan kekuasaan, jabatan, atau amanah demi keuntungan diri maupun kelompok, yang pada akhirnya merugikan orang banyak. Wujudnya tidak melulu berupa pengambilan uang secara terang-terangan. Suap, gratifikasi, penggelapan, sampai penyalahgunaan wewenang sama-sama tergolong korupsi."),
-  ("p", "Korupsi perlu dipahami sebagai persoalan yang merusak banyak sendi kehidupan. Ketika dibiarkan, masyarakat lambat laun menganggap ketidakjujuran sebagai hal biasa. Di titik inilah bahaya terbesarnya, karena persoalannya berpindah dari ranah hukum ke ranah kebiasaan."),
+  ("p", "Korupsi perlu dipahami sebagai persoalan yang merusak banyak sendi kehidupan. Bila terus dibiarkan, perlahan masyarakat mulai memandang ketidakjujuran sebagai sesuatu yang lumrah. Di titik inilah bahaya terbesarnya, karena persoalannya berpindah dari ranah hukum ke ranah kebiasaan."),
 
-  ("h2", "Dasar Hukum Pemberantasan Korupsi"),
-  ("p", "Indonesia memiliki landasan hukum yang tegas dalam memberantas korupsi. Aturan ini menjadi dasar bagi penindakan sekaligus pencegahan."),
+  ("h2", "Landasan Hukum Melawan Korupsi"),
+  ("p", "Untuk memberantas korupsi, Indonesia berbekal sejumlah dasar hukum yang tegas. Aturan tersebut sekaligus menjadi pijakan untuk menindak dan mencegah."),
   ("ul", [
     "Undang-Undang Nomor 31 Tahun 1999 tentang Pemberantasan Tindak Pidana Korupsi.",
     "Undang-Undang Nomor 20 Tahun 2001 yang memperkuat undang-undang sebelumnya.",
     "Komisi Pemberantasan Korupsi sebagai lembaga pencegahan dan penindakan.",
   ]),
-  ("p", "Selain penindakan, Komisi Pemberantasan Korupsi juga mengembangkan pendidikan antikorupsi melalui berbagai materi pembelajaran yang dapat diakses publik. Hal ini menegaskan bahwa pemberantasan korupsi tidak cukup mengandalkan hukuman, tetapi juga membutuhkan pembentukan kesadaran sejak dini."),
+  ("p", "Tidak berhenti pada penindakan, Komisi Pemberantasan Korupsi turut menyusun bahan ajar antikorupsi yang terbuka untuk umum. Artinya, memberantas korupsi tidak bisa hanya bertumpu pada hukuman, sebab penyadaran sejak awal sama pentingnya."),
 
   ("h2", "Dampak Korupsi"),
   ("p", "Dampak korupsi terasa pada banyak sisi kehidupan. Mengenali dampak ini membuat seseorang lebih waspada terhadap praktik yang sering dianggap sepele."),
   ("ul", [
-    "Dampak ekonomi, yaitu anggaran untuk pendidikan dan kesehatan justru mengalir ke pihak tertentu.",
+    "Dari sisi ekonomi, dana yang mestinya untuk pendidikan dan kesehatan malah berpindah ke segelintir orang.",
     "Dampak sosial, yaitu ketimpangan melebar dan kepercayaan terhadap negara menurun.",
     "Dampak moral, yaitu tumbuhnya sikap permisif terhadap ketidakjujuran.",
   ]),
@@ -476,14 +476,14 @@ BAB.append({
     "Keberanian, yaitu menolak ajakan curang dan melaporkan penyimpangan.",
     "Kesederhanaan, yaitu tidak memaksakan gaya hidup berlebihan.",
   ]),
-  ("p", "Nilai-nilai ini tampak sederhana, tetapi justru di situlah pendidikan antikorupsi diuji. Gaya hidup berlebihan dan keinginan kaya secara cepat sering menjadi pintu masuk perilaku koruptif, sehingga penanaman nilai sejak masa kuliah menjadi sangat penting."),
+  ("p", "Sekilas nilai-nilai itu terlihat remeh, padahal di sanalah pendidikan antikorupsi sesungguhnya teruji. Hidup yang serba mewah dan hasrat kaya secara instan kerap membuka jalan menuju perilaku korup, maka membiasakan nilai baik sejak bangku kuliah terasa mendesak."),
 
   ("h2", "Peran Mahasiswa Membangun Integritas"),
-  ("p", "Perguruan tinggi memikul tanggung jawab menanamkan nilai antikorupsi, tidak hanya melalui materi kuliah, tetapi juga melalui budaya dan tata kelola kampus. Kampus yang membiarkan plagiarisme atau kecurangan organisasi sebenarnya sedang menormalkan benih korupsi."),
-  ("p", "Mahasiswa dapat menjadi pelopor kejujuran melalui keputusan kecil setiap hari, seperti mengerjakan tugas dengan jujur, mengakui kesalahan, dan berani menolak ajakan berbuat curang. Bagi mahasiswa yang kelak mendampingi orang lain, integritas menjadi syarat utama karena profesi semacam itu bertumpu pada kepercayaan. Kejujuran yang dilatih sejak kuliah akan menjadi modal agar kelak tidak menyalahgunakan amanah yang diberikan."),
+  ("p", "Tugas menumbuhkan sikap antikorupsi sejatinya berada di pundak kampus, dan itu tidak cukup lewat ceramah di kelas, melainkan juga lewat suasana akademik serta cara kampus dikelola. Kampus yang menutup mata terhadap penjiplakan atau kecurangan organisasi pada hakikatnya sedang memupuk bibit korupsi."),
+  ("p", "Lewat pilihan-pilihan kecil tiap hari, mahasiswa bisa memelopori budaya jujur, misalnya menggarap tugas tanpa kecurangan, mau mengakui kekeliruan, serta tegas menampik ajakan berbuat tidak benar. Bagi mahasiswa yang kelak mendampingi orang lain, integritas menjadi syarat utama karena profesi semacam itu bertumpu pada kepercayaan. Kejujuran yang dilatih sejak kuliah akan menjadi modal agar kelak tidak menyalahgunakan amanah yang diberikan."),
 
   ("h2", "Ringkasan dan Penutup"),
-  ("p", "Korupsi adalah penyalahgunaan kepercayaan untuk keuntungan pribadi yang merugikan kepentingan umum, dengan dampak luas pada ekonomi, kehidupan sosial, dan moral bangsa. Aturan pokoknya dapat ditemukan dalam Undang-Undang Nomor 31 Tahun 1999 beserta perubahannya melalui Undang-Undang Nomor 20 Tahun 2001."),
+  ("p", "Pada intinya, korupsi terjadi ketika amanah diselewengkan demi untung sendiri, dan kerugiannya merembet ke perekonomian, tatanan sosial, hingga moral bangsa. Aturan pokoknya dapat ditemukan dalam Undang-Undang Nomor 31 Tahun 1999 beserta perubahannya melalui Undang-Undang Nomor 20 Tahun 2001."),
   ("p", "Mencegah korupsi berarti menumbuhkan kejujuran, tanggung jawab, dan keberanian sejak dari hal-hal kecil keseharian. Sebagai pamungkas mini book ini, bahasan antikorupsi mengikat benang merah seluruh materi, yakni menyiapkan mahasiswa menjadi warga negara yang berintegritas, paham hukum, dan siap berbakti bagi bangsa."),
  ]
 })
@@ -562,8 +562,8 @@ EXTRA = {
  ],
  "4": [
   ("h2", "Konstitusi sebagai Pelindung Hak Warga"),
-  ("p", "Selain membatasi kekuasaan, konstitusi hadir untuk melindungi warga negara. Undang-Undang Dasar Tahun 1945 menjamin hak memperoleh keadilan, pendidikan, rasa aman, dan kebebasan berpendapat. Dengan adanya jaminan tersebut, kekuasaan tidak boleh memperlakukan warga secara semena-mena."),
-  ("p", "Perlindungan itu hanya berjalan baik bila warga memahami haknya. Banyak orang mengalami ketidakadilan tetapi tidak menyadari bahwa hak mereka dilindungi konstitusi. Karena itu, memahami konstitusi membuat seseorang lebih siap membela diri melalui jalur yang sah."),
+  ("p", "Selain membatasi kekuasaan, konstitusi hadir untuk melindungi warga negara. Hak atas keadilan, pendidikan, rasa aman, dan kebebasan menyuarakan pendapat dijamin oleh Undang-Undang Dasar Tahun 1945. Dengan adanya jaminan tersebut, kekuasaan tidak boleh memperlakukan warga secara semena-mena."),
+  ("p", "Perlindungan tersebut baru efektif jika warganya paham akan haknya. Tidak sedikit orang menanggung perlakuan tidak adil tanpa sadar bahwa konstitusi sebenarnya melindungi hak mereka. Karena itu, memahami konstitusi membuat seseorang lebih siap membela diri melalui jalur yang sah."),
 
   ("h2", "Menaati Aturan Kampus sebagai Latihan"),
   ("p", "Kesadaran berkonstitusi dapat dilatih dari hal yang paling dekat, yaitu menaati aturan kampus. Aturan kampus pada dasarnya adalah konstitusi kecil yang mengatur kehidupan bersama mahasiswa, dosen, dan pegawai. Menaatinya melatih kebiasaan untuk menghormati aturan yang lebih besar di kehidupan bernegara."),
@@ -616,7 +616,7 @@ EXTRA = {
  ],
  "7": [
   ("h2", "Indonesia sebagai Negara Maritim"),
-  ("p", "Sebagian besar wilayah Indonesia adalah laut, sehingga kesadaran maritim menjadi bagian penting dari wawasan nusantara. Laut bukan sekadar pemisah antarpulau, melainkan penghubung yang menyatukan kehidupan bangsa sekaligus sumber pangan, energi, dan jalur perdagangan yang harus dijaga."),
+  ("p", "Karena lautan mendominasi wilayah Indonesia, kesadaran sebagai bangsa bahari menjadi bagian penting dari wawasan nusantara. Laut jangan dilihat hanya sebagai jarak antarpulau, sebab ia justru merangkai kehidupan bangsa dan menjadi gudang pangan, sumber energi, serta lalu lintas dagang yang wajib dirawat."),
   ("p", "Menjaga laut berarti menjaga masa depan bangsa. Pencemaran, penangkapan ikan secara ilegal, dan kerusakan ekosistem laut adalah persoalan yang menyangkut kedaulatan sekaligus kesejahteraan. Kesadaran ini perlu ditumbuhkan agar generasi muda tidak memandang laut hanya sebagai latar belakang peta."),
 
   ("h2", "Menjaga Persatuan di Ruang Digital"),
@@ -632,8 +632,8 @@ EXTRA = {
  ],
  "8": [
   ("h2", "Mencegah Korupsi melalui Sistem dan Karakter"),
-  ("p", "Pencegahan korupsi menuntut dua hal yang berjalan bersama, yaitu sistem yang baik dan karakter yang jujur. Dari sisi sistem, diperlukan transparansi anggaran, pelayanan yang sederhana, dan pengawasan yang ketat agar peluang penyimpangan dipersempit. Dari sisi manusia, diperlukan penanaman nilai integritas sejak dini."),
-  ("p", "Sistem yang baik tanpa manusia yang jujur akan mudah disiasati, sedangkan manusia jujur tanpa sistem yang baik akan kesulitan bertahan. Karena itu, pemberantasan korupsi yang berhasil selalu memadukan perbaikan tata kelola dengan pembentukan karakter."),
+  ("p", "Pencegahan korupsi menuntut dua hal yang berjalan bersama, yaitu sistem yang baik dan karakter yang jujur. Dari segi sistem, dibutuhkan anggaran yang terbuka, layanan yang ringkas, serta pengawasan ketat supaya celah penyelewengan menyempit. Dari sisi pelakunya, nilai integritas perlu ditanam mulai dari usia muda."),
+  ("p", "Sistem sebagus apa pun gampang diakali bila orangnya tidak jujur, dan sebaliknya orang jujur akan kepayahan jika sistemnya buruk. Karena itu, pemberantasan korupsi yang berhasil selalu memadukan perbaikan tata kelola dengan pembentukan karakter."),
 
   ("h2", "Transparansi dalam Organisasi Mahasiswa"),
   ("p", "Latihan paling nyata melawan korupsi bagi mahasiswa ada dalam pengelolaan organisasi. Laporan keuangan yang terbuka, penggunaan dana yang dapat dipertanggungjawabkan, dan keputusan yang melibatkan anggota adalah bentuk integritas yang dapat dipraktikkan langsung."),
@@ -679,8 +679,8 @@ EXTRA2 = {
  ],
  "2": [
   ("h2", "Sejarah Singkat Lahirnya Identitas Bangsa"),
-  ("p", "Identitas nasional Indonesia tumbuh dari pengalaman sejarah yang panjang. Penjajahan yang berlangsung berabad-abad justru menumbuhkan kesadaran bahwa berbagai suku dan daerah memiliki nasib yang sama dan perlu bersatu. Dari kesadaran inilah benih kebangsaan mulai tumbuh."),
-  ("p", "Rangkaian peristiwa, mulai dari Kebangkitan Nasional, lalu Sumpah Pemuda, hingga akhirnya Proklamasi Kemerdekaan, turut menumbuhkan rasa sebangsa di kalangan rakyat. Memahami sejarah ini membantu mahasiswa menyadari bahwa persatuan adalah hasil perjuangan, bukan sesuatu yang datang dengan sendirinya."),
+  ("p", "Identitas nasional Indonesia tumbuh dari pengalaman sejarah yang panjang. Justru dari masa penjajahan yang berlarut-larut itu lahir kesadaran bahwa beragam suku dan daerah sedang menanggung nasib serupa, sehingga harus menyatu. Dari kesadaran inilah benih kebangsaan mulai tumbuh."),
+  ("p", "Rangkaian peristiwa, mulai dari Kebangkitan Nasional, lalu Sumpah Pemuda, hingga akhirnya Proklamasi Kemerdekaan, turut menumbuhkan rasa sebangsa di kalangan rakyat. Dengan menyelami sejarah ini, mahasiswa terbantu menyadari bahwa persatuan diraih lewat perjuangan, bukan turun begitu saja."),
 
   ("h2", "Simbol Negara dan Sikap Menghormatinya"),
   ("p", "Bendera Merah Putih, lambang Garuda Pancasila, bahasa Indonesia, dan lagu Indonesia Raya adalah simbol negara yang memiliki kedudukan hukum melalui Undang-Undang Nomor 24 Tahun 2009. Simbol-simbol ini bukan sekadar atribut seremonial, melainkan penanda jati diri yang patut dihormati."),
@@ -693,7 +693,7 @@ EXTRA2 = {
 
   ("h2", "Peran Media Sosial bagi Persatuan"),
   ("p", "Media sosial memiliki dua sisi dalam menjaga integrasi. Di satu sisi, ia dapat mempererat hubungan dan menyebarkan pesan persatuan. Di sisi lain, ia dapat menjadi alat penyebaran kebencian dan kabar bohong yang memecah belah."),
-  ("p", "Mahasiswa sebagai kelompok terdidik diharapkan menggunakan media sosial secara bijak. Menyebarkan konten yang positif, memeriksa kebenaran sebelum membagikan, dan menahan diri dari komentar yang memperkeruh suasana adalah bentuk nyata menjaga persatuan di ruang digital."),
+  ("p", "Mahasiswa sebagai kelompok terdidik diharapkan menggunakan media sosial secara bijak. Membagikan konten bermanfaat, memastikan kebenaran sebelum meneruskan, dan menahan komentar yang memanaskan keadaan adalah cara nyata merawat persatuan di ranah digital."),
  ],
  "4": [
   ("h2", "Pembagian Kekuasaan dan Pengawasannya"),
@@ -706,8 +706,8 @@ EXTRA2 = {
  ],
  "5": [
   ("h2", "Hak dan Kewajiban dalam Kehidupan Demokrasi"),
-  ("p", "Dalam kehidupan demokrasi, hak dan kewajiban harus berjalan seimbang. Demokrasi memberi ruang bagi warga untuk menyampaikan pendapat, memilih pemimpin, dan mengawasi pemerintahan. Namun hak-hak itu menuntut kedewasaan agar tidak berubah menjadi kebebasan tanpa batas."),
-  ("p", "Dalam pemilihan ketua organisasi atau pemilihan umum, misalnya, warga berhak memilih sekaligus berkewajiban menggunakan haknya secara bertanggung jawab, tidak menjual suara, dan tidak mudah terprovokasi. Keseimbangan inilah yang membuat demokrasi berjalan sehat."),
+  ("p", "Di tengah kehidupan demokrasi, hak dan kewajiban mesti ditimbang secara seimbang. Demokrasi membuka ruang bagi warga untuk bersuara, menentukan pemimpin, dan mengawasi jalannya pemerintahan. Akan tetapi, hak semacam itu menuntut kematangan supaya tidak melenceng menjadi kebebasan yang kebablasan."),
+  ("p", "Saat memilih ketua organisasi maupun dalam pemilihan umum, misalnya, seseorang punya hak memilih sekaligus kewajiban memakainya secara bertanggung jawab, menolak menjual suara, dan tidak gampang terhasut. Keseimbangan inilah yang membuat demokrasi berjalan sehat."),
 
   ("h2", "Tanggung Jawab Sosial di Lingkungan"),
   ("p", "Di luar hak dan kewajiban yang tertulis dalam hukum, ada pula tanggung jawab sosial yang dipikul setiap warga. Bentuknya terlihat ketika seseorang peduli pada keadaan sekitar, ringan tangan membantu, dan mau ikut ambil bagian dalam kegiatan bersama."),
@@ -730,8 +730,8 @@ EXTRA2 = {
  ],
  "7": [
   ("h2", "Pemerataan Pembangunan Antardaerah"),
-  ("p", "Wawasan nusantara menegaskan bahwa pembangunan tidak boleh hanya terpusat di kota besar. Daerah perbatasan, pulau kecil, dan wilayah terpencil perlu mendapat perhatian agar seluruh warga merasakan manfaat kemerdekaan dan pembangunan nasional."),
-  ("p", "Ketika seluruh wilayah merasa diperhatikan, rasa memiliki terhadap bangsa akan tumbuh lebih kuat. Pembangunan yang merata bukan sekadar urusan ekonomi, melainkan juga strategi menjaga persatuan dan memperkuat ketahanan nasional dari dalam."),
+  ("p", "Menurut wawasan nusantara, pembangunan tidak boleh menumpuk di kota-kota besar saja. Kawasan perbatasan, pulau-pulau kecil, dan daerah pelosok layak diperhatikan supaya semua warga ikut menikmati buah kemerdekaan dan pembangunan."),
+  ("p", "Begitu setiap daerah merasa diperhatikan, ikatan batin terhadap bangsa pun akan menguat. Pemerataan pembangunan tidak hanya soal ekonomi, sebab ia juga menjadi cara menjaga persatuan dan mengokohkan ketahanan nasional dari dalam."),
 
   ("h2", "Ketahanan Diri menghadapi Tekanan"),
   ("p", "Ketahanan nasional pada tingkat paling kecil dimulai dari ketahanan diri setiap individu. Mahasiswa yang mampu mengelola tekanan akademik, menjaga kesehatan mental, dan tetap berpikir jernih dalam situasi sulit turut menyumbang pada kekuatan bangsa secara keseluruhan."),
@@ -739,7 +739,7 @@ EXTRA2 = {
  ],
  "8": [
   ("h2", "Jenis-Jenis Korupsi yang Perlu Diwaspadai"),
-  ("p", "Korupsi hadir dalam berbagai bentuk yang tidak selalu mudah dikenali. Mengenali ragamnya membuat seseorang lebih waspada agar tidak menganggap praktik tertentu sebagai hal yang wajar."),
+  ("p", "Korupsi hadir dalam berbagai bentuk yang tidak selalu mudah dikenali. Dengan mengenali macam-macamnya, seseorang menjadi lebih waspada dan tidak mudah menganggap suatu praktik sebagai hal lumrah."),
   ("ul", [
     "Suap, yaitu pemberian untuk memengaruhi keputusan atau memuluskan urusan.",
     "Gratifikasi, yaitu pemberian hadiah yang berkaitan dengan jabatan seseorang.",
@@ -749,8 +749,8 @@ EXTRA2 = {
   ("p", "Memberi uang pelicin untuk mempercepat layanan sering dianggap biasa, padahal termasuk benih korupsi. Kesadaran untuk menolak praktik semacam ini adalah langkah awal melawan korupsi dari kehidupan sehari-hari."),
 
   ("h2", "Membangun Generasi Berintegritas"),
-  ("p", "Tujuan akhir pendidikan antikorupsi adalah lahirnya generasi yang berintegritas. Generasi semacam ini tidak hanya menolak korupsi ketika kelak memegang jabatan, tetapi sudah membiasakan kejujuran sejak masih menjadi mahasiswa."),
-  ("p", "Membangun generasi berintegritas menuntut keteladanan dari berbagai pihak, mulai dari dosen yang adil, kampus yang tegas terhadap kecurangan, hingga keluarga yang menanamkan kejujuran. Dari kebiasaan jujur yang dilatih setiap hari, lahir pemimpin masa depan yang bersih dan dapat dipercaya."),
+  ("p", "Muara dari pendidikan antikorupsi ialah hadirnya generasi yang berintegritas. Generasi seperti itu tidak menunggu sampai menjabat untuk menampik korupsi, sebab mereka telah membiasakan jujur sejak di bangku kuliah."),
+  ("p", "Mencetak generasi berintegritas membutuhkan contoh nyata dari banyak pihak, sebut saja dosen yang berlaku adil, kampus yang tegas pada kecurangan, dan keluarga yang menanam kejujuran. Kejujuran yang diasah saban hari pada akhirnya melahirkan pemimpin masa depan yang bersih lagi tepercaya."),
  ],
 }
 
@@ -820,8 +820,8 @@ EXTRA4 = {
  ],
  "3": [
   ("h2", "Peran Pendidikan dalam Mempererat Bangsa"),
-  ("p", "Pendidikan memiliki peran besar dalam merawat integrasi nasional. Lewat bangku pendidikan, anak muda mulai mengenal perjalanan sejarah bangsanya, memahami nilai Pancasila, dan menyadari betapa mahalnya harga sebuah perpecahan. Pendidikan juga membantu seseorang memahami bahwa perbedaan bukan alasan untuk saling menjauh."),
-  ("p", "Pendidikan Kewarganegaraan secara khusus membangun kesadaran untuk hidup bersama. Mahasiswa tidak hanya mempelajari konsep negara, tetapi juga memahami tanggung jawab sosialnya sebagai bagian dari bangsa. Dengan bekal ini, mahasiswa diharapkan mampu berpikir kritis tanpa kehilangan rasa kebangsaan."),
+  ("p", "Dunia pendidikan memikul peran penting dalam menjaga integrasi nasional. Lewat bangku pendidikan, anak muda mulai mengenal perjalanan sejarah bangsanya, memahami nilai Pancasila, dan menyadari betapa mahalnya harga sebuah perpecahan. Pendidikan pun menolong seseorang menangkap bahwa perbedaan bukanlah dalih untuk saling menjauh."),
+  ("p", "Pendidikan Kewarganegaraan secara khusus membangun kesadaran untuk hidup bersama. Bukan sebatas menghafal konsep kenegaraan, mahasiswa juga diajak menyadari tanggung jawab sosial sebagai anak bangsa. Berbekal hal itu, mahasiswa diharapkan tetap kritis namun tidak tercerabut dari rasa kebangsaan."),
  ],
  "4": [
   ("h2", "Pembatasan Masa Jabatan sebagai Pelajaran"),
@@ -888,12 +888,12 @@ EXTRA5 = {
  ],
  "7": [
   ("h2", "Semangat Persatuan dari Sabang sampai Merauke"),
-  ("p", "Wawasan nusantara menegaskan bahwa seluruh wilayah Indonesia, dari Sabang sampai Merauke, adalah satu kesatuan yang tidak terpisahkan. Semangat ini mengajak setiap warga negara untuk merasa memiliki seluruh Indonesia, bukan hanya daerah asalnya sendiri."),
+  ("p", "Menurut wawasan nusantara, segenap wilayah Indonesia, terbentang dari Sabang hingga Merauke, merupakan satu tubuh yang tak terpisah. Semangat tersebut mengundang tiap warga agar merasa ikut memiliki seluruh penjuru Indonesia, tidak terbatas pada kampung halamannya."),
   ("p", "Bagi mahasiswa, semangat ini tumbuh melalui pergaulan dengan teman dari berbagai daerah. Pengalaman mengenal kebiasaan dan cara pandang yang berbeda memperlihatkan bahwa keberagaman wilayah justru memperkaya bangsa. Dari kesadaran inilah lahir rasa cinta terhadap tanah air yang utuh."),
  ],
  "8": [
   ("h2", "Integritas sebagai Bekal Masa Depan"),
-  ("p", "Integritas adalah kesesuaian antara perkataan dan perbuatan, serta keberanian untuk tetap jujur meski ada kesempatan untuk curang. Nilai ini menjadi bekal paling berharga bagi mahasiswa, karena di mana pun ia bekerja kelak, kepercayaan adalah modal utama."),
+  ("p", "Integritas berarti apa yang diucapkan sejalan dengan yang dilakukan, ditambah nyali untuk tetap lurus walau peluang berbuat curang terbuka lebar. Nilai ini menjadi bekal paling berharga bagi mahasiswa, karena di mana pun ia bekerja kelak, kepercayaan adalah modal utama."),
   ("p", "Membangun integritas dimulai dari hal kecil yang dilakukan secara konsisten, seperti menepati janji, mengakui kesalahan, dan menolak jalan pintas yang tidak jujur. Dari kebiasaan inilah lahir pribadi yang dapat dipercaya, yang kelak menjadi penjaga bangsa dari bahaya korupsi."),
  ],
 }
