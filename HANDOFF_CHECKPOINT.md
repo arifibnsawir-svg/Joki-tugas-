@@ -80,7 +80,7 @@ GOTCHA penting:
 ## 7. Progres
 - Buku 1 (Nurul Syifa): SELESAI, QA 13/13 PASS. FINAL/Buku 1 - Nurul Syifa - PKN - FINISH.pdf & .docx. 64 hal isi. DNA naratif-reflektif, APA.
 - Buku 2 (Naila): SELESAI, QA 16/16 PASS. 62 hal isi. DNA akademik + 10 tabel berwarna + no.halaman kanan + daftar isi bertingkat + IEEE. Bab 5 sudah sesuai silabus (HAM jadi sub-bab).
-- Buku 3 (Balqis Lejla): SELESAI, QA 20/20 PASS. 64 hal isi (66 dgn cover). DNA kontekstual-aplikatif + 16 kotak studi kasus + poin-poin/bullet + no.halaman pojok luar berganti + daftar isi nomor bab 01-08 + Harvard. Overlap antar-buku rendah (vs Buku1 1.7 persen, vs Buku2 7.1 persen; sisa hanya nama UU & URL sumber). Pipeline di `_generator/buku3/`. GOTCHA tambahan: di TOC HTML JANGAN pakai class `bab` pada `<li>` karena bentrok dgn `.bab{break-before:page}` (tiap entri jadi pindah halaman); pakai class lain mis. `tbab`. PDF & DOCX line-height 1.9 (nomor TOC DOCX dari scan PDF).
+- Buku 3 (Balqis Sandra Lejla): SELESAI, QA 20/20 PASS. 64 hal isi (66 dgn cover). DNA kontekstual-aplikatif + 16 kotak studi kasus + poin-poin/bullet + no.halaman pojok luar berganti + daftar isi nomor bab 01-08 + Harvard. Overlap antar-buku rendah (vs Buku1 1.7 persen, vs Buku2 7.1 persen; sisa hanya nama UU & URL sumber). Pipeline di `_generator/buku3/`. GOTCHA tambahan: di TOC HTML JANGAN pakai class `bab` pada `<li>` karena bentrok dgn `.bab{break-before:page}` (tiap entri jadi pindah halaman); pakai class lain mis. `tbab`. PDF & DOCX line-height 1.9 (nomor TOC DOCX dari scan PDF).
 - Buku 4, 5: BELUM. Kerjakan di sesi baru mengikuti DNA & pipeline di atas.
 
 ## 8. Cara melanjutkan di sesi baru
