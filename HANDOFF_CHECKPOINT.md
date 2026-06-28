@@ -36,6 +36,7 @@ Yang SAMA antar buku hanya judul bab. Selebihnya WAJIB beda: kalimat, contoh, su
 | 3 | Balqis Sandra Lejla | Kontekstual-aplikatif | Pojok luar (kiri-kanan ganti) | Poin-poin/bullet + kotak studi kasus | Leader titik format beda | Harvard | BELUM |
 | 4 | Lidya Ellen Febriasalsa | Dialogis/tanya-jawab | Tengah atas (header) | Kotak tanya-jawab + tabel ringkas | Tanpa leader, indentasi | MLA | BELUM |
 | 5 | Nurjali Sangadji | KHUSUS: file asli 100% GAMBAR (62 gambar, 0 teks). Perlu dibangun ulang jadi teks. | ditentukan | ditentukan | ditentukan | ditentukan | BELUM |
+| 6 | Revalina Damayanti | Tematik problem-solusi | Pojok kanan atas (header) | Kotak Akar Masalah + Langkah Solusi (maroon/emas) | Nomor rata kanan + garis tiap bab | Vancouver | SELESAI (PR buku6-revalina) |
 
 Catatan: tabel/warna dibuat lembut & profesional. Tiap buku tetap WAJIB lolos QA penuh.
 
@@ -80,7 +81,8 @@ GOTCHA penting:
 ## 7. Progres
 - Buku 1 (Nurul Syifa): SELESAI, QA 13/13 PASS. FINAL/Buku 1 - Nurul Syifa - PKN - FINISH.pdf & .docx. 64 hal isi. DNA naratif-reflektif, APA.
 - Buku 2 (Naila): SELESAI, QA 16/16 PASS. 62 hal isi. DNA akademik + 10 tabel berwarna + no.halaman kanan + daftar isi bertingkat + IEEE. Bab 5 sudah sesuai silabus (HAM jadi sub-bab).
-- Buku 3, 4, 5: BELUM. Kerjakan di sesi baru mengikuti DNA & pipeline di atas.
+- Buku 3, 4, 5: SELESAI di PR terpisah (buku3-balqis-lejla, buku4-lidya-ellen, buku5-nurjali).
+- Buku 6 (Revalina Damayanti, NPM 202501500541): SELESAI, QA 20/20 PASS. 65 hal isi. DIBANGUN DARI NOL 100% (tanpa file sumber). DNA tematik problem-solusi + kotak Akar Masalah/Langkah Solusi (tema maroon/emas) + no.halaman pojok kanan atas + TOC nomor rata kanan & bergaris + pustaka Vancouver. Cover DIDESAIN (maroon + Garuda Pancasila domain publik, TANPA kata minibook), sampul belakang seirama + biografi penulis. Anti-plagiat (sekelas BK UNINDRA): overlap 8-gram vs B1 0.42%, B2 0.71%, B3 0.36%, B4 0.53%, B5 0.40% (semua <1%). Pipeline self-contained di _generator/buku6/ (konten.py, gen_pdf.py [WeasyPrint, cover didesain+merge], scan.py, build_docx.py [cover dirasterisasi via pymupdf], assets/garuda.png) + qa_buku6.py. (PR branch buku6-revalina)
 
 ## 8. Cara melanjutkan di sesi baru
 1. Clone repo arifibnsawir-svg/Joki-tugas-.
