@@ -33,7 +33,7 @@ Yang SAMA antar buku hanya judul bab. Selebihnya WAJIB beda: kalimat, contoh, su
 |------|---------|--------------|--------------------|------------|------------|----------------|--------|
 | 1 | Nurul Syifa | Naratif-reflektif | Tengah bawah | Prosa + refleksi | Dot leader rata (bab) | APA | SELESAI |
 | 2 | Naila Diyana Nabilah | Akademik-terstruktur | Pojok kanan bawah | Tabel berwarna (header biru lembut) | Bertingkat (bab+subbab) | IEEE [n] | SELESAI |
-| 3 | Balqis Sandra Lejla | Kontekstual-aplikatif | Pojok luar (kiri-kanan ganti) | Poin-poin/bullet + kotak studi kasus | Leader titik format beda | Harvard | BELUM |
+| 3 | Balqis Sandra Lejla | Kontekstual-aplikatif | Pojok luar (kiri-kanan ganti) | Poin-poin/bullet + kotak studi kasus | Leader titik format beda | Harvard | SELESAI |
 | 4 | Lidya Ellen Febriasalsa | Dialogis/tanya-jawab | Tengah atas (header) | Kotak tanya-jawab + tabel ringkas | Tanpa leader, indentasi | MLA | BELUM |
 | 5 | Nurjali Sangadji | KHUSUS: file asli 100% GAMBAR (62 gambar, 0 teks). Perlu dibangun ulang jadi teks. | ditentukan | ditentukan | ditentukan | ditentukan | BELUM |
 
@@ -80,7 +80,8 @@ GOTCHA penting:
 ## 7. Progres
 - Buku 1 (Nurul Syifa): SELESAI, QA 13/13 PASS. FINAL/Buku 1 - Nurul Syifa - PKN - FINISH.pdf & .docx. 64 hal isi. DNA naratif-reflektif, APA.
 - Buku 2 (Naila): SELESAI, QA 16/16 PASS. 62 hal isi. DNA akademik + 10 tabel berwarna + no.halaman kanan + daftar isi bertingkat + IEEE. Bab 5 sudah sesuai silabus (HAM jadi sub-bab).
-- Buku 3, 4, 5: BELUM. Kerjakan di sesi baru mengikuti DNA & pipeline di atas.
+- Buku 3 (Balqis Lejla): SELESAI, QA 20/20 PASS. 64 hal isi (66 dgn cover). DNA kontekstual-aplikatif + 16 kotak studi kasus + poin-poin/bullet + no.halaman pojok luar berganti + daftar isi nomor bab 01-08 + Harvard. Overlap antar-buku rendah (vs Buku1 1.7 persen, vs Buku2 7.1 persen; sisa hanya nama UU & URL sumber). Pipeline di `_generator/buku3/`. GOTCHA tambahan: di TOC HTML JANGAN pakai class `bab` pada `<li>` karena bentrok dgn `.bab{break-before:page}` (tiap entri jadi pindah halaman); pakai class lain mis. `tbab`. PDF & DOCX line-height 1.9 (nomor TOC DOCX dari scan PDF).
+- Buku 4, 5: BELUM. Kerjakan di sesi baru mengikuti DNA & pipeline di atas.
 
 ## 8. Cara melanjutkan di sesi baru
 1. Clone repo arifibnsawir-svg/Joki-tugas-.
