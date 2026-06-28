@@ -3,8 +3,8 @@ import re, zipfile
 from pypdf import PdfReader
 import docx
 
-PDF = "Joki-tugas-/FINAL/Buku 3 - Balqis Lejla - PKN - FINISH.pdf"
-DOC = "Joki-tugas-/FINAL/Buku 3 - Balqis Lejla - PKN - FINISH.docx"
+PDF = "Joki-tugas-/FINAL/Buku 3 - Balqis Sandra Lejla - PKN - FINISH.pdf"
+DOC = "Joki-tugas-/FINAL/Buku 3 - Balqis Sandra Lejla - PKN - FINISH.docx"
 WAJIB = [(1, "HAKIKAT PENDIDIKAN KEWARGANEGARAAN"), (2, "IDENTITAS NASIONAL"), (3, "INTEGRASI NASIONAL"),
 (4, "NEGARA DAN KONSTITUSI"), (5, "HAK DAN KEWAJIBAN WARGA NEGARA"), (6, "PENEGAKAN HUKUM YANG BERKEADILAN"),
 (7, "GEOPOLITIK DAN GEOSTRATEGI"), (8, "ANTI KORUPSI")]

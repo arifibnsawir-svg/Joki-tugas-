@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Render Buku #3 (Balqis Lejla) -> PDF via WeasyPrint, lalu tempel cover via merge.
+"""Render Buku #3 (Balqis Sandra Lejla) -> PDF via WeasyPrint, lalu tempel cover via merge.
 DNA: kontekstual-aplikatif, poin-poin/bullet + kotak studi kasus, nomor halaman POJOK LUAR
 berganti (kiri-kanan), daftar isi leader titik dengan nomor bab berformat (zero-pad), Harvard.
 Isi dirender TANPA cover => penomoran mulai 1, target-counter TOC akurat. TANPA counter-reset.
@@ -9,7 +9,7 @@ from io import BytesIO
 from konten import KATA_PENGANTAR, BAB, DAFTAR_PUSTAKA
 
 OUTDIR = "Joki-tugas-/FINAL"
-OUTPDF = os.path.join(OUTDIR, "Buku 3 - Balqis Lejla - PKN - FINISH.pdf")
+OUTPDF = os.path.join(OUTDIR, "Buku 3 - Balqis Sandra Lejla - PKN - FINISH.pdf")
 IMGDIR = "Joki-tugas-/_generator/buku3/build_balqis/img"
 
 def covers():

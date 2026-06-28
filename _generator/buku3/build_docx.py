@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DOCX Buku #3 (Balqis Lejla) - mirror layout PDF (A4, TNR 12, spasi 1.9 seperti PDF).
+"""DOCX Buku #3 (Balqis Sandra Lejla) - mirror layout PDF (A4, TNR 12, spasi 1.9 seperti PDF).
 DNA: poin-poin/bullet + kotak studi kasus (warna hangat), nomor halaman POJOK LUAR berganti
 (genap kiri, ganjil kanan) via evenAndOddHeaders, daftar isi MANUAL leader titik (nomor bab
 berformat zero-pad), daftar pustaka Harvard. Daftar isi pakai nomor dari scan PDF (acuan=PDF).
@@ -14,7 +14,7 @@ from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 from konten import KATA_PENGANTAR, BAB, DAFTAR_PUSTAKA
 
-OUT = "Joki-tugas-/FINAL/Buku 3 - Balqis Lejla - PKN - FINISH.docx"
+OUT = "Joki-tugas-/FINAL/Buku 3 - Balqis Sandra Lejla - PKN - FINISH.docx"
 IMGDIR = "Joki-tugas-/_generator/buku3/build_balqis/img"
 PR = json.load(open("Joki-tugas-/_generator/buku3/build_balqis/page_real.json"))
 FONT = "Times New Roman"

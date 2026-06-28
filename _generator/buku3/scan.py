@@ -6,7 +6,7 @@ from pypdf import PdfReader
 sys.path.insert(0, "Joki-tugas-/_generator/buku3")
 import konten
 
-PDF = "Joki-tugas-/FINAL/Buku 3 - Balqis Lejla - PKN - FINISH.pdf"
+PDF = "Joki-tugas-/FINAL/Buku 3 - Balqis Sandra Lejla - PKN - FINISH.pdf"
 OUT = "Joki-tugas-/_generator/buku3/build_balqis/page_real.json"
 r = PdfReader(PDF)
 n = len(r.pages)
