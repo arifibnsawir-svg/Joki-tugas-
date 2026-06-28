@@ -33,9 +33,9 @@ Yang SAMA antar buku hanya judul bab. Selebihnya WAJIB beda: kalimat, contoh, su
 |------|---------|--------------|--------------------|------------|------------|----------------|--------|
 | 1 | Nurul Syifa | Naratif-reflektif | Tengah bawah | Prosa + refleksi | Dot leader rata (bab) | APA | SELESAI |
 | 2 | Naila Diyana Nabilah | Akademik-terstruktur | Pojok kanan bawah | Tabel berwarna (header biru lembut) | Bertingkat (bab+subbab) | IEEE [n] | SELESAI |
-| 3 | Balqis Sandra Lejla | Kontekstual-aplikatif | Pojok luar (kiri-kanan ganti) | Poin-poin/bullet + kotak studi kasus | Leader titik format beda | Harvard | BELUM |
-| 4 | Lidya Ellen Febriasalsa | Dialogis/tanya-jawab | Tengah atas (header) | Kotak tanya-jawab + tabel ringkas | Tanpa leader, indentasi | MLA | BELUM |
-| 5 | Nurjali Sangadji | KHUSUS: file asli 100% GAMBAR (62 gambar, 0 teks). Perlu dibangun ulang jadi teks. | ditentukan | ditentukan | ditentukan | ditentukan | BELUM |
+| 3 | Balqis Sandra Lejla | Kontekstual-aplikatif | Pojok luar (kiri-kanan ganti) | Poin-poin/bullet + kotak studi kasus emas | Leader titik 01-08 | Harvard | SELESAI (PR buku3-balqis-lejla) |
+| 4 | Lidya Ellen Febriasalsa | Dialogis/tanya-jawab | Tengah atas (header) | Kotak tanya-jawab teal + tabel ringkas hijau | Tanpa leader, indentasi | MLA | SELESAI (PR buku4-lidya-ellen) |
+| 5 | Nurjali Sangadji | Ekspositori ringkas-padat | Bawah-tengah (dgn garis pemisah) | Kotak Poin Inti (bernomor) + Istilah Kunci, warna indigo/slate | Banded (band warna per bab, tanpa leader) | Chicago | SELESAI (PR buku5-nurjali) |
 
 Catatan: tabel/warna dibuat lembut & profesional. Tiap buku tetap WAJIB lolos QA penuh.
 
@@ -80,7 +80,10 @@ GOTCHA penting:
 ## 7. Progres
 - Buku 1 (Nurul Syifa): SELESAI, QA 13/13 PASS. FINAL/Buku 1 - Nurul Syifa - PKN - FINISH.pdf & .docx. 64 hal isi. DNA naratif-reflektif, APA.
 - Buku 2 (Naila): SELESAI, QA 16/16 PASS. 62 hal isi. DNA akademik + 10 tabel berwarna + no.halaman kanan + daftar isi bertingkat + IEEE. Bab 5 sudah sesuai silabus (HAM jadi sub-bab).
-- Buku 3, 4, 5: BELUM. Kerjakan di sesi baru mengikuti DNA & pipeline di atas.
+- Buku 3 (Balqis Sandra Lejla): SELESAI, QA 20/20 PASS. 64 hal isi. DNA kontekstual-aplikatif + kotak studi kasus emas + no.halaman pojok luar + TOC leader 01-08 + Harvard. Overlap vs buku lain <1%. (PR branch buku3-balqis-lejla)
+- Buku 4 (Lidya Ellen Febriasalsa): SELESAI, QA 18/18 PASS. 62 hal isi. DNA dialogis/tanya-jawab + kotak teal + tabel hijau + no.halaman tengah-atas + TOC tanpa-leader + MLA. Overlap vs buku lain <1%. (PR branch buku4-lidya-ellen)
+- Buku 5 (Nurjali Sangadji): SELESAI, QA 19/19 PASS. 63 hal isi. DNA ekspositori-padat + kotak Poin Inti & Istilah Kunci (indigo/slate) + no.halaman bawah-tengah + TOC banded + Chicago. Sumber asli 100% gambar -> direkonstruksi ke 8 topik silabus. Anti-plagiat: overlap 8-gram vs B1 1.47%, B2 0.71%, B3 1.40%, B4 0.76% (sisa hanya kutipan UU/URL pustaka, judul bab silabus, & istilah baku). (PR branch buku5-nurjali)
+- SEMUA 5 BUKU SELESAI.
 
 ## 8. Cara melanjutkan di sesi baru
 1. Clone repo arifibnsawir-svg/Joki-tugas-.
