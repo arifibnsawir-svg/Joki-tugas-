@@ -141,8 +141,66 @@ def fig_3_1():
     render(body, css, 18, 7.2, "fig_3_1.png")
 
 
+# ---------------- Gambar 1.2 : Faktor yang Memengaruhi Gaya Belajar ----------------
+def fig_1_2():
+    css = """
+    .pills{display:flex;gap:0.4cm;align-items:flex-start;}
+    .pill{flex:1;border-radius:12px;color:#fff;padding:12px 10px;text-align:center;
+      box-shadow:0 2px 4px rgba(0,0,0,.12);}
+    .pill .num{width:30px;height:30px;border-radius:50%%;background:rgba(255,255,255,.25);
+      border:2px solid rgba(255,255,255,.9);margin:0 auto 7px auto;font-weight:700;font-size:13pt;
+      line-height:26px;}
+    .pill .lb{font-weight:700;font-size:11pt;line-height:1.25;}
+    """
+    cols = [INDIGO, "#2563eb", "#0e7490", "#15a34a", "#ea7317"]
+    labels = ["Biologis dan Genetik", "Lingkungan", "Pengalaman Belajar", "Sosial Budaya", "Motivasi dan Kepribadian"]
+    pills = "".join('<div class=pill style="background:%s"><div class=num>%d</div><div class=lb>%s</div></div>'
+                    % (cols[i], i + 1, labels[i]) for i in range(5))
+    render("<div class=pills>%s</div>" % pills, css, 18, 4.0, "fig_1_2.png")
+
+
+# ---------------- Gambar 2.2 : Empat Modalitas VARK ----------------
+def fig_2_2():
+    css = """
+    .vark{display:flex;gap:0.5cm;align-items:flex-start;}
+    .vk{flex:1;border-radius:12px;color:#fff;padding:14px 10px;text-align:center;
+      box-shadow:0 2px 4px rgba(0,0,0,.12);}
+    .vk .lt{font-size:26pt;font-weight:700;line-height:1;}
+    .vk .nm{font-size:12pt;font-weight:700;margin-top:6px;}
+    .vk .ds{font-size:9.5pt;margin-top:3px;opacity:.95;}
+    """
+    data = [("V", V, "Visual", "Melihat"), ("A", A, "Auditorial", "Mendengar"),
+            ("R", RW, "Read/Write", "Membaca-Menulis"), ("K", K, "Kinestetik", "Bergerak")]
+    cards = "".join('<div class=vk style="background:%s"><div class=lt>%s</div><div class=nm>%s</div><div class=ds>%s</div></div>'
+                    % (c, l, nm, ds) for l, c, nm, ds in data)
+    render("<div class=vark>%s</div>" % cards, css, 18, 4.2, "fig_2_2.png")
+
+
+# ---------------- Gambar 3.2 : Siklus Membangun Kebiasaan Belajar ----------------
+def fig_3_2():
+    css = """
+    .flow{display:flex;align-items:stretch;gap:0;}
+    .st{flex:1;border-radius:12px;color:#fff;padding:11px 9px;text-align:center;
+      display:flex;align-items:center;justify-content:center;box-shadow:0 2px 4px rgba(0,0,0,.12);}
+    .st .in{width:100%%;font-weight:700;font-size:10.5pt;line-height:1.25;}
+    .ar{align-self:center;width:0;height:0;border-top:11px solid transparent;border-bottom:11px solid transparent;
+      border-left:15px solid %(gold)s;margin:0 4px;}
+    """ % {"gold": GOLD}
+    steps = [("Mulai dari target kecil", INDIGO), ("Kaitkan dengan rutinitas", "#2563eb"),
+             ("Beri penghargaan kecil", "#0e7490"), ("Catat kemajuan", "#15a34a"), ("Jaga konsistensi", "#ea7317")]
+    parts = []
+    for i, (t, c) in enumerate(steps):
+        parts.append('<div class=st style="background:%s"><div class=in>%s</div></div>' % (c, t))
+        if i < len(steps) - 1:
+            parts.append('<div class=ar></div>')
+    render("<div class=flow>%s</div>" % "".join(parts), css, 19, 3.6, "fig_3_2.png")
+
+
 if __name__ == "__main__":
     fig_1_1()
+    fig_1_2()
     fig_2_1()
+    fig_2_2()
     fig_3_1()
-    print("Selesai membuat 3 gambar.")
+    fig_3_2()
+    print("Selesai membuat 6 gambar.")

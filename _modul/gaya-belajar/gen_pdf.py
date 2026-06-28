@@ -83,6 +83,7 @@ figcaption { font-weight:bold; font-size:11pt; color:#1f3c88; margin-top:5pt; }
 /* MOTTO */
 .motto { margin-top:14pt; padding:12pt 16pt; background:#eef1fb; border-left:5pt solid #c8a24a;
   border-radius:8px; font-style:italic; font-size:12.5pt; color:#1f3c88; text-align:center; }
+.signoff { break-before:avoid; text-align:right; margin-top:14pt; line-height:1.5; }
 """
 
 def r_blocks(blocks, sub_ids=None, bno=None):
@@ -146,7 +147,7 @@ def build_content():
     p.append('<section class=sec id=kp><h1 class=major>KATA PENGANTAR</h1>')
     for t in K.KATA_PENGANTAR:
         p.append("<p>%s</p>" % esc(t))
-    p.append('<p style="text-align:right;margin-top:14pt">Jakarta, %s<br>Tim Penyusun,<br>%s</p>' % ("Juni 2026", esc(K.KELOMPOK)))
+    p.append('<p class=signoff>Jakarta, %s<br>Tim Penyusun,<br>%s</p>' % ("Juni 2026", esc(K.KELOMPOK)))
     p.append("</section>")
 
     # kumpulkan id subbab tiap bab dulu (perlu utk TOC) -> render bab ke string + simpan struktur
@@ -254,7 +255,7 @@ def build_content():
     for t in K.PENUTUP:
         p.append("<p>%s</p>" % esc(t))
     p.append('<div class=motto>%s</div>' % esc(K.MOTTO))
-    p.append('<p style="text-align:right;margin-top:14pt">Jakarta, Juni 2026<br>Tim Penyusun, %s</p>' % esc(K.KELOMPOK))
+    p.append('<p class=signoff>Jakarta, Juni 2026<br>Tim Penyusun, %s</p>' % esc(K.KELOMPOK))
     p.append("</section>")
 
     p.append("</body></html>")
