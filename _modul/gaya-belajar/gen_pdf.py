@@ -262,51 +262,41 @@ def build_content():
     return "".join(p)
 
 # --------------------------- COVER ---------------------------
-COVER_CSS = """
+COVER_CSS = '''
 @page { size:A4; margin:0; }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Caladea','Liberation Serif',serif; }
-.page { width:21cm; height:29.7cm; position:relative; background:#ffffff; }
-.top { position:absolute; top:0; left:0; right:0; height:9.2cm;
-  background:linear-gradient(135deg,#1f3c88 0%,#2a4ba0 60%,#0e7490 100%); color:#fff; }
-.top .tag { position:absolute; top:1.3cm; left:0; right:0; text-align:center; font-size:12.5pt; letter-spacing:3pt; color:#cdd6f4; }
-.top .mk { position:absolute; top:2.2cm; left:0; right:0; text-align:center; font-size:12pt; color:#e7ecfb; }
-.top .big { position:absolute; top:3.7cm; left:1.5cm; right:1.5cm; text-align:center; font-size:40pt; font-weight:bold; letter-spacing:1pt; }
-.top .sub { position:absolute; top:6.6cm; left:2cm; right:2cm; text-align:center; font-size:15pt; color:#f1cf7a; }
-.band { position:absolute; top:9.2cm; left:0; right:0; height:0.32cm; background:#c8a24a; }
-.cards { position:absolute; top:10.6cm; left:2.2cm; right:2.2cm; display:flex; gap:0.5cm; }
-.vc { flex:1; border-radius:12px; color:#fff; padding:12pt 8pt; text-align:center; }
-.vc .lt { font-size:24pt; font-weight:bold; }
-.vc .nm { font-size:11.5pt; margin-top:3pt; }
-.author { position:absolute; top:16.0cm; left:2.5cm; right:2.5cm; text-align:center; }
-.author .lbl { font-size:12pt; color:#1f3c88; letter-spacing:2pt; font-weight:bold; }
-.author .nm { font-size:13.5pt; margin-top:6pt; color:#1c2536; line-height:1.7; }
-.foot { position:absolute; bottom:1.6cm; left:2cm; right:2cm; text-align:center; color:#1c2536; line-height:1.55; }
-.foot .org { font-size:13pt; font-weight:bold; color:#1f3c88; }
-.foot .yr { font-size:13pt; font-weight:bold; margin-top:4pt; }
-.frame { position:absolute; bottom:1.0cm; left:1.0cm; right:1.0cm; top:1.0cm; border:2pt solid #1f3c88; border-radius:6px; pointer-events:none; }
-"""
+.page { width:21cm; height:29.7cm; position:relative; }
+.bg { position:absolute; top:0; left:0; width:21cm; height:29.7cm; object-fit:cover; }
+.title { position:absolute; left:1.8cm; right:1.8cm; top:2.6cm; text-align:center; color:#fff;
+  text-shadow:0 2pt 8pt rgba(8,12,30,.55); }
+.title .mk { font-size:12.5pt; letter-spacing:2pt; color:#f1cf7a; font-weight:bold; }
+.title .big { font-size:46pt; font-weight:bold; letter-spacing:1pt; line-height:1.05; margin-top:8pt; }
+.title .sub { font-size:14.5pt; margin-top:10pt; color:#f3e6c2; font-style:italic; }
+.auth { position:absolute; left:2.6cm; right:2.6cm; top:22.4cm; text-align:center; color:#fff;
+  background:linear-gradient(180deg, rgba(12,18,45,0), rgba(12,18,45,.45) 22%, rgba(12,18,45,.5));
+  border-radius:12px; padding:14pt 10pt; }
+.auth .lbl { font-size:11.5pt; letter-spacing:1.5pt; color:#f1cf7a; font-weight:bold; }
+.auth .nm { font-size:12.5pt; margin-top:3pt; }
+.auth .org { font-size:11.5pt; margin-top:9pt; line-height:1.5; }
+.auth .yr { font-size:13pt; font-weight:bold; margin-top:6pt; color:#f1cf7a; }
+'''
 
 def build_cover():
+    bg = img_uri("cover_base.png")
     tim = "".join('<div class=nm>%s (%s)</div>' % (esc(n), esc(npm)) for n, npm in K.TIM)
-    return ("""<!DOCTYPE html><html><head><meta charset=utf-8><style>%s</style></head><body><div class=page>
-    <div class=top>
-      <div class=tag>MODUL BELAJAR</div>
-      <div class=mk>%s</div>
-      <div class=big>%s</div>
-      <div class=sub>%s</div>
-    </div>
-    <div class=band></div>
-    <div class=cards>
-      <div class=vc style="background:#2563eb"><div class=lt>V</div><div class=nm>Visual</div></div>
-      <div class=vc style="background:#ea7317"><div class=lt>A</div><div class=nm>Auditorial</div></div>
-      <div class=vc style="background:#15a34a"><div class=lt>K</div><div class=nm>Kinestetik</div></div>
-    </div>
-    <div class=author><div class=lbl>Disusun oleh Tim Penyusun</div>%s</div>
-    <div class=foot><div class=org>%s</div><div class=org>%s</div><div class=org>%s</div><div class=yr>%s</div></div>
-    <div class=frame></div>
-    </div></body></html>""" % (COVER_CSS, esc(K.MATKUL), esc(K.JUDUL), esc(K.SUBJUDUL), tim,
-                                esc(K.PRODI), esc(K.FAKULTAS), esc(K.KAMPUS), esc(K.TAHUN)))
+    return (
+        "<!DOCTYPE html><html><head><meta charset=utf-8><style>" + COVER_CSS + "</style></head><body>"
+        "<div class=page>"
+        '<img class=bg src="' + bg + '">'
+        '<div class=title><div class=mk>MODUL BELAJAR &nbsp;|&nbsp; ' + esc(K.MATKUL) + '</div>'
+        '<div class=big>' + esc(K.JUDUL) + '</div>'
+        '<div class=sub>' + esc(K.SUBJUDUL) + '</div></div>'
+        '<div class=auth><div class=lbl>Disusun oleh Tim Penyusun (' + esc(K.KELOMPOK) + ')</div>' + tim
+        + '<div class=org>' + esc(K.PRODI) + '<br>' + esc(K.FAKULTAS) + '<br>' + esc(K.KAMPUS) + '</div>'
+        + '<div class=yr>' + esc(K.TAHUN) + '</div></div>'
+        "</div></body></html>"
+    )
 
 def main():
     from weasyprint import HTML
