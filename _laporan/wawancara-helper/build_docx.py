@@ -20,11 +20,17 @@ OUTDIR = os.path.abspath(os.path.join(HERE, "..", "..", "LAPORAN_FINAL"))
 OUTDOCX = os.path.join(OUTDIR, "Laporan Wawancara Helper - Kelompok - Pengembangan Profesi Konseling - FINISH.docx")
 OUTPDF = os.path.join(OUTDIR, "Laporan Wawancara Helper - Kelompok - Pengembangan Profesi Konseling - FINISH.pdf")
 FOTODIR = os.path.join(HERE, "_foto_dl")
+ASSETDIR = os.path.join(HERE, "assets")
+LOGO = os.path.join(ASSETDIR, "logo-unindra.jpg")
 FONT = "Times New Roman"
 TEXT_W_CM = 14.0  # lebar area teks A4 (21 - 4 - 3)
-NAVY = RGBColor(0x1F, 0x3A, 0x5F)       # aksen navy utama
-NAVY_DK = RGBColor(0x15, 0x29, 0x3F)    # navy gelap
-NAVY_HEX = "1F3A5F"
+BLACK = RGBColor(0x00, 0x00, 0x00)      # seluruh teks hitam
+NAVY = BLACK                            # alias: tidak ada lagi warna navy pada teks
+NAVY_DK = BLACK
+RULE_HEX = "000000"                     # garis bawah judul: hitam tipis
+TBL_HEAD_HEX = "ECECEC"                 # header tabel abu-abu lembut
+TBL_BORDER_HEX = "CCCCCC"               # garis tabel abu-abu tipis
+TBL_ZEBRA_HEX = "F7F7F7"                # zebra sangat samar
 
 # ---------------------------------------------------------------- scan PDF
 def scan_pages():
@@ -86,8 +92,8 @@ def para(doc, text, size=12, after=6, before=0, align=WD_ALIGN_PARAGRAPH.JUSTIFY
     set_font(r, size, bold=bold)
     return p
 
-def para_bottom_rule(p, color=NAVY_HEX, sz="12"):
-    """Garis bawah aksen pada paragraf (untuk judul BAB / bagian)."""
+def para_bottom_rule(p, color=RULE_HEX, sz="6"):
+    """Garis bawah tipis pada paragraf (judul BAB / bagian) - hitam, halus."""
     pPr = p._p.get_or_add_pPr()
     pbdr = OxmlElement("w:pBdr")
     bottom = OxmlElement("w:bottom")
@@ -125,25 +131,12 @@ def callout(doc, text):
     ppr_flag(p, "widowControl"); ppr_flag(p, "keepLines")
     pPr = p._p.get_or_add_pPr()
     shd = OxmlElement("w:shd"); shd.set(qn("w:val"), "clear")
-    shd.set(qn("w:fill"), "EEF2F8"); pPr.append(shd)
+    shd.set(qn("w:fill"), TBL_ZEBRA_HEX); pPr.append(shd)
     pbdr = OxmlElement("w:pBdr")
     left = OxmlElement("w:left"); left.set(qn("w:val"), "single")
-    left.set(qn("w:sz"), "24"); left.set(qn("w:space"), "6"); left.set(qn("w:color"), NAVY_HEX)
+    left.set(qn("w:sz"), "18"); left.set(qn("w:space"), "6"); left.set(qn("w:color"), TBL_BORDER_HEX)
     pbdr.append(left); pPr.append(pbdr)
     r = p.add_run(text); set_font(r, 12)
-    return p
-
-def band(doc, text):
-    """Pita aksen pada halaman judul: latar navy, teks putih."""
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    pf = p.paragraph_format
-    pf.space_before = Pt(0); pf.space_after = Pt(14)
-    ls15(pf)
-    pPr = p._p.get_or_add_pPr()
-    shd = OxmlElement("w:shd"); shd.set(qn("w:val"), "clear")
-    shd.set(qn("w:fill"), NAVY_HEX); pPr.append(shd)
-    r = p.add_run(text); set_font(r, 12, bold=True, color=RGBColor(0xFF, 0xFF, 0xFF))
     return p
 
 def numbered(doc, items):
@@ -178,26 +171,26 @@ def shade(cell, fill):
 def set_borders(table):
     tblPr = table._tbl.tblPr; borders = OxmlElement("w:tblBorders")
     for edge in ("top", "left", "bottom", "right", "insideH", "insideV"):
-        e = OxmlElement("w:" + edge); e.set(qn("w:val"), "single"); e.set(qn("w:sz"), "6"); e.set(qn("w:color"), "6F86AD"); borders.append(e)
+        e = OxmlElement("w:" + edge); e.set(qn("w:val"), "single"); e.set(qn("w:sz"), "4"); e.set(qn("w:color"), TBL_BORDER_HEX); borders.append(e)
     tblPr.append(borders)
 
 def add_table(doc, tb):
     cap = doc.add_paragraph(); cap.paragraph_format.space_after = Pt(3); cap.paragraph_format.space_before = Pt(6)
     cap.paragraph_format.keep_with_next = True
     ppr_flag(cap, "widowControl")
-    rc = cap.add_run(tb["judul"]); set_font(rc, 11, italic=True, color=NAVY)
+    rc = cap.add_run(tb["judul"]); set_font(rc, 11, italic=True, color=BLACK)
     t = doc.add_table(rows=1, cols=len(tb["head"])); t.alignment = WD_TABLE_ALIGNMENT.CENTER
     set_borders(t)
     hdr = t.rows[0].cells
     for j, h in enumerate(tb["head"]):
-        shade(hdr[j], NAVY_HEX); pr = hdr[j].paragraphs[0]; pr.paragraph_format.space_after = Pt(2)
-        rr = pr.add_run(h); set_font(rr, 11, bold=True, color=RGBColor(0xFF, 0xFF, 0xFF))
+        shade(hdr[j], TBL_HEAD_HEX); pr = hdr[j].paragraphs[0]; pr.paragraph_format.space_after = Pt(2)
+        rr = pr.add_run(h); set_font(rr, 11, bold=True, color=BLACK)
     trPr = t.rows[0]._tr.get_or_add_trPr(); th = OxmlElement("w:tblHeader"); th.set(qn("w:val"), "true"); trPr.append(th)
     for ri, row in enumerate(tb["rows"]):
         cells = t.add_row().cells
         for j, c in enumerate(row):
             if ri % 2 == 1:
-                shade(cells[j], "F2F5FA")
+                shade(cells[j], TBL_ZEBRA_HEX)
             pr = cells[j].paragraphs[0]; pr.paragraph_format.space_after = Pt(2)
             rr = pr.add_run(c); set_font(rr, 11)
     for row in t.rows:
@@ -248,25 +241,35 @@ def build():
     def tp(text, size, bold=False, italic=False, before=0, after=6, upper=False, color=None, rule=False):
         p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         pf = p.paragraph_format; pf.space_before = Pt(before); pf.space_after = Pt(after); ls15(pf)
-        r = p.add_run(text.upper() if upper else text); set_font(r, size, bold=bold, italic=italic, color=color)
+        r = p.add_run(text.upper() if upper else text); set_font(r, size, bold=bold, italic=italic, color=color or BLACK)
         if rule:
             para_bottom_rule(p)
         return p
-    band(doc, "LAPORAN TUGAS MATA KULIAH PENGEMBANGAN PROFESI KONSELING")
-    tp(I["judul"], 18, bold=True, before=18, after=10, upper=True, color=NAVY, rule=True)
-    tp(I["subjudul"], 12.5, italic=True, before=6, after=20, color=NAVY_DK)
+    # Cover sederhana: judul, subjudul, mata kuliah, dosen, LOGO (tengah),
+    # "Disusun oleh" + nama/NIM, lalu prodi/fakultas/universitas/tahun. Semua teks hitam.
+    tp(I["judul"], 18, bold=True, before=18, after=12, upper=True)
+    tp(I["subjudul"], 12.5, italic=True, before=4, after=20)
     tp("Disusun untuk memenuhi tugas mata kuliah", 12, after=2)
     tp(I["matakuliah"], 12, bold=True, after=8)
-    tp("Dosen Pengampu: " + I["dosen"], 12, after=20)
-    tp("UNIVERSITAS INDRAPRASTA PGRI", 13, bold=True, after=14, color=NAVY)
+    tp("Dosen Pengampu: " + I["dosen"], 12, after=18)
+    # Logo UNINDRA di tengah (atau placeholder bila gagal diunduh)
+    logo_missing = False
+    if os.path.exists(LOGO):
+        lp = doc.add_paragraph(); lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        lp.paragraph_format.space_before = Pt(2); lp.paragraph_format.space_after = Pt(18)
+        ppr_flag(lp, "keepLines")
+        lp.add_run().add_picture(LOGO, width=Cm(4.2))
+    else:
+        logo_missing = True
+        tp("[Logo UNINDRA]", 12, before=18, after=18)
     tp("Disusun oleh:", 12, bold=True, after=8)
     for n, nim in I["penyusun"]:
         tp(n, 12.5, bold=True, after=1)
         tp("NIM. " + nim, 11.5, after=8)
-    tp(I["prodi"], 12.5, bold=True, before=18, after=2, upper=True, color=NAVY)
-    tp(I["fakultas"], 12.5, bold=True, after=2, upper=True, color=NAVY)
-    tp(I["universitas"], 12.5, bold=True, after=2, upper=True, color=NAVY)
-    tp(I["tahun"], 12.5, bold=True, after=2, color=NAVY)
+    tp(I["prodi"], 12.5, bold=True, before=18, after=2, upper=True)
+    tp(I["fakultas"], 12.5, bold=True, after=2, upper=True)
+    tp(I["universitas"], 12.5, bold=True, after=2, upper=True)
+    tp(I["tahun"], 12.5, bold=True, after=2)
 
     # ---- Section 2: ISI (footer PAGE field) ----
     body = doc.add_section(WD_SECTION.NEW_PAGE)
@@ -345,6 +348,8 @@ def build():
     enable_update_fields(doc)
     os.makedirs(OUTDIR, exist_ok=True)
     doc.save(OUTDOCX)
+    if logo_missing:
+        print("PERINGATAN: logo UNINDRA tidak ditemukan ->", LOGO, "(placeholder dipakai)")
     if missing:
         print("PERINGATAN: foto tidak ditemukan ->", missing)
     print("SAVED:", OUTDOCX, os.path.getsize(OUTDOCX), "bytes")

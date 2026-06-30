@@ -187,6 +187,33 @@ add("11. Detail Guru BK: 'SMA Negeri 49 Jakarta' & '32 tahun' ada",
     sekolah_ada and lama_ada,
     "SMA Negeri 49 Jakarta=%s; 32 tahun=%s" % (sekolah_ada, lama_ada))
 
+# ---- 12. cover memuat logo (gambar) ATAU placeholder dicatat ----
+def page_has_image(page):
+    try:
+        res = page.get("/Resources")
+        xo = res.get("/XObject") if res else None
+        if xo:
+            xo = xo.get_object()
+            for o in xo.values():
+                if o.get_object().get("/Subtype") == "/Image":
+                    return True
+    except Exception:
+        pass
+    return False
+
+cover_text = pages[0] if npage > 0 else ""
+pdf_logo = page_has_image(reader.pages[0]) if npage > 0 else False
+pdf_placeholder = "[Logo UNINDRA]" in cover_text
+# di DOCX: logo menambah 1 gambar di luar foto Lampiran 3
+docx_logo = docx_ok and (docx_imgs > len(photos_present))
+docx_placeholder = docx_ok and any("[Logo UNINDRA]" in p.text for p in d.paragraphs)
+pdf_cover_ok = pdf_logo or pdf_placeholder
+docx_cover_ok = docx_logo or docx_placeholder
+add("12. Cover memuat logo UNINDRA (gambar) atau placeholder",
+    pdf_cover_ok and docx_cover_ok,
+    "PDF: logo=%s, placeholder=%s; DOCX: logo=%s (gambar=%d, foto=%d), placeholder=%s"
+    % (pdf_logo, pdf_placeholder, docx_logo, docx_imgs, len(photos_present), docx_placeholder))
+
 # ---- cetak ----
 print("=" * 70)
 print("QA - LAPORAN WAWANCARA DENGAN HELPER PEMBERI LAYANAN")
