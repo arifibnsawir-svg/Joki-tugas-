@@ -35,7 +35,7 @@ flat = " ".join(full.split())
 # ---- 1. semua bagian ada dan urut ----
 order_labels = ["KATA PENGANTAR", "DAFTAR ISI", "BAB I", "PENDAHULUAN", "BAB II",
                 "LANDASAN TEORI", "BAB III", "METODE KEGIATAN", "BAB IV",
-                "HASIL WAWANCARA DAN PEMBAHASAN", "BAB V", "PENUTUP",
+                "HASIL WAWANCARA DAN PEMBAHASAN", "BAB V", "KESIMPULAN DAN SARAN",
                 "DAFTAR PUSTAKA", "LAMPIRAN 1", "LAMPIRAN 2", "LAMPIRAN 3"]
 positions = []
 ok_order = True

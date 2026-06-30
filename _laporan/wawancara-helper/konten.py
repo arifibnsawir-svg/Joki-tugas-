@@ -287,7 +287,7 @@ PEMBAHASAN = [
 # BAB V PENUTUP
 # =====================================================================
 BAB5 = {
-    "no": "V", "judul": "PENUTUP",
+    "no": "V", "judul": "KESIMPULAN DAN SARAN",
     "isi": [
         ("h2", "5.1 Kesimpulan"),
         ("p", "Berdasarkan hasil wawancara terhadap empat helper dari bidang yang berbeda, dapat disimpulkan bahwa keberhasilan dalam memberikan layanan bantuan sangat dipengaruhi oleh keterampilan komunikasi, empati, dan kemampuan memahami kebutuhan orang yang dilayani secara menyeluruh. Meskipun berasal dari profesi yang berlainan, anggota TNI, petugas pemadam kebakaran, bidan, dan guru bimbingan dan konseling sama-sama menjalankan peran sebagai helper yang melindungi, menenangkan, memberi informasi, dan mendampingi."),
@@ -308,7 +308,7 @@ BAB5 = {
 # =====================================================================
 DAFTAR_PUSTAKA = [
     "Brammer, L. M., & MacDonald, G. (2003). The helping relationship: Process and skills (8th ed.). Allyn & Bacon. https://www.pearson.com/en-us/subject-catalog/p/helping-relationship-the-process-and-skills/P200000000826/9780205355204",
-    "Corey, G. (2017). Theory and practice of counseling and psychotherapy (10th ed.). Cengage Learning. https://www.cengage.com/c/student/9780357671429/",
+    "Corey, G. (2017). Theory and practice of counseling and psychotherapy (10th ed.). Cengage Learning. https://openlibrary.org/works/OL21156W/Theory_and_practice_of_counseling_and_psychotherapy",
     "Gladding, S. T. (2018). Counseling: A comprehensive profession (8th ed.). Pearson. https://www.pearson.com/en-us/subject-catalog/p/counseling:-a-comprehensive-profession/P200000001101/9780136874720",
     "Lubis, N. L. (2011). Memahami dasar-dasar konseling dalam teori dan praktik. Kencana. https://www.gramedia.com/author/author-namora-lumongga-lubis-msc-phd-dan-hasnida-phd-psikolog",
     "Prayitno, & Amti, E. (2004). Dasar-dasar bimbingan dan konseling. Rineka Cipta. https://ejournal.unp.ac.id/index.php/konselor/article/view/8754",
