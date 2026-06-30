@@ -199,8 +199,9 @@ def add_table(doc, tb):
 
 def toc_line(doc, label, page, lvl1=True):
     p = doc.add_paragraph(); pf = p.paragraph_format
-    pf.line_spacing_rule = WD_LINE_SPACING.MULTIPLE; pf.line_spacing = 1.3
-    pf.space_after = Pt(5 if lvl1 else 2)
+    # Spasi Daftar Isi dirapatkan agar muat satu halaman (mirror PDF). Teks isi tetap 1.5.
+    pf.line_spacing_rule = WD_LINE_SPACING.MULTIPLE; pf.line_spacing = 1.12
+    pf.space_after = Pt(2 if lvl1 else 1)
     if not lvl1:
         pf.left_indent = Cm(0.9)
     pf.tab_stops.add_tab_stop(Cm(TEXT_W_CM), WD_TAB_ALIGNMENT.RIGHT, WD_TAB_LEADER.DOTS)

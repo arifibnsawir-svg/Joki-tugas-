@@ -126,7 +126,7 @@ add("5. Humanizer: 0 em-dash, 0 en-dash, 0 kutip keriting, 0 emoji",
     emdash == 0 and endash == 0 and curly == 0 and len(emoji) == 0,
     "em-dash=%d, en-dash=%d, kutip-keriting=%d, emoji=%d" % (emdash, endash, curly, len(emoji)))
 
-# ---- 6. tanpa halaman kosong / heading menggantung ----
+# ---- 6. tanpa halaman kosong / heading menggantung / halaman hampir kosong ----
 blank = [i + 1 for i in range(1, npage) if len(pages[i].strip()) < 5]
 # heading menggantung: halaman yang hanya berisi "BAB X" tanpa isi lain
 dangling = []
@@ -134,9 +134,23 @@ for i, t in enumerate(pages):
     s = " ".join(t.split())
     if re.fullmatch(r"BAB [IVX]+", s):
         dangling.append(i + 1)
-add("6. Tanpa halaman kosong / heading menggantung",
-    len(blank) == 0 and len(dangling) == 0,
-    "halaman kosong: %s; heading menggantung: %s" % (blank or "tidak ada", dangling or "tidak ada"))
+# halaman HAMPIR kosong: non-cover (indeks > 0), panjang teks 1..120 karakter.
+# Ini menandai baris tunggal yang menggantung (mis. satu entri Daftar Isi yang
+# tumpah ke halaman berikutnya). Halaman yang memang pendek namun sah
+# (lanjutan paragraf/daftar isi normal tanpa dot-leader) DIKECUALIKAN; baris
+# Daftar Isi yang menggantung dikenali dari pola titik-titik (dot leader).
+near_empty = []
+for i in range(1, npage):
+    s = " ".join(pages[i].split())
+    L = len(s)
+    if 1 <= L <= 120:
+        is_toc_orphan = re.search(r"\.{4,}", s) is not None  # baris Daftar Isi menggantung
+        if is_toc_orphan:
+            near_empty.append("hal %d (%d char, dot-leader)" % (i + 1, L))
+add("6. Tanpa halaman kosong / heading menggantung / halaman hampir kosong",
+    len(blank) == 0 and len(dangling) == 0 and len(near_empty) == 0,
+    "halaman kosong: %s; heading menggantung: %s; halaman hampir kosong: %s"
+    % (blank or "tidak ada", dangling or "tidak ada", near_empty or "tidak ada"))
 
 # ---- 7. PDF & DOCX ada & dapat dibuka ----
 docx_ok = False
@@ -213,6 +227,31 @@ add("12. Cover memuat logo UNINDRA (gambar) atau placeholder",
     pdf_cover_ok and docx_cover_ok,
     "PDF: logo=%s, placeholder=%s; DOCX: logo=%s (gambar=%d, foto=%d), placeholder=%s"
     % (pdf_logo, pdf_placeholder, docx_logo, docx_imgs, len(photos_present), docx_placeholder))
+
+# ---- 13. Daftar Isi muat dalam SATU halaman PDF ----
+# Cari halaman yang memuat "DAFTAR ISI"; halaman berikutnya HARUS sudah masuk
+# badan dokumen (memuat "BAB I" + "PENDAHULUAN"), BUKAN sisa entri Daftar Isi
+# (mis. baris "LAMPIRAN ..." dengan dot leader yang tumpah ke halaman kedua).
+di_idx = next((i for i, t in enumerate(pages) if "DAFTAR ISI" in " ".join(t.split())), None)
+di_detail = ""
+di_ok = False
+if di_idx is None:
+    di_detail = "halaman DAFTAR ISI tidak ditemukan"
+elif di_idx + 1 >= npage:
+    di_detail = "tidak ada halaman setelah DAFTAR ISI"
+else:
+    nxt = " ".join(pages[di_idx + 1].split())
+    starts_body = ("BAB I" in nxt and "PENDAHULUAN" in nxt)
+    # sisa entri Daftar Isi yang menggantung: baris pendek berisi dot leader
+    toc_leftover = bool(re.search(r"\.{4,}", nxt)) and ("LAMPIRAN" in nxt or len(nxt) <= 120)
+    di_ok = starts_body and not toc_leftover
+    di_detail = ("DAFTAR ISI di hal %d; hal berikut (hal %d) %s badan dokumen; "
+                 "sisa entri menggantung: %s") % (
+        di_idx + 1, di_idx + 2,
+        "memulai" if starts_body else "TIDAK memulai",
+        "ADA -> " + nxt[:60] if toc_leftover else "tidak ada")
+add("13. Daftar Isi muat dalam satu halaman PDF (tanpa tumpah ke halaman kedua)",
+    di_ok, di_detail)
 
 # ---- cetak ----
 print("=" * 70)

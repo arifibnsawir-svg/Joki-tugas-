@@ -63,12 +63,16 @@ h3 { font-size:12pt; font-weight:bold; font-style:italic; color:#000; margin:10p
 .sec { break-before:page; }
 
 /* ====== DAFTAR ISI ====== */
-ul.toc { list-style:none; padding:0; margin:0; }
-ul.toc li { margin:0 0 6pt 0; line-height:1.4; }
+/* Spasi sengaja dirapatkan agar seluruh Daftar Isi muat dalam SATU halaman.
+   Hanya daftar ini yang lebih rapat; teks isi tetap spasi 1.5. */
+ul.toc { list-style:none; padding:0; margin:0; line-height:1.22; }
+ul.toc li { margin:0 0 2pt 0; line-height:1.22; }
 ul.toc li.lvl2 { margin-left:0.9cm; }
 ul.toc a { color:#000; text-decoration:none; display:block; }
 ul.toc a::after { content: leader('.') target-counter(attr(href url), page); }
 ul.toc li.lvl1 > a { font-weight:bold; color:#000; }
+/* Judul "DAFTAR ISI" sedikit lebih rapat agar list punya ruang cukup. */
+#di h1.major { margin-bottom:10pt; }
 
 /* ====== DAFTAR & NOMOR ====== */
 ol.num { margin:0 0 8pt 0; padding-left:1.2cm; }
