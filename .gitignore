@@ -1,0 +1,7 @@
+# Foto dokumentasi hasil unduhan (jangan dikomit)
+_laporan/wawancara-helper/_foto_dl/
+
+
+# Cache Python
+__pycache__/
+*.pyc
