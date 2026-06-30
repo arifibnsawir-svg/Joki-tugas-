@@ -5,3 +5,16 @@ _laporan/wawancara-helper/_foto_dl/
 # Cache Python
 __pycache__/
 *.pyc
+
+
+# File turunan render (dibuat ulang otomatis, jangan dikomit)
+_modul/*/assets/cover_render.png
+
+# Folder unduhan sementara / foto pribadi narasumber (jangan dikomit)
+_*_dl/
+*_dl/
+_foto_dl/
+_pv/
+_qc/
+_qcall/
+_qc6/

@@ -33,9 +33,10 @@ Yang SAMA antar buku hanya judul bab. Selebihnya WAJIB beda: kalimat, contoh, su
 |------|---------|--------------|--------------------|------------|------------|----------------|--------|
 | 1 | Nurul Syifa | Naratif-reflektif | Tengah bawah | Prosa + refleksi | Dot leader rata (bab) | APA | SELESAI |
 | 2 | Naila Diyana Nabilah | Akademik-terstruktur | Pojok kanan bawah | Tabel berwarna (header biru lembut) | Bertingkat (bab+subbab) | IEEE [n] | SELESAI |
-| 3 | Balqis Sandra Lejla | Kontekstual-aplikatif | Pojok luar (kiri-kanan ganti) | Poin-poin/bullet + kotak studi kasus | Leader titik format beda | Harvard | BELUM |
-| 4 | Lidya Ellen Febriasalsa | Dialogis/tanya-jawab | Tengah atas (header) | Kotak tanya-jawab + tabel ringkas | Tanpa leader, indentasi | MLA | BELUM |
-| 5 | Nurjali Sangadji | KHUSUS: file asli 100% GAMBAR (62 gambar, 0 teks). Perlu dibangun ulang jadi teks. | ditentukan | ditentukan | ditentukan | ditentukan | BELUM |
+| 3 | Balqis Sandra Lejla | Kontekstual-aplikatif | Pojok luar (kiri-kanan ganti) | Poin-poin/bullet + kotak studi kasus emas | Leader titik 01-08 | Harvard | SELESAI |
+| 4 | Lidya Ellen Febriasalsa | Dialogis/tanya-jawab | Tengah atas (header) | Kotak tanya-jawab teal + tabel hijau | Tanpa leader, indentasi | MLA | SELESAI |
+| 5 | Nurjali Sangadji | Ekspositori ringkas-padat | Bawah tengah (garis pemisah) | Kotak Poin Inti + Istilah Kunci (indigo) | Banded (band warna per bab) | Chicago | SELESAI |
+| 6 | Revalina Damayanti | Tematik problem-solusi | Pojok kanan atas | Kotak Akar Masalah + Langkah Solusi (maroon) | Nomor rata kanan + garis | Vancouver | SELESAI (tambahan) |
 
 Catatan: tabel/warna dibuat lembut & profesional. Tiap buku tetap WAJIB lolos QA penuh.
 
@@ -80,7 +81,18 @@ GOTCHA penting:
 ## 7. Progres
 - Buku 1 (Nurul Syifa): SELESAI, QA 13/13 PASS. FINAL/Buku 1 - Nurul Syifa - PKN - FINISH.pdf & .docx. 64 hal isi. DNA naratif-reflektif, APA.
 - Buku 2 (Naila): SELESAI, QA 16/16 PASS. 62 hal isi. DNA akademik + 10 tabel berwarna + no.halaman kanan + daftar isi bertingkat + IEEE. Bab 5 sudah sesuai silabus (HAM jadi sub-bab).
-- Buku 3, 4, 5: BELUM. Kerjakan di sesi baru mengikuti DNA & pipeline di atas.
+- Buku 3 (Balqis Sandra Lejla): SELESAI, QA SEMUA PASS. 64 hal isi. DNA kontekstual-aplikatif + kotak studi kasus emas + no.halaman pojok luar + TOC leader 01-08 + Harvard.
+- Buku 4 (Lidya Ellen Febriasalsa): SELESAI, QA SEMUA PASS. 62 hal isi. DNA dialogis + kotak teal + tabel hijau + no.halaman tengah-atas + TOC tanpa-leader + MLA.
+- Buku 5 (Nurjali Sangadji): SELESAI, QA SEMUA PASS. 63 hal isi. DNA ekspositori-padat + kotak Poin Inti/Istilah Kunci (indigo) + no.halaman bawah-tengah + TOC banded + Chicago. Sumber asli 100% gambar, direkonstruksi ke 8 topik silabus.
+- Buku 6 (Revalina Damayanti) [TAMBAHAN]: SELESAI, QA SEMUA PASS. 65 hal isi. Dibangun dari nol. DNA tematik problem-solusi + kotak Akar Masalah/Langkah Solusi (maroon/emas) + no.halaman pojok kanan atas + TOC nomor rata kanan + Vancouver. Cover didesain (Garuda Pancasila domain publik).
+- Anti-plagiat antar-buku (sekelas BK): overlap 8-gram tertinggi 1.47% (semua < 2%, aman).
+
+## 7b. Modul (mata kuliah Belajar dan Pembelajaran)
+- Modul "Gaya Belajar" (Kelompok 10: Balqis, Motiara, Nurjali): SELESAI, QA rubrik dosen 100% PASS. Output di MODUL_FINAL/ (PDF + DOCX). Pipeline di _modul/gaya-belajar/. Aturan dosen di .kiro/steering/aturan-modul-bnp.md.
+- Premium: cover desain (ChatGPT) + 6 diagram ChatGPT (tes typo 0/6) + 7 tabel berwarna + 13 kotak + Evaluasi 20 soal+kunci + Refleksi 6 + Pustaka 9 (APA7 link terverifikasi). Format A4 Cambria 12 spasi 1,5 margin 4/3/3/3.
+
+## 7c. Laporan (mata kuliah Pengembangan Profesi Konseling)
+- Laporan Wawancara Helper (4 mahasiswa: Nurul Syifa, Lidya Ellen, Balqis, Devia Zahra): output di LAPORAN_FINAL/. Pipeline + data + checkpoint di _laporan/wawancara-helper/. Foto narasumber TIDAK dikomit (privasi), ada di Google Drive.
 
 ## 8. Cara melanjutkan di sesi baru
 1. Clone repo arifibnsawir-svg/Joki-tugas-.
