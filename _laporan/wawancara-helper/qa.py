@@ -163,6 +163,30 @@ add("8. Foto dirujuk di Lampiran 3 (atau placeholder dicatat)",
     "foto tersedia: %s; placeholder: %s; gambar di DOCX: %d"
     % (photos_present, photos_missing or "tidak ada", docx_imgs))
 
+# ---- 9. identitas Guru BK asli (Elisabeth Suwartini, tanpa nama samaran) ----
+nama_asli_ada = "Elisabeth Suwartini" in flat
+fulana_ada = ("Fulana" in flat) or ("samaran" in flat)
+add("9. Identitas Guru BK asli: 'Elisabeth Suwartini' ada, 'Fulana'/'samaran' TIDAK ada",
+    nama_asli_ada and not fulana_ada,
+    "Elisabeth Suwartini=%s; Fulana/samaran=%s" % (nama_asli_ada, fulana_ada))
+
+# ---- 10. Kata Pengantar Islami ----
+kp_start = flat.find("KATA PENGANTAR")
+di_start = flat.find("DAFTAR ISI")
+kp_text = flat[kp_start:di_start] if (kp_start != -1 and di_start != -1 and di_start > kp_start) else flat
+islami_ada = "Allah Subhanahu wa Ta'ala" in kp_text
+puji_tuhan_ada = "Puji Tuhan" in flat
+add("10. Kata Pengantar Islami: 'Allah Subhanahu wa Ta'ala' ada, 'Puji Tuhan' TIDAK ada",
+    islami_ada and not puji_tuhan_ada,
+    "Allah Subhanahu wa Ta'ala (di KP)=%s; Puji Tuhan=%s" % (islami_ada, puji_tuhan_ada))
+
+# ---- 11. detail identitas Guru BK: tempat & lama pengalaman ----
+sekolah_ada = "SMA Negeri 49 Jakarta" in flat
+lama_ada = "32 tahun" in flat
+add("11. Detail Guru BK: 'SMA Negeri 49 Jakarta' & '32 tahun' ada",
+    sekolah_ada and lama_ada,
+    "SMA Negeri 49 Jakarta=%s; 32 tahun=%s" % (sekolah_ada, lama_ada))
+
 # ---- cetak ----
 print("=" * 70)
 print("QA - LAPORAN WAWANCARA DENGAN HELPER PEMBERI LAYANAN")

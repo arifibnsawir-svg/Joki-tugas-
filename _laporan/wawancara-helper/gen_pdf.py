@@ -17,66 +17,89 @@ def esc(t):
     return _html.escape(str(t))
 
 CSS = r"""
+/* ====== PALET WARNA AKSEN (deep navy) ====== */
+/* accent       #1F3A5F   navy utama
+   accent-dark  #15293F   navy gelap (band judul)
+   tint-head    #DCE4F0   tint header tabel
+   tint-zebra   #F2F5FA   tint baris genap
+   tint-callout #EEF2F8   tint kotak kutipan */
+
 @page {
   size: A4;
   margin: 3cm 3cm 3cm 4cm;
-  @bottom-center { content: counter(page); font-family:'Liberation Serif',serif; font-size:11pt; }
+  @bottom-center { content: counter(page); font-family:'Liberation Serif',serif; font-size:11pt; color:#1F3A5F; }
 }
-@page :first { @bottom-center { content: normal; } }
+@page :first { margin: 1cm; @bottom-center { content: normal; } }
 
 html { font-family:'Liberation Serif','Times New Roman',serif; }
 body { font-size:12pt; line-height:1.5; text-align:justify; color:#000; hyphens:none; }
 p { margin:0 0 6pt 0; orphans:2; widows:2; text-indent:0; }
 p.lead { margin:0 0 8pt 0; }
 
-/* HALAMAN JUDUL */
-.titlepage { text-align:center; page-break-after:always; height:100%; }
-.titlepage .judul { font-size:16pt; font-weight:bold; margin-top:1.5cm; line-height:1.4; text-transform:uppercase; }
-.titlepage .subjudul { font-size:12pt; font-style:italic; margin:14pt 1.5cm 0 1.5cm; line-height:1.4; }
-.titlepage .label { font-size:12pt; margin-top:24pt; }
-.titlepage .logo { font-size:12pt; font-weight:bold; margin:24pt 0; }
-.titlepage .penyusun { font-size:12pt; margin-top:18pt; line-height:1.5; }
-.titlepage .footer { font-size:14pt; font-weight:bold; margin-top:24pt; line-height:1.5; text-transform:uppercase; }
+/* ====== HALAMAN JUDUL ====== */
+.titlepage { page-break-after:always; height:100%; box-sizing:border-box;
+  padding:0; text-align:center; }
+.cover-frame { box-sizing:border-box; min-height:27.4cm; padding:1.6cm 2.0cm 2.0cm 2.0cm;
+  border:3pt solid #1F3A5F; margin:0; }
+.cover-band { background:#1F3A5F; color:#fff; margin:-1.6cm -2.0cm 1.2cm -2.0cm;
+  padding:14pt 1.2cm; font-size:12pt; letter-spacing:1pt; text-transform:uppercase; font-weight:bold; }
+.cover-rule { height:3pt; background:#1F3A5F; width:5cm; margin:14pt auto; }
+.titlepage .judul { font-size:20pt; font-weight:bold; color:#1F3A5F; margin-top:1.0cm; line-height:1.35; text-transform:uppercase; }
+.titlepage .subjudul { font-size:12.5pt; font-style:italic; color:#15293F; margin:14pt 1.0cm 0 1.0cm; line-height:1.45; }
+.titlepage .label { font-size:12pt; margin-top:20pt; }
+.titlepage .logo { font-size:13pt; font-weight:bold; color:#1F3A5F; margin:22pt 0 6pt 0; letter-spacing:0.5pt; }
+.titlepage .penyusun-head { font-size:12pt; margin-top:18pt; font-weight:bold; }
+.titlepage .mhs { margin:8pt 0; line-height:1.35; }
+.titlepage .mhs .nm { font-size:12.5pt; font-weight:bold; }
+.titlepage .mhs .nim { font-size:11.5pt; }
+.titlepage .footer { font-size:13.5pt; font-weight:bold; color:#1F3A5F; margin-top:22pt; line-height:1.55; text-transform:uppercase; }
 
-/* JUDUL BAGIAN & BAB */
-h1.major { font-size:14pt; font-weight:bold; text-align:center; margin:0 0 16pt 0; text-transform:uppercase; break-after:avoid; }
-.babhead { text-align:center; margin:0 0 18pt 0; break-after:avoid; }
-.babhead .babno { font-size:14pt; font-weight:bold; }
-.babhead .babtitle { font-size:14pt; font-weight:bold; margin-top:4pt; }
-h2 { font-size:12pt; font-weight:bold; margin:12pt 0 6pt 0; break-after:avoid; }
-h3 { font-size:12pt; font-weight:bold; font-style:italic; margin:10pt 0 4pt 0; break-after:avoid; }
+/* ====== JUDUL BAGIAN & BAB ====== */
+h1.major { font-size:14pt; font-weight:bold; text-align:center; color:#1F3A5F;
+  margin:0 0 16pt 0; padding-bottom:6pt; text-transform:uppercase; break-after:avoid;
+  border-bottom:2pt solid #1F3A5F; }
+.babhead { text-align:center; margin:0 0 18pt 0; padding-bottom:8pt; break-after:avoid;
+  border-bottom:2pt solid #1F3A5F; }
+.babhead .babno { font-size:14pt; font-weight:bold; color:#1F3A5F; letter-spacing:1pt; }
+.babhead .babtitle { font-size:14pt; font-weight:bold; color:#1F3A5F; margin-top:4pt; }
+h2 { font-size:12pt; font-weight:bold; color:#1F3A5F; margin:12pt 0 6pt 0; break-after:avoid; }
+h3 { font-size:12pt; font-weight:bold; font-style:italic; color:#15293F; margin:10pt 0 4pt 0; break-after:avoid; }
 .sec { break-before:page; }
 
-/* DAFTAR ISI */
+/* ====== DAFTAR ISI ====== */
 ul.toc { list-style:none; padding:0; margin:0; }
 ul.toc li { margin:0 0 6pt 0; line-height:1.4; }
 ul.toc li.lvl2 { margin-left:0.9cm; }
 ul.toc a { color:#000; text-decoration:none; display:block; }
 ul.toc a::after { content: leader('.') target-counter(attr(href url), page); }
-ul.toc li.lvl1 > a { font-weight:bold; }
+ul.toc li.lvl1 > a { font-weight:bold; color:#1F3A5F; }
 
-/* DAFTAR & NOMOR */
+/* ====== DAFTAR & NOMOR ====== */
 ol.num { margin:0 0 8pt 0; padding-left:1.2cm; }
 ol.num li { margin:0 0 4pt 0; }
 
-/* TABEL */
-table.t { width:100%; border-collapse:collapse; margin:6pt 0 12pt 0; font-size:11pt; break-inside:avoid; }
-table.t caption { caption-side:top; font-style:italic; font-size:11pt; text-align:left; margin-bottom:5pt; }
-table.t th { background:#dfe6f0; border:1px solid #6f86ad; padding:5pt 7pt; text-align:left; font-weight:bold; }
-table.t td { border:1px solid #aab6cc; padding:5pt 7pt; vertical-align:top; }
-table.t tr:nth-child(even) td { background:#f3f6fb; }
+/* ====== KOTAK KUTIPAN (callout motivasi) ====== */
+.callout { background:#EEF2F8; border-left:4pt solid #1F3A5F; padding:7pt 10pt;
+  margin:4pt 0 10pt 0; break-inside:avoid; text-align:justify; }
 
-/* DAFTAR PUSTAKA (APA hanging indent) */
+/* ====== TABEL ====== */
+table.t { width:100%; border-collapse:collapse; margin:6pt 0 12pt 0; font-size:11pt; break-inside:avoid; }
+table.t caption { caption-side:top; font-style:italic; font-size:11pt; text-align:left; color:#1F3A5F; margin-bottom:5pt; }
+table.t th { background:#1F3A5F; color:#fff; border:1px solid #1F3A5F; padding:5pt 7pt; text-align:left; font-weight:bold; }
+table.t td { border:1px solid #B7C2D6; padding:5pt 7pt; vertical-align:top; }
+table.t tr:nth-child(even) td { background:#F2F5FA; }
+
+/* ====== DAFTAR PUSTAKA (APA hanging indent) ====== */
 ul.ref { list-style:none; padding:0; margin:0; }
 ul.ref li { margin:0 0 10pt 0; padding-left:1.2cm; text-indent:-1.2cm; word-break:break-word; }
 
-/* LAMPIRAN */
+/* ====== LAMPIRAN ====== */
 .qa { margin:0 0 8pt 0; }
-.qa .q { font-weight:bold; }
+.qa .q { font-weight:bold; color:#1F3A5F; }
 .foto { text-align:center; margin:12pt 0 16pt 0; break-inside:avoid; }
-.foto img { max-width:11cm; max-height:9cm; border:1px solid #888; }
+.foto img { max-width:11cm; max-height:9cm; border:2pt solid #1F3A5F; padding:2pt; }
 .foto .cap { font-size:11pt; font-style:italic; margin-top:5pt; }
-.placeholder { width:10cm; height:6cm; border:1px dashed #888; margin:0 auto; line-height:6cm; color:#555; }
+.placeholder { width:10cm; height:6cm; border:1px dashed #1F3A5F; margin:0 auto; line-height:6cm; color:#555; }
 """
 
 def render_blocks(blocks):
@@ -91,6 +114,8 @@ def render_blocks(blocks):
             out.append("<p>%s</p>" % esc(b[1]))
         elif kind == "lead":
             out.append('<p class="lead">%s</p>' % esc(b[1]))
+        elif kind == "callout":
+            out.append('<div class="callout">%s</div>' % esc(b[1]))
         elif kind == "num":
             out.append("<ol class=num>" + "".join("<li>%s</li>" % esc(x) for x in b[1]) + "</ol>")
         elif kind == "table":
@@ -120,17 +145,20 @@ def img_data_uri(path):
 
 def title_page():
     I = K.IDENTITAS
-    p = ['<section class="titlepage">']
+    p = ['<section class="titlepage"><div class="cover-frame">']
+    p.append('<div class="cover-band">Laporan Tugas Mata Kuliah Pengembangan Profesi Konseling</div>')
     p.append('<div class="judul">%s</div>' % esc(I["judul"]))
+    p.append('<div class="cover-rule"></div>')
     p.append('<div class="subjudul">%s</div>' % esc(I["subjudul"]))
-    p.append('<div class="label">Disusun untuk memenuhi tugas mata kuliah<br>%s</div>' % esc(I["matakuliah"]))
+    p.append('<div class="label">Disusun untuk memenuhi tugas mata kuliah<br><strong>%s</strong></div>' % esc(I["matakuliah"]))
     p.append('<div class="label">Dosen Pengampu: %s</div>' % esc(I["dosen"]))
     p.append('<div class="logo">UNIVERSITAS INDRAPRASTA PGRI</div>')
-    rows = "".join("%s &nbsp;&nbsp; %s<br>" % (esc(n), esc(nim)) for n, nim in I["penyusun"])
-    p.append('<div class="penyusun">Disusun oleh:<br>%s</div>' % rows)
+    p.append('<div class="penyusun-head">Disusun oleh:</div>')
+    for n, nim in I["penyusun"]:
+        p.append('<div class="mhs"><div class="nm">%s</div><div class="nim">NIM. %s</div></div>' % (esc(n), esc(nim)))
     p.append('<div class="footer">%s<br>%s<br>%s<br>%s</div>' % (
         esc(I["prodi"]), esc(I["fakultas"]), esc(I["universitas"]), esc(I["tahun"])))
-    p.append("</section>")
+    p.append("</div></section>")
     return "".join(p)
 
 def toc():

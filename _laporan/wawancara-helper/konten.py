@@ -36,7 +36,7 @@ IDENTITAS = {
 # KATA PENGANTAR
 # =====================================================================
 KATA_PENGANTAR = [
-    "Puji syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa atas rahmat dan karunia-Nya sehingga laporan yang berjudul \"Laporan Wawancara dengan Helper Pemberi Layanan\" ini dapat kami selesaikan dengan baik. Laporan ini disusun untuk memenuhi tugas mata kuliah Pengembangan Profesi Konseling pada Program Studi Bimbingan dan Konseling, Fakultas Ilmu Pendidikan dan Pengetahuan Sosial, Universitas Indraprasta PGRI.",
+    "Puji dan syukur kami panjatkan ke hadirat Allah Subhanahu wa Ta'ala atas limpahan rahmat dan karunia-Nya sehingga laporan yang berjudul \"Laporan Wawancara dengan Helper Pemberi Layanan\" ini dapat kami selesaikan dengan baik. Laporan ini disusun untuk memenuhi tugas mata kuliah Pengembangan Profesi Konseling pada Program Studi Bimbingan dan Konseling, Fakultas Ilmu Pendidikan dan Pengetahuan Sosial, Universitas Indraprasta PGRI.",
     "Penyusunan laporan ini bertujuan untuk memahami secara langsung pengalaman para helper atau pemberi layanan bantuan di lapangan. Kami melakukan wawancara terhadap empat narasumber dari bidang yang berbeda, yaitu anggota TNI Angkatan Darat, petugas pemadam kebakaran, bidan, dan guru bimbingan dan konseling. Melalui kegiatan ini kami berusaha melihat benang merah antara praktik membantu di berbagai profesi dengan konsep helper yang dipelajari dalam ilmu bimbingan dan konseling.",
     "Kami menyadari bahwa kegiatan wawancara dan penulisan laporan ini tidak akan terlaksana tanpa bantuan banyak pihak. Oleh karena itu, kami mengucapkan terima kasih kepada Ibu Burju Ruth, M.Pd., Kons. selaku dosen pengampu yang telah membimbing kami, kepada keempat narasumber yang telah meluangkan waktu dan berbagi pengalaman, serta kepada rekan-rekan dan keluarga yang telah memberikan dukungan selama proses penyusunan.",
     "Kami menyadari laporan ini masih memiliki kekurangan. Oleh sebab itu, kritik dan saran yang membangun sangat kami harapkan demi penyempurnaan pada penulisan berikutnya. Semoga laporan ini bermanfaat bagi pembaca, khususnya bagi mahasiswa bimbingan dan konseling yang sedang mendalami profesi membantu.",
@@ -140,10 +140,10 @@ BAB3 = {
                 ["Helper A", "Lukman Hidayat", "TNI Angkatan Darat", "Pusenopik 1", "5 tahun"],
                 ["Helper B", "Rinno", "Petugas Pemadam Kebakaran", "Sektor Ciracas", "1 tahun"],
                 ["Helper C", "Priska Ayu Anjastari", "Bidan", "TPMB Rukiyati S.Keb", "10 tahun (sejak 2016)"],
-                ["Helper D", "Ibu Fulana (nama samaran)", "Guru Bimbingan dan Konseling", "SMA", "Sekitar 30 tahun"],
+                ["Helper D", "Elisabeth Suwartini", "Guru Bimbingan dan Konseling", "SMA Negeri 49 Jakarta", "32 tahun"],
             ],
         }),
-        ("p", "Khusus untuk Helper D, nama yang digunakan adalah nama samaran atas permintaan narasumber. Hal ini sekaligus menjadi penerapan asas kerahasiaan yang dijunjung dalam praktik bimbingan dan konseling."),
+        ("p", "Keempat narasumber bersedia disebutkan identitasnya dalam laporan ini. Meskipun demikian, seluruh informasi yang bersifat pribadi dan menyangkut pihak yang dilayani tetap kami jaga sesuai asas kerahasiaan yang dijunjung dalam praktik bimbingan dan konseling."),
 
         ("h2", "3.3 Teknik Pengumpulan Data"),
         ("p", "Teknik pengumpulan data yang digunakan adalah wawancara semi terstruktur. Melalui teknik ini, pewawancara berpegang pada daftar pertanyaan pokok yang telah disiapkan, namun tetap memberi ruang bagi narasumber untuk menjawab secara leluasa dan bagi pewawancara untuk menggali jawaban lebih dalam. Dengan begitu, jawaban yang diperoleh lebih kaya tanpa kehilangan arah pembahasan."),
@@ -231,12 +231,12 @@ HELPER_C = {
 }
 
 HELPER_D = {
-    "kode": "Helper D", "nama": "Ibu Fulana (nama samaran)", "profesi": "Guru Bimbingan dan Konseling",
-    "tempat": "SMA", "lama": "Sekitar 30 tahun",
+    "kode": "Helper D", "nama": "Elisabeth Suwartini", "profesi": "Guru Bimbingan dan Konseling",
+    "tempat": "SMA Negeri 49 Jakarta", "lama": "32 tahun",
     "foto": "guru bk.jpg",
     "poin": [
-        ("Makna profesi dan peran utama", "Ibu Fulana memaknai profesi guru bimbingan dan konseling sebagai pendamping perkembangan peserta didik. Peran utamanya bukan menghukum, melainkan membantu siswa mengenali diri, menyelesaikan masalah, dan merencanakan masa depan."),
-        ("Perkembangan profesi dari awal hingga kini", "Selama hampir tiga puluh tahun mengabdi dan kini menjelang masa pensiun, ia menyaksikan layanan bimbingan dan konseling berkembang dari peran yang sering disalahpahami menjadi layanan yang semakin diakui penting bagi kesejahteraan siswa."),
+        ("Makna profesi dan peran utama", "Ibu Elisabeth Suwartini memaknai profesi guru bimbingan dan konseling sebagai pendamping perkembangan peserta didik. Peran utamanya bukan menghukum, melainkan membantu siswa mengenali diri, menyelesaikan masalah, dan merencanakan masa depan."),
+        ("Perkembangan profesi dari awal hingga kini", "Selama 32 tahun mengabdi dan kini menjelang masa pensiun, ia menyaksikan layanan bimbingan dan konseling berkembang dari peran yang sering disalahpahami menjadi layanan yang semakin diakui penting bagi kesejahteraan siswa."),
         ("Kompetensi paling penting", "Menurutnya, kompetensi yang paling penting adalah keterampilan mendengar aktif, empati, serta kemampuan membangun kepercayaan. Tanpa kepercayaan, siswa tidak akan terbuka menceritakan persoalannya."),
         ("Peran organisasi profesi", "Ia menyebut Asosiasi Bimbingan dan Konseling Indonesia berperan dalam menjaga mutu layanan melalui pelatihan, pengembangan keprofesian, dan penegakan kode etik. Organisasi profesi juga memperkuat posisi guru bimbingan dan konseling di sekolah."),
         ("Penerapan kode etik", "Kode etik ia terapkan terutama melalui asas kerahasiaan. Informasi yang disampaikan siswa ia jaga dengan ketat dan hanya dibuka untuk kepentingan siswa sesuai prosedur. Ia juga menghindari sikap menghakimi."),
@@ -333,7 +333,10 @@ def build_bab4():
                          "Berikut ringkasan jawaban narasumber atas lima belas butir pertanyaan."
                          % (h["nama"], h["profesi"].lower(), h["tempat"], h["lama"])))
         for i, (judul, teks) in enumerate(h["poin"], 1):
-            isi.append(("lead", "%d. %s. %s" % (i, judul, teks)))
+            if judul.startswith("Motivasi"):
+                isi.append(("callout", "%d. %s. %s" % (i, judul, teks)))
+            else:
+                isi.append(("lead", "%d. %s. %s" % (i, judul, teks)))
     isi.extend(PEMBAHASAN)
     return {"no": "IV", "judul": "HASIL WAWANCARA DAN PEMBAHASAN", "isi": isi}
 

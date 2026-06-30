@@ -22,6 +22,9 @@ OUTPDF = os.path.join(OUTDIR, "Laporan Wawancara Helper - Kelompok - Pengembanga
 FOTODIR = os.path.join(HERE, "_foto_dl")
 FONT = "Times New Roman"
 TEXT_W_CM = 14.0  # lebar area teks A4 (21 - 4 - 3)
+NAVY = RGBColor(0x1F, 0x3A, 0x5F)       # aksen navy utama
+NAVY_DK = RGBColor(0x15, 0x29, 0x3F)    # navy gelap
+NAVY_HEX = "1F3A5F"
 
 # ---------------------------------------------------------------- scan PDF
 def scan_pages():
@@ -83,7 +86,17 @@ def para(doc, text, size=12, after=6, before=0, align=WD_ALIGN_PARAGRAPH.JUSTIFY
     set_font(r, size, bold=bold)
     return p
 
-def heading(doc, text, size=14, align=WD_ALIGN_PARAGRAPH.CENTER, before=0, after=16, page_break=False, italic=False):
+def para_bottom_rule(p, color=NAVY_HEX, sz="12"):
+    """Garis bawah aksen pada paragraf (untuk judul BAB / bagian)."""
+    pPr = p._p.get_or_add_pPr()
+    pbdr = OxmlElement("w:pBdr")
+    bottom = OxmlElement("w:bottom")
+    bottom.set(qn("w:val"), "single"); bottom.set(qn("w:sz"), sz)
+    bottom.set(qn("w:space"), "4"); bottom.set(qn("w:color"), color)
+    pbdr.append(bottom)
+    pPr.append(pbdr)
+
+def heading(doc, text, size=14, align=WD_ALIGN_PARAGRAPH.CENTER, before=0, after=16, page_break=False, italic=False, color=NAVY, rule=False):
     p = doc.add_paragraph()
     pf = p.paragraph_format
     p.alignment = align
@@ -96,7 +109,41 @@ def heading(doc, text, size=14, align=WD_ALIGN_PARAGRAPH.CENTER, before=0, after
     if page_break:
         pf.page_break_before = True
     r = p.add_run(text)
-    set_font(r, size, bold=True, italic=italic)
+    set_font(r, size, bold=True, italic=italic, color=color)
+    if rule:
+        para_bottom_rule(p)
+    return p
+
+def callout(doc, text):
+    """Kotak kutipan motivasi: shading tipis + garis aksen di kiri."""
+    p = doc.add_paragraph()
+    pf = p.paragraph_format
+    p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    ls15(pf)
+    pf.space_before = Pt(4); pf.space_after = Pt(10)
+    pf.left_indent = Cm(0.4); pf.right_indent = Cm(0.2)
+    ppr_flag(p, "widowControl"); ppr_flag(p, "keepLines")
+    pPr = p._p.get_or_add_pPr()
+    shd = OxmlElement("w:shd"); shd.set(qn("w:val"), "clear")
+    shd.set(qn("w:fill"), "EEF2F8"); pPr.append(shd)
+    pbdr = OxmlElement("w:pBdr")
+    left = OxmlElement("w:left"); left.set(qn("w:val"), "single")
+    left.set(qn("w:sz"), "24"); left.set(qn("w:space"), "6"); left.set(qn("w:color"), NAVY_HEX)
+    pbdr.append(left); pPr.append(pbdr)
+    r = p.add_run(text); set_font(r, 12)
+    return p
+
+def band(doc, text):
+    """Pita aksen pada halaman judul: latar navy, teks putih."""
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    pf = p.paragraph_format
+    pf.space_before = Pt(0); pf.space_after = Pt(14)
+    ls15(pf)
+    pPr = p._p.get_or_add_pPr()
+    shd = OxmlElement("w:shd"); shd.set(qn("w:val"), "clear")
+    shd.set(qn("w:fill"), NAVY_HEX); pPr.append(shd)
+    r = p.add_run(text); set_font(r, 12, bold=True, color=RGBColor(0xFF, 0xFF, 0xFF))
     return p
 
 def numbered(doc, items):
@@ -138,19 +185,19 @@ def add_table(doc, tb):
     cap = doc.add_paragraph(); cap.paragraph_format.space_after = Pt(3); cap.paragraph_format.space_before = Pt(6)
     cap.paragraph_format.keep_with_next = True
     ppr_flag(cap, "widowControl")
-    rc = cap.add_run(tb["judul"]); set_font(rc, 11, italic=True, color=RGBColor(0x1F, 0x38, 0x64))
+    rc = cap.add_run(tb["judul"]); set_font(rc, 11, italic=True, color=NAVY)
     t = doc.add_table(rows=1, cols=len(tb["head"])); t.alignment = WD_TABLE_ALIGNMENT.CENTER
     set_borders(t)
     hdr = t.rows[0].cells
     for j, h in enumerate(tb["head"]):
-        shade(hdr[j], "DFE6F0"); pr = hdr[j].paragraphs[0]; pr.paragraph_format.space_after = Pt(2)
-        rr = pr.add_run(h); set_font(rr, 11, bold=True, color=RGBColor(0x1F, 0x38, 0x64))
+        shade(hdr[j], NAVY_HEX); pr = hdr[j].paragraphs[0]; pr.paragraph_format.space_after = Pt(2)
+        rr = pr.add_run(h); set_font(rr, 11, bold=True, color=RGBColor(0xFF, 0xFF, 0xFF))
     trPr = t.rows[0]._tr.get_or_add_trPr(); th = OxmlElement("w:tblHeader"); th.set(qn("w:val"), "true"); trPr.append(th)
     for ri, row in enumerate(tb["rows"]):
         cells = t.add_row().cells
         for j, c in enumerate(row):
             if ri % 2 == 1:
-                shade(cells[j], "F3F6FB")
+                shade(cells[j], "F2F5FA")
             pr = cells[j].paragraphs[0]; pr.paragraph_format.space_after = Pt(2)
             rr = pr.add_run(c); set_font(rr, 11)
     for row in t.rows:
@@ -170,13 +217,15 @@ def render_blocks(doc, blocks):
     for b in blocks:
         kind = b[0]
         if kind == "h2":
-            heading(doc, b[1], size=12, align=WD_ALIGN_PARAGRAPH.LEFT, before=10, after=4)
+            heading(doc, b[1], size=12, align=WD_ALIGN_PARAGRAPH.LEFT, before=10, after=4, color=NAVY)
         elif kind == "h3":
-            heading(doc, b[1], size=12, align=WD_ALIGN_PARAGRAPH.LEFT, before=8, after=3, italic=True)
+            heading(doc, b[1], size=12, align=WD_ALIGN_PARAGRAPH.LEFT, before=8, after=3, italic=True, color=NAVY_DK)
         elif kind == "p":
             para(doc, b[1])
         elif kind == "lead":
             para(doc, b[1])
+        elif kind == "callout":
+            callout(doc, b[1])
         elif kind == "num":
             numbered(doc, b[1])
         elif kind == "table":
@@ -196,23 +245,28 @@ def build():
     sec.footer.is_linked_to_previous = False
 
     I = K.IDENTITAS
-    def tp(text, size, bold=False, italic=False, before=0, after=6, upper=False):
+    def tp(text, size, bold=False, italic=False, before=0, after=6, upper=False, color=None, rule=False):
         p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         pf = p.paragraph_format; pf.space_before = Pt(before); pf.space_after = Pt(after); ls15(pf)
-        r = p.add_run(text.upper() if upper else text); set_font(r, size, bold=bold, italic=italic)
+        r = p.add_run(text.upper() if upper else text); set_font(r, size, bold=bold, italic=italic, color=color)
+        if rule:
+            para_bottom_rule(p)
         return p
-    tp(I["judul"], 16, bold=True, before=24, after=8, upper=True)
-    tp(I["subjudul"], 12, italic=True, after=20)
+    band(doc, "LAPORAN TUGAS MATA KULIAH PENGEMBANGAN PROFESI KONSELING")
+    tp(I["judul"], 18, bold=True, before=18, after=10, upper=True, color=NAVY, rule=True)
+    tp(I["subjudul"], 12.5, italic=True, before=6, after=20, color=NAVY_DK)
     tp("Disusun untuk memenuhi tugas mata kuliah", 12, after=2)
     tp(I["matakuliah"], 12, bold=True, after=8)
     tp("Dosen Pengampu: " + I["dosen"], 12, after=20)
-    tp("Disusun oleh:", 12, after=4)
+    tp("UNIVERSITAS INDRAPRASTA PGRI", 13, bold=True, after=14, color=NAVY)
+    tp("Disusun oleh:", 12, bold=True, after=8)
     for n, nim in I["penyusun"]:
-        tp("%s  (%s)" % (n, nim), 12, after=2)
-    tp(I["prodi"], 12, bold=True, before=20, after=2, upper=True)
-    tp(I["fakultas"], 12, bold=True, after=2, upper=True)
-    tp(I["universitas"], 12, bold=True, after=2, upper=True)
-    tp(I["tahun"], 12, bold=True, after=2)
+        tp(n, 12.5, bold=True, after=1)
+        tp("NIM. " + nim, 11.5, after=8)
+    tp(I["prodi"], 12.5, bold=True, before=18, after=2, upper=True, color=NAVY)
+    tp(I["fakultas"], 12.5, bold=True, after=2, upper=True, color=NAVY)
+    tp(I["universitas"], 12.5, bold=True, after=2, upper=True, color=NAVY)
+    tp(I["tahun"], 12.5, bold=True, after=2, color=NAVY)
 
     # ---- Section 2: ISI (footer PAGE field) ----
     body = doc.add_section(WD_SECTION.NEW_PAGE)
@@ -223,12 +277,12 @@ def build():
     page_field(fp)
 
     # KATA PENGANTAR
-    heading(doc, "KATA PENGANTAR")
+    heading(doc, "KATA PENGANTAR", rule=True)
     for t in K.KATA_PENGANTAR:
         para(doc, t)
 
     # DAFTAR ISI
-    heading(doc, "DAFTAR ISI", page_break=True)
+    heading(doc, "DAFTAR ISI", page_break=True, rule=True)
     toc_line(doc, "KATA PENGANTAR", pm["KATA PENGANTAR"], lvl1=True)
     for b in K.BAB_LIST:
         toc_line(doc, "BAB %s  %s" % (b["no"], b["judul"]), pm["bab" + b["no"]], lvl1=True)
@@ -243,11 +297,11 @@ def build():
     # BAB I - V
     for b in K.BAB_LIST:
         heading(doc, "BAB %s" % b["no"], size=14, page_break=True, after=4)
-        heading(doc, b["judul"], size=14, after=16)
+        heading(doc, b["judul"], size=14, after=16, rule=True)
         render_blocks(doc, b["isi"])
 
     # DAFTAR PUSTAKA
-    heading(doc, "DAFTAR PUSTAKA", size=14, page_break=True, after=16)
+    heading(doc, "DAFTAR PUSTAKA", size=14, page_break=True, after=16, rule=True)
     for ref in K.DAFTAR_PUSTAKA:
         p = doc.add_paragraph(); pf = p.paragraph_format; ls15(pf)
         pf.space_after = Pt(8); pf.left_indent = Cm(1.2); pf.first_line_indent = Cm(-1.2)
@@ -256,12 +310,12 @@ def build():
         r = p.add_run(ref); set_font(r, 12)
 
     # LAMPIRAN 1
-    heading(doc, "LAMPIRAN 1: DAFTAR PERTANYAAN WAWANCARA", size=14, page_break=True, after=12)
+    heading(doc, "LAMPIRAN 1: DAFTAR PERTANYAAN WAWANCARA", size=14, page_break=True, after=12, rule=True)
     para(doc, "Berikut lima belas butir pertanyaan yang disusun berdasarkan Rencana Pembelajaran Semester dan diajukan kepada seluruh narasumber dengan penyesuaian bahasa sesuai profesi.")
     numbered(doc, K.PERTANYAAN)
 
     # LAMPIRAN 2
-    heading(doc, "LAMPIRAN 2: TRANSKRIP WAWANCARA", size=14, page_break=True, after=12)
+    heading(doc, "LAMPIRAN 2: TRANSKRIP WAWANCARA", size=14, page_break=True, after=12, rule=True)
     for h in K.HELPERS:
         heading(doc, "Transkrip %s: %s (%s)" % (h["kode"], h["nama"], h["profesi"]),
                 size=12, align=WD_ALIGN_PARAGRAPH.LEFT, before=8, after=4)
@@ -270,7 +324,7 @@ def build():
             para(doc, teks, after=6)
 
     # LAMPIRAN 3 (foto)
-    heading(doc, "LAMPIRAN 3: DOKUMENTASI KEGIATAN", size=14, page_break=True, after=12)
+    heading(doc, "LAMPIRAN 3: DOKUMENTASI KEGIATAN", size=14, page_break=True, after=12, rule=True)
     para(doc, "Berikut dokumentasi kegiatan wawancara bersama keempat narasumber.")
     missing = []
     for h in K.HELPERS:
