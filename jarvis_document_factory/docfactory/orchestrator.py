@@ -54,8 +54,6 @@ def render_all(spec, out_dir: str, basename: str = "document", *, request: str =
         pdf_path_for_docx = pdf_out
 
     if "docx" in fmts and _has_toc(spec) and pdf_path_for_docx is None:
-        # DOCX has a TOC but no PDF was requested: render a throwaway PDF just to
-        # scan accurate page numbers, then discard it.
         temp_pdf = os.path.join(out_dir, _TOC_SCAN_TMP)
         pdf_renderer.render(spec, temp_pdf)
         pdf_path_for_docx = temp_pdf

@@ -70,6 +70,11 @@ python3 run.py SPEC.json --out OUTDIR [--basename NAMA] [--request "minimal slid
 Exit 0 hanya jika gate PASS untuk semua format (status DONE); selain itu non-zero
 (AWAITING_GATE) dengan daftar cek yang gagal.
 
+### Hasil: baca dari JSON report, jangan menebak
+run.py mencetak JSON report yang berisi `page_count` DAN `word_count` untuk tiap
+output — dihitung langsung dari teks FILE JADI (bukan estimasi dari SPEC). Selalu
+baca dari sana, jangan pernah menebak panjang/jumlah kata dari teks SPEC mentah.
+
 ### Pra-cek SPEC (WAJIB sebelum run.py)
 Sebelum memanggil run.py, jalankan validator pra-render untuk menangkap SPEC
 yang salah dengan pesan JELAS (field apa yang kurang), bukan crash misterius:
@@ -119,3 +124,4 @@ nomor cocok), `images_real` (semua gambar dari file nyata).
 - [ ] Humanizer + cite-or-abstain jalan sebelum render.
 - [ ] Semua figure punya path yang ada (kalau tidak: perbaiki SPEC, jangan paksa).
 - [ ] `gate` PASS untuk tiap format sebelum menyebut DONE.
+- [ ] `word_count` dibaca dari JSON report run.py, bukan ditebak dari teks SPEC.

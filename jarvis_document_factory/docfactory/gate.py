@@ -17,7 +17,7 @@ import re
 from .citation import CITE_PAIR, CITE_SINGLE, _surname_of_reference
 from .humanizer import is_humanizer_clean
 from .images import referenced_figure_refs, verified_figure_refs
-from .readers import read_docx_paragraph_texts, read_pdf_pages, read_pptx_slide_texts
+from .readers import count_words, read_docx_paragraph_texts, read_pdf_pages, read_pptx_slide_texts
 from .spec import CheckResult, GateVerdict
 
 NEAR_EMPTY_THRESHOLD = 10
@@ -274,10 +274,6 @@ def gate(spec, fmt, file_path, *, pdf_path=None) -> GateVerdict:
     # 2) citation_consistency (two-way)
     def _citation():
         if fmt == "pptx":
-            # Deck condenses content: chapter body prose (and its citations)
-            # may not appear on slides, so a rendered-deck scan would falsely
-            # flag a reference as never-cited. The deck's citations are always
-            # a subset of the SPEC's, so check integrity against the SPEC body.
             body = _spec_body_text(spec)
         else:
             ref_title = _references_title(spec)
@@ -296,7 +292,6 @@ def gate(spec, fmt, file_path, *, pdf_path=None) -> GateVerdict:
     def _blank():
         if pages is None:
             return True, "not applicable for %s (no page model)" % fmt
-        # skip the title/cover page (index 0), which is intentionally spaced
         return check_no_blank_page(pages[1:] if len(pages) > 1 else pages)
     run("no_blank_page", _blank)
 
@@ -307,7 +302,7 @@ def gate(spec, fmt, file_path, *, pdf_path=None) -> GateVerdict:
         return check_no_dangling_heading(pages)
     run("no_dangling_heading", _dangling)
 
-    # 6) toc_accurate (runs on every document; verifies where a TOC exists)
+    # 6) toc_accurate
     def _toc():
         if pages is None:
             return True, "not applicable for %s (no page model)" % fmt
@@ -325,4 +320,6 @@ def gate(spec, fmt, file_path, *, pdf_path=None) -> GateVerdict:
     failed = [c for c in checks if not c.passed]
     verdict = "PASS" if not failed else "FAIL"
     page_count = len(pages) if pages is not None else 0
-    return GateVerdict(verdict=verdict, failed_checks=failed, page_count=page_count)
+    # Word count from the rendered file, not SPEC estimation.
+    word_count = count_words(fmt, file_path)
+    return GateVerdict(verdict=verdict, failed_checks=failed, page_count=page_count, word_count=word_count)

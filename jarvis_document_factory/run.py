@@ -52,6 +52,7 @@ def main(argv=None):
             fmt: {
                 "path": r.out_path,
                 "page_count": r.page_count,
+                "word_count": r.word_count,
                 "verdict": result.verdicts[fmt].verdict,
                 "failed_checks": [
                     {"check": c.check_id, "detail": c.detail}

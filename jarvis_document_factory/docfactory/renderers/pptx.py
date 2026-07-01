@@ -12,6 +12,7 @@ import importlib.util
 import os
 
 from ..images import verified_figure_refs
+from ..readers import count_words
 from ..spec import RenderResult
 
 DECK_LAYOUTS = ("cover", "section", "bullets", "two_col", "closing", "image")
@@ -154,8 +155,6 @@ def build_deck_spec(spec, style_mode: str = "house") -> dict:
         "slides": slides,
     }
     if style_mode == "minimal":
-        # Minimal style still goes through the house renderer; the accents are
-        # neutralized so the deck reads plain rather than designed.
         deck["theme"] = {"accent": "888888", "accent2": "666666", "head_font": "Calibri"}
     return deck
 
@@ -167,9 +166,12 @@ def render(spec, out_path: str, *, pdf_path: str | None = None, request: str = "
     out_dir = os.path.dirname(os.path.abspath(out_path))
     os.makedirs(out_dir, exist_ok=True)
     facts = render_deck(deck_spec, out_path)
+    # Word count from the rendered file, not SPEC estimation.
+    word_count = count_words("pptx", out_path)
     return RenderResult(
         fmt="pptx",
         out_path=out_path,
         page_count=int(facts.get("slide_count", 0)),
+        word_count=word_count,
         warnings=[],
     )
