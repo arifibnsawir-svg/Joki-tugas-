@@ -4,13 +4,15 @@ render_all produces exactly one file per requested format from the same
 validated SPEC. The Audit/Rancang/Sistemasi/Iterasi loop and the gate wiring
 live in run_pipeline.
 
-PIPA4 auto-wiring (CHECKPOINT 12.29): after factory gate PASS for academic
-docs, auto-trigger PIPA4 council via pipa4_gate.sh. Fail-open, scoped to
-is_academic=true only.
+PIPA4 auto-wiring (CHECKPOINT 12.29 / RESUME): after factory gate PASS for
+academic docs, auto-trigger PIPA4 council via pipa4_gate.sh. Hook lives in
+~/.hermes/scripts/pipa4_hook.py (repo jarvis/scripts/). Fail-open: jika
+PIPA4 tidak terpasang di Acer, skip graceful.
 """
 from __future__ import annotations
 
 import os
+import sys
 
 from .readers import read_text
 from .renderers import docx as docx_renderer
@@ -20,7 +22,6 @@ from .citation import apply_citation_layer
 from .gate import gate as run_gate
 from .humanizer import humanize_spec
 from .images import assert_referenced_images_exist, resolve_figures
-from .pipa4_hook import run as run_pipa4
 from .router import select_route
 from .spec import parse_spec
 from .validation import validate
@@ -153,6 +154,26 @@ def _apply_layers_and_validate(spec):
     return spec
 
 
+def _load_pipa4_hook():
+    """Load PIPA4 hook from ~/.hermes/scripts/ (repo jarvis/scripts/).
+
+    Fail-open: returns None jika PIPA4 tidak terpasang di Acer.
+    """
+    candidates = [
+        os.path.expanduser("~/.hermes/scripts/pipa4_hook.py"),
+        os.path.expanduser("~/jarvis/scripts/pipa4_hook.py"),
+    ]
+    for path in candidates:
+        if path and os.path.isfile(path):
+            import importlib.util
+
+            spec = importlib.util.spec_from_file_location("pipa4_hook", path)
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            return module
+    return None
+
+
 def run_pipeline(spec_or_dict, out_dir, basename="document", *, request="",
                  fix_fn=None, max_iterations=3):
     trace = []
@@ -204,11 +225,18 @@ def run_pipeline(spec_or_dict, out_dir, basename="document", *, request="",
     all_pass = status == "DONE"
     if is_academic and all_pass:
         trace.append("pipa4_council")
-        target_fmt = "pdf" if "pdf" in results else ("docx" if "docx" in results else None)
-        if target_fmt:
-            target_path = results[target_fmt].out_path
-            constraint = getattr(spec, "pipa4_constraint", None) or None
-            pipa4_result = run_pipa4(target_path, constraint_name=constraint)
+        pipa4_mod = _load_pipa4_hook()
+        if pipa4_mod is not None:
+            target_fmt = "pdf" if "pdf" in results else ("docx" if "docx" in results else None)
+            if target_fmt:
+                target_path = results[target_fmt].out_path
+                constraint = getattr(spec, "pipa4_constraint", None) or None
+                pipa4_result = pipa4_mod.run(target_path, constraint_name=constraint)
+        else:
+            pipa4_result = {
+                "triggered": False, "verdict": "SKIPPED",
+                "reason_skipped": "pipa4_hook.py tidak ditemukan di ~/.hermes/scripts/",
+            }
 
     return PipelineResult(
         status=status, route=route, results=results, verdicts=verdicts,

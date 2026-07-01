@@ -1,6 +1,6 @@
 ---
 name: jarvis-document-factory
-description: "Hasilkan dokumen PPTX, DOCX, dan PDF kualitas one-shot dari satu SPEC terstruktur. Dipicu saat diminta membuat/menyusun presentasi (.pptx), Word (.docx), atau PDF: laporan, makalah, modul, mini-book, slide sidang. Model mengeluarkan SPEC (JSON) lalu renderer deterministik yang membuat file; gate deterministik (Python) satu-satunya penentu DONE. Untuk dokumen akademik (is_academic=true), PIPA4 council (LLM audit via jarvis-reason) otomatis dipicu setelah factory gate PASS. Humanizer + cite-or-abstain selalu nyala; gambar hanya dari path yang benar-benar ada (anti-halu)."
+description: "Hasilkan dokumen PPTX, DOCX, dan PDF kualitas one-shot dari satu SPEC terstruktur. Dipicu saat diminta membuat/menyusun presentasi (.pptx), Word (.docx), atau PDF: laporan, makalah, modul, mini-book, slide sidang. Model mengeluarkan SPEC (JSON) lalu renderer deterministik yang membuat file; gate deterministik (Python) satu-satunya penentu DONE. Untuk dokumen akademik (is_academic=true), PIPA4 council (LLM audit via jarvis-reason) otomatis dipicu setelah factory gate PASS — hook di ~/.hermes/scripts/pipa4_hook.py (repo jarvis, fail-open, kill-switch PIPA4_AUTO=off). Humanizer + cite-or-abstain selalu nyala; gambar hanya dari path yang benar-benar ada (anti-halu)."
 version: 1.0.0
 license: MIT
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
@@ -46,7 +46,8 @@ Contoh pemicu: "buatkan PPT sidang", "susun laporan Word", "bikin makalah PDF",
    render ulang. Ulang sampai gate PASS.
 5. **PIPA4 Council (auto, akademik saja):** setelah factory gate PASS untuk `is_academic=true`,
    PIPA4 council otomatis dipicu lewat `pipa4_gate.sh` (LLM audit via jarvis-reason).
-   Hasilnya di JSON output (`pipa4_council`). Fail-open: kalau PIPA4 tidak terpasang
+   Hook: `~/.hermes/scripts/pipa4_hook.py` (repo jarvis/scripts/).
+   Hasilnya di JSON output (`pipa4_council`). Fail-open: kalau PIPA4/hook tidak terpasang
    di Acer, skip graceful — tidak menggagalkan factory gate. Kill-switch: `PIPA4_AUTO=off`.
 
 ## Kontrak SPEC (ringkas)

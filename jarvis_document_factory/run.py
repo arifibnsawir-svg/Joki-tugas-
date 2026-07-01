@@ -6,7 +6,8 @@ Router, the four-stage loop, and the deterministic gate.
 
 PIPA4 auto-wiring: untuk dokumen akademik (is_academic=true), PIPA4 council
 (LLM audit via jarvis-reason) otomatis dipicu setelah factory gate PASS.
-Hasilnya di JSON output. Fail-open. Kill-switch: PIPA4_AUTO=off.
+Hook di ~/.hermes/scripts/pipa4_hook.py (repo jarvis/scripts/).
+Fail-open. Kill-switch: PIPA4_AUTO=off.
 
 Usage:
     run.py SPEC.json --out OUTDIR [--basename NAME] [--request "..."]
