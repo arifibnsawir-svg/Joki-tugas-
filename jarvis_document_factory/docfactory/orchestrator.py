@@ -4,10 +4,11 @@ render_all produces exactly one file per requested format from the same
 validated SPEC. The Audit/Rancang/Sistemasi/Iterasi loop and the gate wiring
 live in run_pipeline.
 
-PIPA4 auto-wiring (CHECKPOINT 12.29 / RESUME): after factory gate PASS for
-academic docs, auto-trigger PIPA4 council via pipa4_gate.sh. Hook lives in
-~/.hermes/scripts/pipa4_hook.py (repo jarvis/scripts/). Fail-open: jika
-PIPA4 tidak terpasang di Acer, skip graceful.
+PIPA4 auto-wiring (CHECKPOINT 12.29 / RESUME): after factory gate PASS,
+auto-trigger PIPA4 council via pipa4_gate.sh. Triggered for ALL deliverable
+final (not just academic — business reports, proposals, decks, etc. also
+deserve council audit). Hook in ~/.hermes/scripts/pipa4_hook.py (repo
+jarvis/scripts/). Fail-open: skip if PIPA4 not installed on Acer.
 """
 from __future__ import annotations
 
@@ -219,11 +220,12 @@ def run_pipeline(spec_or_dict, out_dir, basename="document", *, request="",
 
     status = "DONE" if all(s.is_done for s in states.values()) and states else "AWAITING_GATE"
 
-    # ---- PIPA4 auto-wiring (academic only, after factory gate PASS) ----
+    # ---- PIPA4 auto-wiring (ALL deliverable final, after factory gate PASS) ----
+    # PIPA4 council triggers for any document type (academic, business, proposal,
+    # deck), not just is_academic=true. Constraint auto-detected based on doc_type.
     pipa4_result = {}
-    is_academic = getattr(spec, "is_academic", False)
     all_pass = status == "DONE"
-    if is_academic and all_pass:
+    if all_pass:
         trace.append("pipa4_council")
         pipa4_mod = _load_pipa4_hook()
         if pipa4_mod is not None:

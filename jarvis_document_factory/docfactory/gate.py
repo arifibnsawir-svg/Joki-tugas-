@@ -271,8 +271,13 @@ def gate(spec, fmt, file_path, *, pdf_path=None) -> GateVerdict:
     # 1) structure_order
     run("structure_order", lambda: check_structure_order(_expected_labels(spec, fmt), flat))
 
-    # 2) citation_consistency (two-way)
+    # 2) citation_consistency (two-way) — auto-skip when no references exist
+    #    (non-academic docs like business reports have no reference list;
+    #     running the check on them yields false positives like "Center"
+    #     from "Katadata Insight Center" matching CITE_SINGLE regex).
     def _citation():
+        if not spec.references:
+            return True, "skipped (no references — non-academic doc)"
         if fmt == "pptx":
             body = _spec_body_text(spec)
         else:
