@@ -19,7 +19,10 @@ import re
 # In-text APA author-year citations. Pair form handles "A dan B (2020)"
 # (Indonesian) and is matched before the single form.
 CITE_PAIR = re.compile(r"([A-Z][a-zA-Z]+)\s+dan\s+([A-Z][a-zA-Z]+)\s*\((\d{4})\)")
-CITE_SINGLE = re.compile(r"([A-Z][a-zA-Z]+)\s*\((\d{4})\)")
+# Single form: "Name (Year)", "Name, Year", "Name dkk. (Year)", "Name et al. (Year)".
+CITE_SINGLE = re.compile(
+    r"([A-Z][a-zA-Z]+)(?:\s+(?:dkk\.|et al\.))?[\,\(]\s*(\d{4})\)?"
+)
 
 _SURNAME = re.compile(r"([A-Z][a-zA-Z]+)")
 
