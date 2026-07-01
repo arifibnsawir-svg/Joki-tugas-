@@ -2,7 +2,7 @@
 
 The gate inspects a rendered file and returns a GateVerdict. It is the sole
 authority that declares an output done; the language model may at most propose
-the awaiting-gate state. The gate runs all seven checks for every format,
+the awaiting-gate state. The gate runs up to eight checks for every format,
 returns exactly PASS or FAIL, lists every failed check with a description on
 FAIL, and never crashes (each check is wrapped so an unexpected error becomes a
 FAIL, not an exception).
@@ -24,6 +24,9 @@ NEAR_EMPTY_THRESHOLD = 10
 _DANGLING = re.compile(r"BAB [IVXLCDM]+")
 _TRAILING_NUM = re.compile(r"^(.*\S)\s+(\d+)$")
 _EM_EN_DASH = ("\u2014", "\u2013")
+
+# Characters that signal a natural sentence/page ending.
+_SENTENCE_END = re.compile(r"[.!?\u3002\uFF01\uFF1F]$")
 
 
 # ---------------------------------------------------------------- pure checks
@@ -105,6 +108,40 @@ def check_images_real(paths):
     missing = [p for p in paths if not os.path.exists(p)]
     ok = not missing
     return ok, ("all images resolve to real files" if ok else "missing image files: %s" % missing)
+
+
+def check_no_truncated_text(pages):
+    """Pass iff no page body ends mid-word (text truncated by page overflow).
+
+    Detects the pattern seen in business report: paragraphs cut at page
+    boundaries where the last word is incomplete ("nongk", "st", "inconsis",
+    "Surve"). A healthy document ends each page body with a complete sentence
+    or a naturally hyphenated word.
+
+    Skips title page (index 0) and the last page (normal ending).
+    """
+    offenders = []
+    for i in range(1, len(pages) - 1):
+        text = pages[i].strip()
+        if not text:
+            continue
+        # Get the last token of the page body.
+        last_word = text.split()[-1] if text.split() else ""
+        # Skip if the last character is a sentence-ending punctuation.
+        if _SENTENCE_END.search(last_word[-1:] if last_word else ""):
+            continue
+        # Skip if the page ends with a digit (likely a page number artifact).
+        if last_word.isdigit():
+            continue
+        # Skip if it's a heading-like short line (ALL CAPS, <5 words page).
+        if len(text.split()) < 10:
+            continue
+        # A dangling short token (1-4 chars of lowercase-only, no sentence end)
+        # is a strong signal of mid-word truncation.
+        if 1 <= len(last_word) <= 4 and last_word.isalpha() and last_word.islower():
+            offenders.append(i + 1)
+    ok = not offenders
+    return ok, ("no truncated text" if ok else "truncated text on pages: %s (last words are incomplete — check renderer/text overflow)" % offenders)
 
 
 # ---------------------------------------------------------------- extraction
@@ -271,10 +308,7 @@ def gate(spec, fmt, file_path, *, pdf_path=None) -> GateVerdict:
     # 1) structure_order
     run("structure_order", lambda: check_structure_order(_expected_labels(spec, fmt), flat))
 
-    # 2) citation_consistency (two-way) — auto-skip when no references exist
-    #    (non-academic docs like business reports have no reference list;
-    #     running the check on them yields false positives like "Center"
-    #     from "Katadata Insight Center" matching CITE_SINGLE regex).
+    # 2) citation_consistency (auto-skip when no references)
     def _citation():
         if not spec.references:
             return True, "skipped (no references — non-academic doc)"
@@ -287,7 +321,7 @@ def gate(spec, fmt, file_path, *, pdf_path=None) -> GateVerdict:
         return check_citation_consistency(_cited_surnames(body), _ref_surnames(spec))
     run("citation_consistency", _citation)
 
-    # 3) humanizer_clean (strip deck chrome for pptx)
+    # 3) humanizer_clean
     def _humanizer():
         text = _strip_deck_chrome(flat) if fmt == "pptx" else flat
         return check_humanizer_clean(text)
@@ -321,6 +355,13 @@ def gate(spec, fmt, file_path, *, pdf_path=None) -> GateVerdict:
         paths = [spec.figure_by_ref(r).path for r in sorted(used) if spec.figure_by_ref(r)]
         return check_images_real(paths)
     run("images_real", _images)
+
+    # 8) no_truncated_text (detects mid-word page truncation)
+    def _truncated():
+        if pages is None or len(pages) <= 2:
+            return True, "not applicable (too few pages)"
+        return check_no_truncated_text(pages)
+    run("no_truncated_text", _truncated)
 
     failed = [c for c in checks if not c.passed]
     verdict = "PASS" if not failed else "FAIL"
