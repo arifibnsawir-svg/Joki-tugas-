@@ -150,6 +150,29 @@ def _references_title(spec):
     return "DAFTAR PUSTAKA"
 
 
+def _spec_body_text(spec) -> str:
+    """Body prose from the SPEC (all non-references sections).
+
+    Used for the PPTX citation check: a condensed deck may omit chapter body
+    prose (and its citations), so scanning the rendered deck would falsely flag
+    a reference as never-cited. The deck's citations are always a subset of the
+    SPEC's, so citation integrity is checked against the SPEC body instead.
+    """
+    parts = []
+    for s in spec.sections:
+        if s.kind == "references":
+            continue
+        for b in s.blocks:
+            t = b.get("type")
+            if t in ("paragraph", "lead", "callout", "heading"):
+                if b.get("text"):
+                    parts.append(b["text"])
+            elif t == "list":
+                for it in b.get("items", []):
+                    parts.append(it)
+    return "\n".join(parts)
+
+
 def _cited_surnames(body_text: str) -> set:
     primaries = set()
     for a, _b, _yr in CITE_PAIR.findall(body_text):
@@ -250,9 +273,16 @@ def gate(spec, fmt, file_path, *, pdf_path=None) -> GateVerdict:
 
     # 2) citation_consistency (two-way)
     def _citation():
-        ref_title = _references_title(spec)
-        cut = flat.casefold().rfind(ref_title.casefold())
-        body = flat[:cut] if cut > 0 else flat
+        if fmt == "pptx":
+            # Deck condenses content: chapter body prose (and its citations)
+            # may not appear on slides, so a rendered-deck scan would falsely
+            # flag a reference as never-cited. The deck's citations are always
+            # a subset of the SPEC's, so check integrity against the SPEC body.
+            body = _spec_body_text(spec)
+        else:
+            ref_title = _references_title(spec)
+            cut = flat.casefold().rfind(ref_title.casefold())
+            body = flat[:cut] if cut > 0 else flat
         return check_citation_consistency(_cited_surnames(body), _ref_surnames(spec))
     run("citation_consistency", _citation)
 
