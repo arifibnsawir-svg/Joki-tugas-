@@ -24,6 +24,7 @@ from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
 
 from ..images import verified_figure_refs
+from ..readers import count_words
 from ..spec import RenderResult, resolve_style
 from .base import pinned_datetime, resolve_logo_path, slug
 
@@ -475,4 +476,7 @@ def render(spec, out_path: str, *, pdf_path: str | None = None) -> RenderResult:
             page_count = len(PdfReader(pdf_path).pages)
         except Exception:
             page_count = 0
-    return RenderResult(fmt="docx", out_path=out_path, page_count=page_count, warnings=[])
+
+    # Word count from the rendered file, not SPEC estimation.
+    word_count = count_words("docx", out_path)
+    return RenderResult(fmt="docx", out_path=out_path, page_count=page_count, word_count=word_count, warnings=[])

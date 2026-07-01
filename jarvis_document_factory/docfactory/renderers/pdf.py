@@ -11,6 +11,7 @@ from __future__ import annotations
 import os
 
 from ..images import verified_figure_refs
+from ..readers import count_words
 from ..spec import RenderResult, resolve_style
 from .base import esc, image_data_uri, resolve_logo_path, slug, stable_epoch
 
@@ -237,4 +238,6 @@ def render(spec, out_path: str, *, pdf_path: str | None = None) -> RenderResult:
         else:
             os.environ["SOURCE_DATE_EPOCH"] = prev
 
-    return RenderResult(fmt="pdf", out_path=out_path, page_count=page_count, warnings=[])
+    # Word count from the rendered file, not SPEC estimation.
+    word_count = count_words("pdf", out_path)
+    return RenderResult(fmt="pdf", out_path=out_path, page_count=page_count, word_count=word_count, warnings=[])

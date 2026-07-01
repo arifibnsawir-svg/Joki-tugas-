@@ -2,6 +2,8 @@
 
 Shared by the orchestrator (cross-format consistency) and the Output_Gate.
 PDF and DOCX are read with pypdf and python-docx; PPTX with python-pptx.
+Also includes count_words() for word-count accuracy (counted from the rendered
+file, not from SPEC estimation).
 """
 from __future__ import annotations
 
@@ -50,6 +52,16 @@ def read_text(fmt: str, path: str) -> str:
     if fmt == "pptx":
         return "\n".join(read_pptx_slide_texts(path))
     raise ValueError("unknown format: %r" % fmt)
+
+
+def count_words(fmt: str, path: str) -> int:
+    """Count words from the RENDERED file text, not from SPEC estimation.
+
+    This is the single source of truth for word-count accuracy (RESUME #3).
+    Jarvis should read this from the run.py JSON report, never estimate from
+    SPEC block text alone.
+    """
+    return len(read_text(fmt, path).split())
 
 
 # ------------------------------------------------------------------ images

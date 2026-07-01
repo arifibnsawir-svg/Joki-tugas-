@@ -25,6 +25,7 @@ class RenderResult:
     fmt: str
     out_path: str
     page_count: int
+    word_count: int = 0
     warnings: list[str] = field(default_factory=list)
 
 
@@ -40,6 +41,7 @@ class GateVerdict:
     verdict: str  # "PASS" | "FAIL"
     failed_checks: list[CheckResult]
     page_count: int
+    word_count: int = 0
 
     @property
     def is_pass(self) -> bool:
