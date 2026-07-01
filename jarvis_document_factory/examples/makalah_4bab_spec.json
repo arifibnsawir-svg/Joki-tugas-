@@ -1,0 +1,104 @@
+{
+  "doc_id": "makalah-medsos-prestasi",
+  "formats": ["pdf", "docx"],
+  "doc_type": "makalah",
+  "is_academic": true,
+  "identity": {
+    "title": "PENGARUH MEDIA SOSIAL TERHADAP PRESTASI BELAJAR MAHASISWA",
+    "subtitle": "Kajian Ringkas Dampak Media Sosial pada Pendidikan Tinggi",
+    "course": "Teknologi Informasi dan Komunikasi",
+    "lecturer": "Dosen Pengampu",
+    "authors": [{"name": "Budiman Arif", "id": "NIM. 2019010101"}],
+    "program": "Program Studi Ilmu Komunikasi",
+    "faculty": "Fakultas Ilmu Sosial dan Ilmu Politik",
+    "institution": "Universitas Contoh",
+    "year": "2026"
+  },
+  "style": {},
+  "sections": [
+    {
+      "id": "frontmatter",
+      "kind": "frontmatter",
+      "title": "KATA PENGANTAR",
+      "blocks": [
+        {"type": "paragraph", "text": "Puji syukur penulis panjatkan ke hadirat Tuhan Yang Maha Esa atas selesainya makalah ini. Makalah ini disusun untuk memenuhi tugas mata kuliah sekaligus sebagai kajian ringkas mengenai dampak media sosial terhadap dunia pendidikan tinggi."},
+        {"type": "paragraph", "text": "Penulis mengucapkan terima kasih kepada dosen pengampu serta semua pihak yang telah membantu penyusunan makalah ini. Penulis menyadari makalah ini masih jauh dari sempurna, sehingga kritik dan saran yang membangun sangat diharapkan."}
+      ]
+    },
+    {
+      "id": "toc",
+      "kind": "toc",
+      "title": "DAFTAR ISI",
+      "blocks": []
+    },
+    {
+      "id": "bab1",
+      "kind": "chapter",
+      "number": "I",
+      "title": "PENDAHULUAN",
+      "blocks": [
+        {"type": "heading", "level": 2, "id": "h-1-1", "text": "1.1 Latar Belakang"},
+        {"type": "paragraph", "text": "Perkembangan teknologi informasi mendorong media sosial menjadi bagian tak terpisahkan dari keseharian mahasiswa. Platform seperti Instagram, TikTok, dan berbagai aplikasi pesan digunakan hampir setiap hari untuk berkomunikasi, mencari informasi, sekaligus mengisi waktu luang. Media sosial dipahami sebagai medium berbasis internet yang memungkinkan penggunanya berpartisipasi, berbagi, dan menciptakan konten secara daring (Nasrullah, 2015)."},
+        {"type": "paragraph", "text": "Di sisi lain, prestasi belajar merupakan hasil yang dicapai mahasiswa setelah melalui proses pembelajaran dan dipengaruhi oleh faktor internal maupun eksternal (Slameto, 2010). Intensitas penggunaan media sosial yang tinggi berpotensi menggeser waktu belajar, sehingga topik ini penting untuk dikaji secara sistematis."},
+        {"type": "heading", "level": 2, "id": "h-1-2", "text": "1.2 Rumusan Masalah"},
+        {"type": "list", "ordered": true, "items": ["Bagaimana pola penggunaan media sosial di kalangan mahasiswa?", "Bagaimana pengaruh media sosial terhadap prestasi belajar mahasiswa?", "Bagaimana strategi memanfaatkan media sosial secara positif untuk mendukung belajar?"]},
+        {"type": "heading", "level": 2, "id": "h-1-3", "text": "1.3 Tujuan Penulisan"},
+        {"type": "list", "ordered": true, "items": ["Menjelaskan pola penggunaan media sosial di kalangan mahasiswa.", "Menganalisis pengaruh media sosial terhadap prestasi belajar.", "Merumuskan strategi penggunaan media sosial yang mendukung pembelajaran."]}
+      ]
+    },
+    {
+      "id": "bab2",
+      "kind": "chapter",
+      "number": "II",
+      "title": "LANDASAN TEORI",
+      "blocks": [
+        {"type": "heading", "level": 2, "id": "h-2-1", "text": "2.1 Konsep Media Sosial"},
+        {"type": "paragraph", "text": "Media sosial didefinisikan sebagai kelompok aplikasi berbasis internet yang dibangun di atas fondasi teknologi Web 2.0 dan memungkinkan penciptaan serta pertukaran konten oleh pengguna (Kaplan, 2010). Situs jejaring sosial memungkinkan individu membangun profil publik, menyusun daftar koneksi, dan menelusuri jaringan relasi mereka (Boyd, 2007). Karakteristik interaktif inilah yang membuat media sosial begitu melekat pada mahasiswa."},
+        {"type": "heading", "level": 2, "id": "h-2-2", "text": "2.2 Prestasi Belajar"},
+        {"type": "paragraph", "text": "Prestasi belajar adalah tingkat penguasaan mahasiswa terhadap materi yang dinyatakan dalam nilai atau indeks prestasi (Syah, 2017). Capaian ini dipengaruhi oleh faktor internal seperti minat dan motivasi, serta faktor eksternal seperti lingkungan dan pemanfaatan waktu (Slameto, 2010). Media sosial berada pada faktor eksternal yang dapat bekerja dua arah, mendukung sekaligus mengganggu."},
+        {"type": "table", "caption": "Faktor yang memengaruhi prestasi belajar", "header": ["Jenis Faktor", "Contoh"], "rows": [["Internal", "Minat, motivasi, kesehatan, kebiasaan belajar"], ["Eksternal", "Lingkungan keluarga, kampus, dan penggunaan media sosial"]]}
+      ]
+    },
+    {
+      "id": "bab3",
+      "kind": "chapter",
+      "number": "III",
+      "title": "PEMBAHASAN",
+      "blocks": [
+        {"type": "heading", "level": 2, "id": "h-3-1", "text": "3.1 Dampak Positif Media Sosial"},
+        {"type": "paragraph", "text": "Dimanfaatkan dengan bijak, media sosial memperluas akses mahasiswa terhadap sumber belajar, komunitas ilmiah, dan diskusi lintas kampus (Nasrullah, 2015). Grup belajar daring dan kanal edukasi mempermudah berbagi materi serta memperkuat kolaborasi."},
+        {"type": "list", "ordered": false, "items": ["Akses cepat ke sumber belajar dan bacaan pendukung.", "Ruang diskusi dan kolaborasi antarmahasiswa.", "Penyebaran informasi akademik yang lebih luas."]},
+        {"type": "heading", "level": 2, "id": "h-3-2", "text": "3.2 Dampak Negatif Media Sosial"},
+        {"type": "paragraph", "text": "Sebaliknya, penggunaan yang berlebihan menyita waktu belajar, memecah konsentrasi, dan menurunkan kualitas istirahat yang pada akhirnya berdampak pada prestasi belajar (Syah, 2017). Notifikasi yang terus menerus membuat mahasiswa sulit fokus pada tugas yang menuntut perhatian penuh."},
+        {"type": "heading", "level": 2, "id": "h-3-3", "text": "3.3 Strategi Penggunaan yang Sehat"},
+        {"type": "paragraph", "text": "Kunci utamanya adalah manajemen diri: menjadwalkan waktu penggunaan, mematikan notifikasi saat belajar, dan mengarahkan media sosial untuk tujuan akademik. Dengan pengelolaan yang disiplin, media sosial dapat menjadi penunjang belajar, bukan penghambat."}
+      ]
+    },
+    {
+      "id": "bab4",
+      "kind": "chapter",
+      "number": "IV",
+      "title": "PENUTUP",
+      "blocks": [
+        {"type": "heading", "level": 2, "id": "h-4-1", "text": "4.1 Kesimpulan"},
+        {"type": "paragraph", "text": "Media sosial memiliki pengaruh dua arah terhadap prestasi belajar mahasiswa. Pemanfaatan yang terarah memperkaya sumber dan kolaborasi belajar, sedangkan penggunaan berlebihan menurunkan fokus dan waktu belajar. Dampak akhirnya sangat bergantung pada cara mahasiswa mengelola penggunaannya."},
+        {"type": "heading", "level": 2, "id": "h-4-2", "text": "4.2 Saran"},
+        {"type": "list", "ordered": true, "items": ["Mahasiswa menetapkan batas waktu penggunaan media sosial harian.", "Dosen mengarahkan pemanfaatan media sosial untuk kegiatan akademik.", "Kampus menyediakan literasi digital untuk penggunaan yang sehat."]}
+      ]
+    },
+    {
+      "id": "references",
+      "kind": "references",
+      "title": "DAFTAR PUSTAKA",
+      "blocks": []
+    }
+  ],
+  "references": [
+    {"id": "slameto2010", "apa": "Slameto. (2010). Belajar dan faktor-faktor yang mempengaruhinya. Rineka Cipta.", "url": "", "verified": true},
+    {"id": "nasrullah2015", "apa": "Nasrullah, R. (2015). Media sosial: Perspektif komunikasi, budaya, dan sosioteknologi. Simbiosa Rekatama Media.", "url": "", "verified": true},
+    {"id": "kaplan2010", "apa": "Kaplan, A. M., & Haenlein, M. (2010). Users of the world, unite! The challenges and opportunities of social media. Business Horizons, 53(1), 59-68.", "url": "", "verified": true},
+    {"id": "syah2017", "apa": "Syah, M. (2017). Psikologi pendidikan dengan pendekatan baru. Remaja Rosdakarya.", "url": "", "verified": true},
+    {"id": "boyd2007", "apa": "Boyd, D. M., & Ellison, N. B. (2007). Social network sites: Definition, history, and scholarship. Journal of Computer-Mediated Communication, 13(1), 210-230.", "url": "", "verified": true}
+  ],
+  "figures": []
+}

@@ -26,8 +26,8 @@ if command -v rsync >/dev/null 2>&1; then
     --exclude 'tests' --exclude '*.pyc' \
     "$SRC"/ "$DEST"/
 else
-  rm -rf "$DEST"/docfactory "$DEST"/SKILL.md "$DEST"/run.py "$DEST"/requirements.txt "$DEST"/examples
-  cp -r "$SRC"/docfactory "$SRC"/SKILL.md "$SRC"/run.py "$SRC"/requirements.txt "$SRC"/examples "$DEST"/
+  rm -rf "$DEST"/docfactory "$DEST"/SKILL.md "$DEST"/run.py "$DEST"/validate_spec.py "$DEST"/requirements.txt "$DEST"/examples
+  cp -r "$SRC"/docfactory "$SRC"/SKILL.md "$SRC"/run.py "$SRC"/validate_spec.py "$SRC"/requirements.txt "$SRC"/examples "$DEST"/
   find "$DEST" -name '__pycache__' -type d -prune -exec rm -rf {} + 2>/dev/null || true
 fi
 

@@ -70,6 +70,28 @@ python3 run.py SPEC.json --out OUTDIR [--basename NAMA] [--request "minimal slid
 Exit 0 hanya jika gate PASS untuk semua format (status DONE); selain itu non-zero
 (AWAITING_GATE) dengan daftar cek yang gagal.
 
+### Pra-cek SPEC (WAJIB sebelum run.py)
+Sebelum memanggil run.py, jalankan validator pra-render untuk menangkap SPEC
+yang salah dengan pesan JELAS (field apa yang kurang), bukan crash misterius:
+```
+python3 validate_spec.py SPEC.json      # tambah --json untuk output mesin
+```
+Exit 0 = SPEC siap dirender. Exit 1 = ada masalah (tiap masalah disebut + hint
+perbaikan). Exit 2 = file tak terbaca / bukan JSON valid. Perbaiki SPEC sampai
+validate_spec.py exit 0, BARU jalankan run.py. Validator ini memeriksa skema +
+validasi + citation_consistency di level SPEC; gate tetap penentu akhir pada file jadi.
+
+### Kalau run.py GAGAL (AWAITING_GATE / error) - ANTI-FALLBACK
+JANGAN beralih ke freehand (python-docx / render_deck.py langsung / tulis file
+biner manual). Itu pola gagal yang sudah terbukti. Sebaliknya:
+1. Jalankan `validate_spec.py SPEC.json` untuk membaca masalah SPEC.
+2. Baca `failed_checks` dari output run.py, perbaiki SPEC (bukan bikin file manual).
+3. Jalankan ulang run.py. Maksimal 5 iterasi.
+4. Kalau setelah 5 iterasi masih gagal: BERHENTI, minta bantuan Arif, lampirkan
+   SPEC terakhir + output run.py + output validate_spec.py. Jangan klaim selesai.
+Template struktur makalah 4 bab (Kata Pengantar, Daftar Isi, BAB I-IV, Daftar
+Pustaka) ada di `examples/makalah_4bab_spec.json` - pakai sebagai acuan, jangan menebak.
+
 ## Yang dicek gate (semua harus PASS)
 `structure_order` (struktur & urutan), `citation_consistency` (dua arah sitasi<->pustaka),
 `humanizer_clean` (nol em-dash/en-dash/kutip keriting/emoji), `no_blank_page`,
@@ -93,6 +115,7 @@ nomor cocok), `images_real` (semua gambar dari file nyata).
 
 ## Checklist verifikasi
 - [ ] SPEC dikeluarkan lebih dulu; tidak ada penulisan biner manual.
+- [ ] validate_spec.py exit 0 sebelum run.py.
 - [ ] Humanizer + cite-or-abstain jalan sebelum render.
 - [ ] Semua figure punya path yang ada (kalau tidak: perbaiki SPEC, jangan paksa).
 - [ ] `gate` PASS untuk tiap format sebelum menyebut DONE.
