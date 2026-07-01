@@ -1,0 +1,61 @@
+{
+  "spec_version": "1.0",
+  "doc_id": "wawancara-helper-2026",
+  "formats": ["pdf", "docx"],
+  "doc_type": "report",
+  "is_academic": true,
+  "identity": {
+    "title": "LAPORAN WAWANCARA DENGAN HELPER PEMBERI LAYANAN",
+    "subtitle": "Telaah Karakteristik dan Peran Helper pada Empat Bidang Layanan",
+    "course": "Pengembangan Profesi Konseling",
+    "lecturer": "Burju Ruth, M.Pd., Kons.",
+    "authors": [
+      { "name": "Nurul Syifa", "id": "202501500526" },
+      { "name": "Balqis Sandra Lejla", "id": "202501500525" }
+    ],
+    "program": "Program Studi Bimbingan dan Konseling",
+    "faculty": "Fakultas Ilmu Pendidikan dan Pengetahuan Sosial",
+    "institution": "Universitas Indraprasta PGRI",
+    "year": "2026"
+  },
+  "style": {},
+  "sections": [
+    {
+      "id": "kp", "kind": "frontmatter", "title": "KATA PENGANTAR",
+      "blocks": [
+        { "type": "paragraph", "text": "Puji dan syukur kami panjatkan atas selesainya laporan wawancara ini dengan lancar dan tepat waktu." },
+        { "type": "paragraph", "text": "Laporan ini disusun untuk memenuhi tugas mata kuliah Pengembangan Profesi Konseling pada Program Studi Bimbingan dan Konseling." }
+      ]
+    },
+    { "id": "toc", "kind": "toc", "title": "DAFTAR ISI", "blocks": [] },
+    {
+      "id": "bab1", "kind": "chapter", "number": "I", "title": "PENDAHULUAN",
+      "blocks": [
+        { "type": "heading", "level": 2, "id": "1-1", "text": "1.1 Latar Belakang" },
+        { "type": "paragraph", "text": "Prayitno dan Amti (2004) menjelaskan bahwa bimbingan adalah proses pemberian bantuan oleh orang yang ahli kepada individu agar mampu mengembangkan diri dan mandiri." },
+        { "type": "heading", "level": 2, "id": "1-2", "text": "1.2 Tujuan" },
+        { "type": "list", "ordered": true, "items": [
+          "Memahami peran helper dalam memberikan layanan bantuan.",
+          "Mengidentifikasi keterampilan yang dibutuhkan dalam profesi membantu."
+        ] }
+      ],
+      "pptx": { "layout": "section" }
+    },
+    {
+      "id": "bab2", "kind": "chapter", "number": "II", "title": "LANDASAN TEORI",
+      "blocks": [
+        { "type": "heading", "level": 2, "id": "2-1", "text": "2.1 Pengertian Helper" },
+        { "type": "paragraph", "text": "Rogers (1961) menekankan bahwa hubungan yang tulus, empati, dan penerimaan tanpa syarat menjadi inti dari proses membantu." },
+        { "type": "table", "caption": "Tabel 2.1 Aspek inti hubungan membantu",
+          "header": ["Aspek", "Keterangan"],
+          "rows": [["Empati", "Memahami perasaan orang lain"], ["Ketulusan", "Kejujuran dan keaslian sikap"]] }
+      ]
+    },
+    { "id": "dp", "kind": "references", "title": "DAFTAR PUSTAKA", "blocks": [] }
+  ],
+  "references": [
+    { "id": "prayitno2004", "apa": "Prayitno, & Amti, E. (2004). Dasar-dasar bimbingan dan konseling. Rineka Cipta.", "url": "https://onesearch.id/Record/IOS3107.slims-1", "verified": true },
+    { "id": "rogers1961", "apa": "Rogers, C. R. (1961). On becoming a person: A therapist's view of psychotherapy. Houghton Mifflin.", "url": "", "verified": true }
+  ],
+  "figures": []
+}
