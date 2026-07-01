@@ -2,15 +2,14 @@
 """Entry point for the Jarvis Document Factory skill.
 
 Reads a SPEC (JSON) and produces the requested PPTX/DOCX/PDF files through the
-Router, the four-stage loop, and the deterministic gate. The gate is the sole
-authority that declares an output DONE; this entry point only reports what the
-gate decided. It never hand-writes a binary document.
+Router, the four-stage loop, and the deterministic gate.
+
+PIPA4 auto-wiring: untuk dokumen akademik (is_academic=true), PIPA4 council
+(LLM audit via jarvis-reason) otomatis dipicu setelah factory gate PASS.
+Hasilnya di JSON output. Fail-open. Kill-switch: PIPA4_AUTO=off.
 
 Usage:
     run.py SPEC.json --out OUTDIR [--basename NAME] [--request "..."]
-
-Exit code is 0 only when the gate returns PASS for every requested format
-(status DONE); otherwise it is non-zero (status AWAITING_GATE).
 """
 from __future__ import annotations
 
@@ -27,11 +26,11 @@ from docfactory.orchestrator import run_pipeline  # noqa: E402
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Jarvis Document Factory (SPEC -> PPTX/DOCX/PDF)")
+    parser = argparse.ArgumentParser(description="Jarvis Document Factory")
     parser.add_argument("spec", help="path to a SPEC JSON file")
     parser.add_argument("--out", required=True, help="output directory")
     parser.add_argument("--basename", default="document", help="output file base name")
-    parser.add_argument("--request", default="", help="raw request text (e.g. 'minimal slides')")
+    parser.add_argument("--request", default="", help="raw request text")
     args = parser.parse_args(argv)
 
     with open(args.spec, "r", encoding="utf-8") as f:
@@ -54,14 +53,14 @@ def main(argv=None):
                 "page_count": r.page_count,
                 "word_count": r.word_count,
                 "verdict": result.verdicts[fmt].verdict,
-                "failed_checks": [
-                    {"check": c.check_id, "detail": c.detail}
-                    for c in result.verdicts[fmt].failed_checks
-                ],
+                "failed_checks": [{"check": c.check_id, "detail": c.detail}
+                                  for c in result.verdicts[fmt].failed_checks],
             }
             for fmt, r in result.results.items()
         },
     }
+    if result.pipa4:
+        report["pipa4_council"] = result.pipa4
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return 0 if result.status == "DONE" else 1
 

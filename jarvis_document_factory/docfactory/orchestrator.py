@@ -1,14 +1,12 @@
 """Orchestrator: multi-format render dispatch and cross-format consistency.
 
 render_all produces exactly one file per requested format from the same
-validated SPEC, rendering the PDF before the DOCX whenever both are requested
-and a table of contents is present so the DOCX can scan accurate page numbers.
-Document identity, section order, and the reference list are kept consistent
-across formats on a best-effort basis; any aspect that cannot be matched is
-reported rather than raised.
+validated SPEC. The Audit/Rancang/Sistemasi/Iterasi loop and the gate wiring
+live in run_pipeline.
 
-The Audit/Rancang/Sistemasi/Iterasi loop and the gate wiring live in the
-run_pipeline function added in the Router/loop phase.
+PIPA4 auto-wiring (CHECKPOINT 12.29): after factory gate PASS for academic
+docs, auto-trigger PIPA4 council via pipa4_gate.sh. Fail-open, scoped to
+is_academic=true only.
 """
 from __future__ import annotations
 
@@ -22,6 +20,7 @@ from .citation import apply_citation_layer
 from .gate import gate as run_gate
 from .humanizer import humanize_spec
 from .images import assert_referenced_images_exist, resolve_figures
+from .pipa4_hook import run as run_pipa4
 from .router import select_route
 from .spec import parse_spec
 from .validation import validate
@@ -34,20 +33,13 @@ def _has_toc(spec) -> bool:
 
 
 def render_all(spec, out_dir: str, basename: str = "document", *, request: str = "") -> dict:
-    """Render every requested format from one validated SPEC.
-
-    Returns {"results": {fmt: RenderResult}, "consistency": {...}, "warnings": [...]}.
-    The SPEC must already be validated and have its layers applied.
-    """
     os.makedirs(out_dir, exist_ok=True)
     fmts = list(spec.formats)
     results = {}
     warnings: list[str] = []
-
     pdf_path_for_docx = None
     temp_pdf = None
 
-    # PDF before DOCX (Requirements 3.7, 11.5)
     if "pdf" in fmts:
         pdf_out = os.path.join(out_dir, basename + ".pdf")
         results["pdf"] = pdf_renderer.render(spec, pdf_out)
@@ -82,14 +74,6 @@ def _expected_facts(spec) -> dict:
 
 
 def extract_presence(fmt: str, path: str, spec) -> dict:
-    """Which expected facts are present in the rendered text of one format.
-
-    Matching is case-insensitive AND whitespace-insensitive: title pages and
-    major headings are uppercased by layout (text-transform in PDF/DOCX) while
-    PPTX keeps the original case, and PDF text extraction can insert spurious
-    spaces inside short uppercased strings. Neither is a real inconsistency, so
-    both casing and whitespace are normalized away before comparison.
-    """
     text = read_text(fmt, path)
     flat = "".join(text.split()).casefold()
     expected = _expected_facts(spec)
@@ -105,51 +89,30 @@ def extract_presence(fmt: str, path: str, spec) -> dict:
 
 
 def check_consistency(spec, results: dict) -> dict:
-    """Best-effort cross-format consistency of title, section order, references.
-
-    Returns {"matched": [...], "unmatched": [...]}. Files are always produced;
-    an aspect that cannot be matched is named, not raised (Requirements 1.6, 1.7).
-    """
     fmts = list(results.keys())
     if len(fmts) < 2:
         return {"matched": ["title", "section_order", "references"], "unmatched": []}
-
     presences = {fmt: extract_presence(fmt, results[fmt].out_path, spec) for fmt in fmts}
     return diff_consistency(presences)
 
 
 def diff_consistency(presences: dict) -> dict:
-    """Compare per-format presence dicts; name any aspect that differs."""
     fmts = list(presences.keys())
     matched: list[str] = []
     unmatched: list[str] = []
-
     title_vals = {presences[f]["title"] for f in fmts}
     (matched if len(title_vals) == 1 else unmatched).append("title")
-
     order_vals = {tuple(presences[f]["section_titles"]) for f in fmts}
     (matched if len(order_vals) == 1 else unmatched).append("section_order")
-
     ref_vals = {presences[f]["references_present"] for f in fmts}
     (matched if len(ref_vals) == 1 else unmatched).append("references")
-
     return {"matched": matched, "unmatched": unmatched}
 
 
-
-# ==========================================================================
-# The Audit / Rancang / Sistemasi / Iterasi loop and DONE authority
-# ==========================================================================
 from dataclasses import dataclass, field  # noqa: E402
 
 
 class OutputState:
-    """Tracks gate verdicts for one output. DONE iff the latest verdict is PASS.
-
-    The language model may at most propose the awaiting-gate state; only a gate
-    PASS moves the output to DONE (Requirements 4.2, 4.3, 4.6).
-    """
-
     def __init__(self):
         self._verdicts: list[str] = []
 
@@ -171,13 +134,14 @@ class OutputState:
 
 @dataclass
 class PipelineResult:
-    status: str                       # "DONE" | "AWAITING_GATE"
+    status: str
     route: object
-    results: dict = field(default_factory=dict)      # fmt -> RenderResult
-    verdicts: dict = field(default_factory=dict)     # fmt -> GateVerdict
+    results: dict = field(default_factory=dict)
+    verdicts: dict = field(default_factory=dict)
     consistency: dict = field(default_factory=dict)
-    trace: list = field(default_factory=list)        # ordered stage names
+    trace: list = field(default_factory=list)
     iterations: int = 0
+    pipa4: dict = field(default_factory=dict)
 
 
 def _apply_layers_and_validate(spec):
@@ -191,23 +155,11 @@ def _apply_layers_and_validate(spec):
 
 def run_pipeline(spec_or_dict, out_dir, basename="document", *, request="",
                  fix_fn=None, max_iterations=3):
-    """Run the four-stage loop and let the gate decide DONE.
-
-    Audit: parse + route. Rancang: the SPEC is the design. Sistemasi: apply the
-    always-on layers, validate, render every requested format. Iterasi: gate each
-    output; if any FAIL and a fix_fn is supplied, apply the fix and re-render;
-    otherwise the output stays AWAITING_GATE. The output reaches DONE only when
-    every gate returns PASS.
-    """
     trace = []
-
-    # ---- Audit ----
     trace.append("audit")
     spec = parse_spec(spec_or_dict) if isinstance(spec_or_dict, dict) else spec_or_dict
     route = select_route(spec, request=request)
-
-    # ---- Rancang ----
-    trace.append("rancang")  # the SPEC already encodes the designed structure
+    trace.append("rancang")
 
     states = {fmt: OutputState() for fmt in spec.formats}
     results = {}
@@ -216,7 +168,6 @@ def run_pipeline(spec_or_dict, out_dir, basename="document", *, request="",
     iterations = 0
 
     for attempt in range(1, max_iterations + 1):
-        # ---- Sistemasi ----
         trace.append("sistemasi")
         _apply_layers_and_validate(spec)
         rendered = render_all(spec, out_dir, basename=basename, request=request)
@@ -224,7 +175,6 @@ def run_pipeline(spec_or_dict, out_dir, basename="document", *, request="",
         consistency = rendered["consistency"]
         pdf_path = results["pdf"].out_path if "pdf" in results else None
 
-        # ---- Iterasi ----
         trace.append("iterasi")
         iterations = attempt
         verdicts = {}
@@ -239,7 +189,7 @@ def run_pipeline(spec_or_dict, out_dir, basename="document", *, request="",
         if not any_fail:
             break
         if fix_fn is None:
-            break  # model may only propose AWAITING_GATE; no deterministic fix
+            break
         failed = {fmt: v.failed_checks for fmt, v in verdicts.items() if not v.is_pass}
         fixed = fix_fn(spec, failed)
         if fixed is None:
@@ -247,7 +197,21 @@ def run_pipeline(spec_or_dict, out_dir, basename="document", *, request="",
         spec = fixed
 
     status = "DONE" if all(s.is_done for s in states.values()) and states else "AWAITING_GATE"
+
+    # ---- PIPA4 auto-wiring (academic only, after factory gate PASS) ----
+    pipa4_result = {}
+    is_academic = getattr(spec, "is_academic", False)
+    all_pass = status == "DONE"
+    if is_academic and all_pass:
+        trace.append("pipa4_council")
+        target_fmt = "pdf" if "pdf" in results else ("docx" if "docx" in results else None)
+        if target_fmt:
+            target_path = results[target_fmt].out_path
+            constraint = getattr(spec, "pipa4_constraint", None) or None
+            pipa4_result = run_pipa4(target_path, constraint_name=constraint)
+
     return PipelineResult(
         status=status, route=route, results=results, verdicts=verdicts,
         consistency=consistency, trace=trace, iterations=iterations,
+        pipa4=pipa4_result,
     )

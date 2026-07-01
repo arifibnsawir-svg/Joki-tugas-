@@ -1,6 +1,6 @@
 ---
 name: jarvis-document-factory
-description: "Hasilkan dokumen PPTX, DOCX, dan PDF kualitas one-shot dari satu SPEC terstruktur. Dipicu saat diminta membuat/menyusun presentasi (.pptx), Word (.docx), atau PDF: laporan, makalah, modul, mini-book, slide sidang. Model mengeluarkan SPEC (JSON) lalu renderer deterministik yang membuat file; gate deterministik (Python) satu-satunya penentu DONE. Humanizer + cite-or-abstain selalu nyala; gambar hanya dari path yang benar-benar ada (anti-halu)."
+description: "Hasilkan dokumen PPTX, DOCX, dan PDF kualitas one-shot dari satu SPEC terstruktur. Dipicu saat diminta membuat/menyusun presentasi (.pptx), Word (.docx), atau PDF: laporan, makalah, modul, mini-book, slide sidang. Model mengeluarkan SPEC (JSON) lalu renderer deterministik yang membuat file; gate deterministik (Python) satu-satunya penentu DONE. Untuk dokumen akademik (is_academic=true), PIPA4 council (LLM audit via jarvis-reason) otomatis dipicu setelah factory gate PASS. Humanizer + cite-or-abstain selalu nyala; gambar hanya dari path yang benar-benar ada (anti-halu)."
 version: 1.0.0
 license: MIT
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep
@@ -37,13 +37,17 @@ Contoh pemicu: "buatkan PPT sidang", "susun laporan Word", "bikin makalah PDF",
    ke path yang tidak ada => error sebelum render, bukan gambar karangan.
 6. **Scope ketat:** hanya PPTX, DOCX, PDF. Satu SPEC, satu renderer per format, satu gate.
 
-## Alur (Router -> ARSI loop -> Gate)
+## Alur (Router -> ARSI loop -> Gate -> PIPA4)
 1. **Audit:** baca permintaan + sumber, tentukan format & apakah butuh sumber ilmiah.
    Kalau akademik, panggil skill `academic-search` DULU untuk sumber terverifikasi.
 2. **Rancang:** susun SPEC (identity, sections berurut, blocks, tables, figures, references).
 3. **Sistemasi:** terapkan humanizer + citation + image-resolver, validasi, render tiap format.
 4. **Iterasi:** jalankan `gate`; kalau FAIL, perbaiki SPEC dari daftar cek yang gagal lalu
    render ulang. Ulang sampai gate PASS.
+5. **PIPA4 Council (auto, akademik saja):** setelah factory gate PASS untuk `is_academic=true`,
+   PIPA4 council otomatis dipicu lewat `pipa4_gate.sh` (LLM audit via jarvis-reason).
+   Hasilnya di JSON output (`pipa4_council`). Fail-open: kalau PIPA4 tidak terpasang
+   di Acer, skip graceful — tidak menggagalkan factory gate. Kill-switch: `PIPA4_AUTO=off`.
 
 ## Kontrak SPEC (ringkas)
 SPEC = objek JSON, sumber kebenaran tunggal semua renderer:
@@ -56,7 +60,8 @@ SPEC = objek JSON, sumber kebenaran tunggal semua renderer:
   "sections": [ { "id"(wajib,unik), "kind":"frontmatter|toc|chapter|references|appendix",
                   "number","title"(wajib), "blocks":[...], "pptx":{"layout"} } ],
   "references": [ {"id","apa"(APA),"url","verified"(harus true agar lolos)} ],
-  "figures": [ {"ref","path","caption","verified_path"} ] }
+  "figures": [ {"ref","path","caption","verified_path"} ],
+  "pipa4_constraint": "academic_book.json" (opsional, default otomatis) }
 ```
 Block (tagged by "type"): `heading{level:2|3,id,text}`, `paragraph{text}`, `lead{text}`,
 `list{ordered,items}`, `table{caption,header,rows}`, `callout{text}`, `figure{ref}`.
@@ -67,61 +72,53 @@ spasi 1.5, rata kiri-kanan, nomor halaman Arab, margin 3/3/4/3 cm.
 ```
 python3 run.py SPEC.json --out OUTDIR [--basename NAMA] [--request "minimal slides"]
 ```
-Exit 0 hanya jika gate PASS untuk semua format (status DONE); selain itu non-zero
-(AWAITING_GATE) dengan daftar cek yang gagal.
+Exit 0 hanya jika gate PASS untuk semua format (status DONE). Untuk akademik,
+PIPA4 council otomatis setelah gate PASS (lihat JSON `pipa4_council`).
 
 ### Hasil: baca dari JSON report, jangan menebak
-run.py mencetak JSON report yang berisi `page_count` DAN `word_count` untuk tiap
-output — dihitung langsung dari teks FILE JADI (bukan estimasi dari SPEC). Selalu
-baca dari sana, jangan pernah menebak panjang/jumlah kata dari teks SPEC mentah.
+run.py mencetak JSON report dengan `page_count` DAN `word_count` — dihitung dari
+FILE JADI. Selalu baca dari situ, jangan menebak dari teks SPEC mentah.
 
 ### Pra-cek SPEC (WAJIB sebelum run.py)
-Sebelum memanggil run.py, jalankan validator pra-render untuk menangkap SPEC
-yang salah dengan pesan JELAS (field apa yang kurang), bukan crash misterius:
 ```
-python3 validate_spec.py SPEC.json      # tambah --json untuk output mesin
+python3 validate_spec.py SPEC.json      # --json untuk output mesin
 ```
-Exit 0 = SPEC siap dirender. Exit 1 = ada masalah (tiap masalah disebut + hint
-perbaikan). Exit 2 = file tak terbaca / bukan JSON valid. Perbaiki SPEC sampai
-validate_spec.py exit 0, BARU jalankan run.py. Validator ini memeriksa skema +
-validasi + citation_consistency di level SPEC; gate tetap penentu akhir pada file jadi.
+Exit 0 = siap render. Exit 1 = ada masalah + hint. Exit 2 = file/JSON rusak.
 
 ### Kalau run.py GAGAL (AWAITING_GATE / error) - ANTI-FALLBACK
-JANGAN beralih ke freehand (python-docx / render_deck.py langsung / tulis file
-biner manual). Itu pola gagal yang sudah terbukti. Sebaliknya:
-1. Jalankan `validate_spec.py SPEC.json` untuk membaca masalah SPEC.
-2. Baca `failed_checks` dari output run.py, perbaiki SPEC (bukan bikin file manual).
-3. Jalankan ulang run.py. Maksimal 5 iterasi.
-4. Kalau setelah 5 iterasi masih gagal: BERHENTI, minta bantuan Arif, lampirkan
-   SPEC terakhir + output run.py + output validate_spec.py. Jangan klaim selesai.
-Template struktur makalah 4 bab (Kata Pengantar, Daftar Isi, BAB I-IV, Daftar
-Pustaka) ada di `examples/makalah_4bab_spec.json` - pakai sebagai acuan, jangan menebak.
+JANGAN freehand. validate_spec -> perbaiki SPEC -> re-run (maks 5 iterasi) ->
+berhenti + lapor Arif. Template di `examples/makalah_4bab_spec.json`.
 
 ## Yang dicek gate (semua harus PASS)
-`structure_order` (struktur & urutan), `citation_consistency` (dua arah sitasi<->pustaka),
-`humanizer_clean` (nol em-dash/en-dash/kutip keriting/emoji), `no_blank_page`,
-`no_dangling_heading` (tak ada halaman cuma "BAB X"), `toc_accurate` (Daftar Isi muat &
-nomor cocok), `images_real` (semua gambar dari file nyata).
+`structure_order`, `citation_consistency`, `humanizer_clean`, `no_blank_page`,
+`no_dangling_heading`, `toc_accurate`, `images_real`.
+
+## PIPA4 Council (auto untuk dokumen akademik)
+Setelah 7 cek gate PASS dan `is_academic=true`, council PIPA4 otomatis:
+- Subprocess `bash ~/.hermes/scripts/pipa4_gate.sh <file> <constraint.json>`
+- LLM audit via `jarvis-reason` (phase6a + council phase6c/6d)
+- Verdict: PASS (READY_FOR_HUMAN_REVIEW + 0 false-READY) / NEEDS_WORK / ERROR
+- Hasil: `pipa4_council.verdict`, `.final_status`, `.false_ready_count`
+
+Council = ADVISORY. Factory gate tetap otoritas DONE. NEEDS_WORK = sinyal
+perbaikan, bukan kegagalan. PIPA4 berat (~300s) — hanya final akademik.
+Fail-open + kill-switch `PIPA4_AUTO=off`.
 
 ## Detail renderer
-- **PDF:** WeasyPrint satu-pass; `target-counter` untuk Daftar Isi TANPA `counter-reset`;
-  `hyphens:none` agar patah baris cocok dengan DOCX; font Liberation Serif (metrik Times).
-- **DOCX:** python-docx mirror PDF; `page_break_before` per bab; footer field PAGE;
-  Daftar Isi manual dengan nomor hasil scan PDF acuan (PDF dirender lebih dulu).
-- **PPTX:** panggil `render_deck.py` (deck 16:9 berdesain: aksen, accent bar, footer,
-  nomor). Default = desain rumah; gaya minimal HANYA jika diminta eksplisit.
+- **PDF:** WeasyPrint A4, target-counter TOC, hyphens:none, Liberation Serif.
+- **DOCX:** python-docx mirror PDF, footer PAGE field, TOC scan dari PDF.
+- **PPTX:** render_deck.py 16:9, akademik/business/dark preset.
 
-## Beda dengan skill lain (hindari rancu)
-- `academic-document-factory` (sudah ada): panduan/berbasis-referensi. Skill INI berbeda:
-  pipeline SPEC->renderer->gate deterministik yang benar-benar menghasilkan file + memvonis PASS/FAIL.
-- `pptx-slides-creation-guard`: mewajibkan PPTX lewat `render_deck`. Skill ini MELAKUKAN itu,
-  jadi saling melengkapi, bukan bertabrakan.
-- `humanizer`: di-reuse sebagai lapis prosa, bukan diduplikasi di sini.
+## Beda dengan skill lain
+- `academic-document-factory`: panduan/referensi. Skill INI: pipeline SPEC->renderer->gate.
+- `pptx-slides-creation-guard`: mewajibkan render_deck. Skill ini MELAKUKAN itu.
+- `humanizer`: di-reuse, tidak diduplikasi.
 
 ## Checklist verifikasi
-- [ ] SPEC dikeluarkan lebih dulu; tidak ada penulisan biner manual.
+- [ ] SPEC dulu, tidak ada penulisan biner manual.
 - [ ] validate_spec.py exit 0 sebelum run.py.
-- [ ] Humanizer + cite-or-abstain jalan sebelum render.
-- [ ] Semua figure punya path yang ada (kalau tidak: perbaiki SPEC, jangan paksa).
-- [ ] `gate` PASS untuk tiap format sebelum menyebut DONE.
-- [ ] `word_count` dibaca dari JSON report run.py, bukan ditebak dari teks SPEC.
+- [ ] Humanizer + cite-or-abstain jalan.
+- [ ] Semua figure punya path nyata.
+- [ ] `gate` PASS sebelum menyebut DONE.
+- [ ] `word_count` dari JSON report, bukan tebakan.
+- [ ] Untuk akademik: `pipa4_council` dicek di JSON.
