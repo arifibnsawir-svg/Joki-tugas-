@@ -19,9 +19,17 @@ import re
 # In-text APA author-year citations. Pair form handles "A dan B (2020)"
 # (Indonesian) and is matched before the single form.
 CITE_PAIR = re.compile(r"([A-Z][a-zA-Z]+)\s+dan\s+([A-Z][a-zA-Z]+)\s*\((\d{4})\)")
-# Single form: "Name (Year)", "Name, Year", "Name dkk. (Year)", "Name et al. (Year)".
+# Single form: supports ALL common APA variations:
+#   Name (Year)           — standard APA, space before paren  ← THIS WAS BROKEN
+#   Name, Year             — comma-separated
+#   (Name, Year)           — parenthesised
+#   Name dkk. (Year)       — Indonesian multi-author
+#   Name et al. (Year)     — English multi-author
+# The \s* before [\,\(] is the key fix: previously the character class
+# required a comma or opening paren IMMEDIATELY after the surname, which
+# broke the most common APA format "Author (Year)".
 CITE_SINGLE = re.compile(
-    r"([A-Z][a-zA-Z]+)(?:\s+(?:dkk\.|et al\.))?[\,\(]\s*(\d{4})\)?"
+    r"([A-Z][a-zA-Z]+)(?:\s+(?:dkk\.|et al\.))?\s*[\,\(]\s*(\d{4})\)?"
 )
 
 _SURNAME = re.compile(r"([A-Z][a-zA-Z]+)")
